@@ -36,11 +36,11 @@ export default function InnerFooter() {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/trulylogo.png"
+                src="/trulylogo.svg"
                 alt="Truly Investor Capital"
-                width={140}
-                height={45}
-                className="h-auto"
+                width={220}
+                height={75}
+                className="h-auto w-[140px] sm:w-[180px] md:w-[220px]"
               />
             </Link>
             <p className="text-white/60 text-sm leading-relaxed mb-6">
