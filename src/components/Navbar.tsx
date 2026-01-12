@@ -184,6 +184,30 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 </div>
               </div>
 
+              {/* Quick Links - Mobile */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35, duration: 0.4 }}
+                className="lg:hidden mt-8 pt-8 border-t border-white/10"
+              >
+                <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+                  Quick Links
+                </span>
+                <div className="grid grid-cols-2 gap-3">
+                  {navLinks.map((link) => (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      onClick={closeDropdown}
+                      className="bg-white/[0.02] border border-white/[0.06] px-4 py-3 text-white/70 hover:text-gold hover:border-gold/20 text-sm transition-all duration-300"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </motion.div>
+
               {/* Login Section */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
