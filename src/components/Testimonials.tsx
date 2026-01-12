@@ -28,14 +28,14 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-32 px-8 md:px-16 bg-white">
+    <section id="testimonials" className="py-16 sm:py-24 md:py-32 px-4 sm:px-8 md:px-16 bg-white">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-20"
+        className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 md:mb-20"
       >
         <span className="section-tag">Testimonials</span>
         <h2 className="section-title">Trusted by Investors Nationwide</h2>
@@ -46,7 +46,7 @@ export default function Testimonials() {
       </motion.div>
 
       {/* Testimonials Grid */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={testimonial.name}
@@ -54,15 +54,15 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group p-10 bg-cream transition-all duration-300 hover:bg-forest"
+            className="group p-5 sm:p-8 md:p-10 bg-cream transition-all duration-300 hover:bg-forest"
           >
             {/* Quote Icon */}
-            <div className="font-display text-7xl leading-none text-gold/30 mb-4 transition-colors duration-300 group-hover:text-gold">
+            <div className="font-display text-5xl sm:text-6xl md:text-7xl leading-none text-gold/30 mb-3 sm:mb-4 transition-colors duration-300 group-hover:text-gold">
               "
             </div>
 
             {/* Quote Text */}
-            <p className="text-lg leading-relaxed text-forest-deep mb-8 italic transition-colors duration-300 group-hover:text-white">
+            <p className="text-base sm:text-lg leading-relaxed text-forest-deep mb-5 sm:mb-8 italic transition-colors duration-300 group-hover:text-white">
               {testimonial.quote}
             </p>
 

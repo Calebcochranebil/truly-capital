@@ -45,7 +45,7 @@ function AnimatedCounter({
   }, [isInView, value]);
 
   return (
-    <span ref={ref} className="font-display text-5xl font-semibold text-gold leading-none">
+    <span ref={ref} className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold text-gold leading-none">
       {isDecimal ? count.toFixed(1) : Math.floor(count).toLocaleString()}
       {suffix}
     </span>
@@ -111,14 +111,14 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-8 md:px-16 pt-32 pb-16 grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 pt-24 sm:pt-32 pb-16 grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-16 items-center relative z-10">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-6">
+          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-4 sm:mb-6">
             <span className="block">Investor Lending</span>
             <span className="text-gold relative inline-block">
               Made Simple
@@ -130,7 +130,7 @@ export default function Hero() {
               />
             </span>
           </h1>
-          <p className="text-xl text-white/80 leading-relaxed mb-10 max-w-lg">
+          <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-6 sm:mb-10 max-w-lg">
             We provide fast, streamlined real estate lending solutions for direct borrowers
             and broker partners, built to support investor success.
           </p>
@@ -145,23 +145,23 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 relative"
+          className="bg-white/5 backdrop-blur-xl border border-white/10 p-4 sm:p-6 md:p-10 relative"
         >
           {/* Top accent line */}
           <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold to-gold-light" />
 
-          <div className="grid grid-cols-2 gap-8">
+          <div className="grid grid-cols-2 gap-2 sm:gap-4 md:gap-8">
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="text-center p-6 border border-white/5 bg-white/[0.02] transition-all duration-300 hover:bg-gold/10 hover:border-gold/30 hover:-translate-y-1"
+                className="text-center p-3 sm:p-4 md:p-6 border border-white/5 bg-white/[0.02] transition-all duration-300 hover:bg-gold/10 hover:border-gold/30 hover:-translate-y-1"
               >
                 <AnimatedCounter
                   value={stat.value}
                   suffix={stat.suffix}
                   isDecimal={stat.isDecimal}
                 />
-                <span className="block text-white/70 text-sm mt-2 tracking-widest uppercase">
+                <span className="block text-white/70 text-xs sm:text-sm mt-1 sm:mt-2 tracking-wider sm:tracking-widest uppercase">
                   {stat.label}
                 </span>
               </div>

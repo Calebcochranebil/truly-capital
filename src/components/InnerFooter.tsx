@@ -30,8 +30,8 @@ export default function InnerFooter() {
   return (
     <footer className="bg-forest-deep text-white">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 py-16">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
           {/* Brand & Contact */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
@@ -155,7 +155,7 @@ export default function InnerFooter() {
 
       {/* Disclosure Section */}
       <div className="bg-forest-deep border-t border-white/5">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8">
           <p className="text-white/30 text-xs leading-relaxed text-center">
             Truly Investor Capital, a division of Oaktree Funding Corp., 3133 West Frye Road, Suite #205
             Chandler, AZ 85226 (NMLS # 71640 | In the following states AZ, CA, ID, MN, OR, UT loans are

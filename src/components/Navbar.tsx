@@ -242,7 +242,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 alt="Truly Investor Capital"
                 width={220}
                 height={75}
-                className={`h-auto transition-all duration-300 ${isScrolled ? "scale-90" : ""}`}
+                className={`h-auto w-[140px] sm:w-[180px] md:w-[220px] transition-all duration-300 ${isScrolled ? "scale-90" : ""}`}
                 priority
               />
             </Link>
@@ -319,14 +319,17 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 866-219-2294
               </a>
               
-              <a href="https://applications.trulyinvestorcapital.com/form-6571272/" target="_blank" rel="noopener noreferrer" className="relative group px-6 py-2.5 bg-gold text-forest-deep text-sm font-semibold tracking-wide overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gold/20">
+              <a href="https://applications.trulyinvestorcapital.com/form-6571272/" target="_blank" rel="noopener noreferrer" className="hidden sm:block relative group px-4 sm:px-6 py-2 sm:py-2.5 bg-gold text-forest-deep text-xs sm:text-sm font-semibold tracking-wide overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gold/20">
                 {/* Shine effect */}
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                 <span className="relative">Get Started</span>
               </a>
 
               {/* Mobile Menu Button */}
-              <button className="lg:hidden w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors">
+              <button
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="lg:hidden w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors"
+              >
                 <Menu className="w-5 h-5" />
               </button>
             </div>

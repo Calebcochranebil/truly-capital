@@ -27,25 +27,26 @@ export default function Calculator() {
   };
 
   return (
-    <section id="calculator" className="py-32 px-8 md:px-16 bg-forest-deep relative overflow-hidden">
+    <section id="calculator" className="py-16 sm:py-24 md:py-32 px-4 sm:px-8 md:px-16 bg-forest-deep relative overflow-hidden">
       {/* Background accent */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-gold/5 to-transparent pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-24 items-center relative z-10">
+      <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.2fr] gap-8 sm:gap-12 lg:gap-24 items-center relative z-10">
         {/* Left Content */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center lg:text-left"
         >
-          <span className="inline-block bg-gold/20 text-gold px-6 py-2 text-xs tracking-[0.2em] uppercase mb-6">
+          <span className="inline-block bg-gold/20 text-gold px-4 sm:px-6 py-2 text-xs tracking-[0.2em] uppercase mb-4 sm:mb-6">
             Quick Estimate
           </span>
-          <h2 className="font-display text-4xl md:text-5xl font-medium text-white leading-tight mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-white leading-tight mb-3 sm:mb-4">
             See Potential Loan Amounts
           </h2>
-          <p className="text-white/70 text-lg leading-relaxed">
+          <p className="text-white/70 text-base sm:text-lg leading-relaxed">
             Get an instant estimate on potential loan amounts and monthly
             payments. Our team is ready to help secure the right financing.
           </p>
@@ -60,24 +61,24 @@ export default function Calculator() {
           className="relative"
         >
           {/* Decorative border */}
-          <div className="absolute -top-5 -left-5 right-5 bottom-5 border-2 border-gold -z-10" />
+          <div className="hidden sm:block absolute -top-5 -left-5 right-5 bottom-5 border-2 border-gold -z-10" />
 
-          <div className="bg-white p-10">
+          <div className="bg-white p-5 sm:p-8 md:p-10">
             {/* Property Value */}
-            <div className="mb-8">
-              <label className="block text-xs font-semibold tracking-widest uppercase text-forest mb-3">
+            <div className="mb-5 sm:mb-8">
+              <label className="block text-xs font-semibold tracking-widest uppercase text-forest mb-2 sm:mb-3">
                 Property Value
               </label>
               <input
                 type="text"
                 value={formatCurrency(propertyValue)}
                 onChange={handlePropertyValueChange}
-                className="w-full px-6 py-4 border-2 border-black/10 bg-cream font-sans text-lg transition-all duration-300 focus:outline-none focus:border-gold focus:bg-white"
+                className="w-full px-4 sm:px-6 py-3 sm:py-4 border-2 border-black/10 bg-cream font-sans text-base sm:text-lg transition-all duration-300 focus:outline-none focus:border-gold focus:bg-white"
               />
             </div>
 
             {/* LTV Slider */}
-            <div className="mb-8">
+            <div className="mb-5 sm:mb-8">
               <label className="block text-xs font-semibold tracking-widest uppercase text-forest mb-3">
                 Loan-to-Value Ratio
               </label>
@@ -97,7 +98,7 @@ export default function Calculator() {
             </div>
 
             {/* Rate Slider */}
-            <div className="mb-8">
+            <div className="mb-5 sm:mb-8">
               <label className="block text-xs font-semibold tracking-widest uppercase text-forest mb-3">
                 Interest Rate
               </label>
@@ -118,11 +119,11 @@ export default function Calculator() {
             </div>
 
             {/* Result */}
-            <div className="bg-forest text-white p-8 text-center mt-4">
+            <div className="bg-forest text-white p-4 sm:p-6 md:p-8 text-center mt-4">
               <div className="text-xs tracking-[0.15em] uppercase text-gold mb-2">
                 Estimated Loan Amount
               </div>
-              <div className="font-display text-5xl font-semibold">
+              <div className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold">
                 {formatCurrency(loanAmount)}
               </div>
             </div>

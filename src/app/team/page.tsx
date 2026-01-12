@@ -183,19 +183,19 @@ export default function TeamPage() {
       <Navbar currentPage="/team" />
       <main className="min-h-screen bg-cream">
         {/* Hero Section */}
-        <section className="relative bg-forest-deep pt-32 pb-20 overflow-hidden">
+        <section className="relative bg-forest-deep pt-24 sm:pt-32 pb-12 sm:pb-20 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gold rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 text-center">
           <motion.span
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-block bg-gold/10 text-gold px-6 py-2 text-xs tracking-[0.2em] uppercase mb-6 border border-gold/20"
+            className="inline-block bg-gold/10 text-gold px-4 sm:px-6 py-2 text-xs tracking-[0.2em] uppercase mb-4 sm:mb-6 border border-gold/20"
           >
             Our Team
           </motion.span>
@@ -204,7 +204,7 @@ export default function TeamPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-display text-5xl md:text-6xl lg:text-7xl text-white mb-6"
+            className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6"
           >
             Meet the <span className="text-gold">Experts</span>
           </motion.h1>
@@ -213,7 +213,7 @@ export default function TeamPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white/70 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
+            className="text-white/70 text-base sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed"
           >
             Our dedicated team of lending professionals brings decades of combined
             experience to help achieve real estate investment goals.
@@ -222,8 +222,8 @@ export default function TeamPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-20 bg-cream-warm">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-cream-warm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -253,8 +253,8 @@ export default function TeamPage() {
       </section>
 
       {/* Sales Team Section */}
-      <section className="py-20 bg-cream">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -284,13 +284,13 @@ export default function TeamPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-forest-deep">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-12 sm:py-16 md:py-20 bg-forest-deep">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-4xl md:text-5xl text-white mb-6"
+            className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 sm:mb-6"
           >
             Ready to Get Started?
           </motion.h2>

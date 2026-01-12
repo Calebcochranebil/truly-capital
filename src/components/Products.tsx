@@ -61,14 +61,14 @@ const products = [
 
 export default function Products() {
   return (
-    <section id="products" className="py-32 px-8 md:px-16 bg-cream">
+    <section id="products" className="py-16 sm:py-24 md:py-32 px-4 sm:px-8 md:px-16 bg-cream">
       {/* Header */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
-        className="text-center max-w-2xl mx-auto mb-20"
+        className="text-center max-w-2xl mx-auto mb-10 sm:mb-16 md:mb-20"
       >
         <span className="section-tag">Our Products</span>
         <h2 className="section-title">
@@ -81,7 +81,7 @@ export default function Products() {
       </motion.div>
 
       {/* Products Grid */}
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         {products.map((product, index) => (
           <motion.div
             key={product.title}
@@ -89,18 +89,18 @@ export default function Products() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group bg-white border border-cream-warm p-8 relative overflow-hidden hover:shadow-xl transition-all duration-500"
+            className="group bg-white border border-cream-warm p-5 sm:p-6 md:p-8 relative overflow-hidden hover:shadow-xl transition-all duration-500"
           >
             {/* Top accent line */}
             <div className="absolute top-0 left-0 h-1 bg-gold w-0 group-hover:w-full transition-all duration-500" />
 
             {/* Icon */}
-            <div className="w-16 h-16 bg-forest-deep flex items-center justify-center mb-6 group-hover:bg-gold transition-colors duration-500">
-              <product.icon className="w-7 h-7 text-gold group-hover:text-forest-deep transition-colors duration-500" />
+            <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-forest-deep flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-gold transition-colors duration-500">
+              <product.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-gold group-hover:text-forest-deep transition-colors duration-500" />
             </div>
 
             {/* Content */}
-            <h3 className="font-display text-2xl text-forest-deep mb-3">
+            <h3 className="font-display text-xl sm:text-2xl text-forest-deep mb-2 sm:mb-3">
               {product.title}
             </h3>
             <p className="text-slate mb-6 leading-relaxed">
