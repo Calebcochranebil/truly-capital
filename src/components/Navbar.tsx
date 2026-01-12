@@ -98,7 +98,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: "-100%", opacity: 0.8 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed top-0 left-0 right-0 bg-forest-deep z-[1001] border-b border-gold/20"
+            className="fixed top-0 left-0 right-0 bottom-0 bg-forest-deep z-[1001] overflow-y-auto"
           >
             {/* Close button */}
             <motion.button
@@ -111,7 +111,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
               <X className="w-4 h-4 text-white/70 group-hover:text-forest-deep transition-colors" />
             </motion.button>
 
-            <div className="max-w-7xl mx-auto px-6 md:px-12 pt-28 pb-12">
+            <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 sm:pt-28 pb-24">
               <div className="grid lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-16">
                 {/* Left Side */}
                 <motion.div
