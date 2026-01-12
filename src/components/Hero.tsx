@@ -1,0 +1,191 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { motion, useInView } from "framer-motion";
+
+const stats = [
+  { value: 3500, label: "Loans Funded", suffix: "+" },
+  { value: 2, label: "Billion Funded", suffix: "B+", isDecimal: false },
+  { value: 48, label: "States Served", suffix: "+" },
+  { value: 20, label: "Day Avg Close", suffix: "+" },
+];
+
+function AnimatedCounter({
+  value,
+  suffix,
+  isDecimal = false,
+}: {
+  value: number;
+  suffix: string;
+  isDecimal?: boolean;
+}) {
+  const [count, setCount] = useState(0);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  useEffect(() => {
+    if (!isInView) return;
+
+    const duration = 2000;
+    const steps = 60;
+    const increment = value / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= value) {
+        setCount(value);
+        clearInterval(timer);
+      } else {
+        setCount(current);
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [isInView, value]);
+
+  return (
+    <span ref={ref} className="font-display text-5xl font-semibold text-gold leading-none">
+      {isDecimal ? count.toFixed(1) : Math.floor(count).toLocaleString()}
+      {suffix}
+    </span>
+  );
+}
+
+export default function Hero() {
+  return (
+    <section className="min-h-screen bg-gradient-to-br from-forest-deep via-forest to-[#2d5a4a] relative flex items-center overflow-hidden">
+      {/* Background Pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            radial-gradient(circle at 20% 80%, rgba(201, 169, 98, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 80% 20%, rgba(201, 169, 98, 0.08) 0%, transparent 40%),
+            radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.03) 0%, transparent 30%)
+          `,
+        }}
+      />
+
+      {/* Grid Pattern */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(201, 169, 98, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(201, 169, 98, 0.03) 1px, transparent 1px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* Floating Shapes */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <motion.div
+          animate={{
+            x: [0, 20, -10, 30, 0],
+            y: [0, -30, 20, 10, 0],
+            rotate: [0, 5, -5, 3, 0],
+          }}
+          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[10%] right-[10%] w-[300px] h-[300px] border border-gold/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]"
+        />
+        <motion.div
+          animate={{
+            x: [0, -15, 25, -10, 0],
+            y: [0, 25, -15, 20, 0],
+            rotate: [0, -5, 5, -3, 0],
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+          className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] border border-gold/20 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%]"
+        />
+        <motion.div
+          animate={{
+            x: [0, 30, -20, 15, 0],
+            y: [0, -20, 30, -10, 0],
+            rotate: [0, 3, -3, 5, 0],
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 4 }}
+          className="absolute top-[40%] right-[25%] w-[150px] h-[150px] border border-gold/20 rounded-[40%_60%_65%_35%_/_40%_45%_55%_60%]"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="max-w-7xl mx-auto px-8 md:px-16 pt-32 pb-16 grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center relative z-10">
+        {/* Text Content */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-6">
+            <span className="block">Investor Lending</span>
+            <span className="text-gold relative inline-block">
+              Made Simple
+              <motion.span
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ delay: 1, duration: 0.8, ease: "easeOut" }}
+                className="absolute bottom-1 left-0 w-full h-[3px] bg-gold origin-left"
+              />
+            </span>
+          </h1>
+          <p className="text-xl text-white/80 leading-relaxed mb-10 max-w-lg">
+            We provide fast, streamlined real estate lending solutions for direct borrowers
+            and broker partners, built to support investor success.
+          </p>
+          <div className="flex flex-wrap gap-4">
+            <a href="https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z" target="_blank" rel="noopener noreferrer" className="btn-primary">Apply Now</a>
+            <a href="/#products" className="btn-secondary">Explore Products</a>
+          </div>
+        </motion.div>
+
+        {/* Stats Card */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 relative"
+        >
+          {/* Top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-gold to-gold-light" />
+
+          <div className="grid grid-cols-2 gap-8">
+            {stats.map((stat) => (
+              <div
+                key={stat.label}
+                className="text-center p-6 border border-white/5 bg-white/[0.02] transition-all duration-300 hover:bg-gold/10 hover:border-gold/30 hover:-translate-y-1"
+              >
+                <AnimatedCounter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  isDecimal={stat.isDecimal}
+                />
+                <span className="block text-white/70 text-sm mt-2 tracking-widest uppercase">
+                  {stat.label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
+      >
+        <span className="text-white/50 text-xs tracking-[0.2em] uppercase">
+          Scroll
+        </span>
+        <motion.div
+          animate={{ height: [60, 40, 60], opacity: [1, 0.5, 1] }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="w-px bg-gradient-to-b from-gold to-transparent"
+        />
+      </motion.div>
+    </section>
+  );
+}
