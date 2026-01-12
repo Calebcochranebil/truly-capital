@@ -79,35 +79,11 @@ export default function Hero() {
         }}
       />
 
-      {/* Floating Shapes */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <motion.div
-          animate={{
-            x: [0, 20, -10, 30, 0],
-            y: [0, -30, 20, 10, 0],
-            rotate: [0, 5, -5, 3, 0],
-          }}
-          transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[10%] right-[10%] w-[300px] h-[300px] border border-gold/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%]"
-        />
-        <motion.div
-          animate={{
-            x: [0, -15, 25, -10, 0],
-            y: [0, 25, -15, 20, 0],
-            rotate: [0, -5, 5, -3, 0],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 2 }}
-          className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] border border-gold/20 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%]"
-        />
-        <motion.div
-          animate={{
-            x: [0, 30, -20, 15, 0],
-            y: [0, -20, 30, -10, 0],
-            rotate: [0, 3, -3, 5, 0],
-          }}
-          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 4 }}
-          className="absolute top-[40%] right-[25%] w-[150px] h-[150px] border border-gold/20 rounded-[40%_60%_65%_35%_/_40%_45%_55%_60%]"
-        />
+      {/* Floating Shapes - Hidden on mobile for performance */}
+      <div className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[10%] right-[10%] w-[300px] h-[300px] border border-gold/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-pulse" />
+        <div className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] border border-gold/20 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%]" />
+        <div className="absolute top-[40%] right-[25%] w-[150px] h-[150px] border border-gold/20 rounded-[40%_60%_65%_35%_/_40%_45%_55%_60%]" />
       </div>
 
       {/* Content */}
@@ -170,22 +146,13 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4"
-      >
+      {/* Scroll Indicator - Hidden on mobile */}
+      <div className="hidden sm:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-4">
         <span className="text-white/50 text-xs tracking-[0.2em] uppercase">
           Scroll
         </span>
-        <motion.div
-          animate={{ height: [60, 40, 60], opacity: [1, 0.5, 1] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          className="w-px bg-gradient-to-b from-gold to-transparent"
-        />
-      </motion.div>
+        <div className="w-px h-[60px] bg-gradient-to-b from-gold to-transparent animate-pulse" />
+      </div>
     </section>
   );
 }
