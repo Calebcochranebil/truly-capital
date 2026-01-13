@@ -138,7 +138,6 @@ export default function DSCRPage() {
             src="/dscr-hero.jpg"
             alt="DSCR Rental Loans"
             fill
-            sizes="100vw"
             className="object-cover opacity-30"
             priority
           />

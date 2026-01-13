@@ -91,7 +91,6 @@ export default function AboutPage() {
             src="/about-hero.jpg"
             alt="Modern architecture"
             fill
-            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -164,7 +163,6 @@ export default function AboutPage() {
                   src="/about-property.jpg"
                   alt="Beautiful property"
                   fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
@@ -304,7 +302,6 @@ export default function AboutPage() {
                 src="/lending-map.png"
                 alt="US Lending Map"
                 fill
-                sizes="(max-width: 768px) 100vw, 800px"
                 className="object-contain"
               />
             </div>
