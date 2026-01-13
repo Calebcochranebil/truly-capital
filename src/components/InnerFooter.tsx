@@ -31,9 +31,46 @@ export default function InnerFooter() {
     <footer className="bg-forest-deep text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
-          {/* Brand & Contact */}
-          <div className="lg:col-span-1">
+        {/* Brand & Contact - Centered on mobile */}
+        <div className="text-center sm:text-left mb-10 sm:hidden">
+          <Link href="/" className="inline-block mb-4">
+            <Image
+              src="/trulylogo.svg"
+              alt="Truly Investor Capital"
+              width={180}
+              height={60}
+              className="h-auto w-[160px] mx-auto"
+            />
+          </Link>
+          <p className="text-white/60 text-sm leading-relaxed mb-4 max-w-xs mx-auto">
+            Innovative lending solutions for real estate investors across the nation.
+          </p>
+          <a
+            href="tel:8662192294"
+            className="inline-flex items-center gap-2 text-white/70 hover:text-gold transition-colors text-sm mb-4"
+          >
+            <Phone className="w-4 h-4 text-gold" />
+            866-219-2294
+          </a>
+          <div className="flex gap-3 justify-center mt-4">
+            {socialLinks.map((social) => (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+                className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold"
+              >
+                <social.icon className="w-4 h-4" />
+              </a>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
+          {/* Brand & Contact - Desktop only */}
+          <div className="hidden sm:block lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <Image
                 src="/trulylogo.svg"
@@ -72,8 +109,8 @@ export default function InnerFooter() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-display text-lg text-gold mb-5">Quick Links</h4>
+          <div className="text-center sm:text-left">
+            <h4 className="font-display text-lg text-gold mb-4 sm:mb-5">Quick Links</h4>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.label}>
@@ -89,8 +126,8 @@ export default function InnerFooter() {
           </div>
 
           {/* Products */}
-          <div>
-            <h4 className="font-display text-lg text-gold mb-5">Products</h4>
+          <div className="text-center sm:text-left">
+            <h4 className="font-display text-lg text-gold mb-4 sm:mb-5">Products</h4>
             <ul className="space-y-2">
               {productLinks.map((link) => (
                 <li key={link.label}>
@@ -106,11 +143,11 @@ export default function InnerFooter() {
           </div>
 
           {/* Location */}
-          <div>
-            <h4 className="font-display text-lg text-gold mb-5">Location</h4>
-            <div className="flex items-start gap-3 text-white/60 text-sm">
+          <div className="col-span-2 sm:col-span-1 text-center sm:text-left mt-4 sm:mt-0">
+            <h4 className="font-display text-lg text-gold mb-4 sm:mb-5">Location</h4>
+            <div className="inline-flex sm:flex items-start gap-3 text-white/60 text-sm">
               <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
-              <address className="not-italic leading-relaxed">
+              <address className="not-italic leading-relaxed text-left">
                 Truly Investor Capital<br />
                 A division of Oaktree Funding Corp.<br />
                 3133 West Frye Road, Suite #205<br />
