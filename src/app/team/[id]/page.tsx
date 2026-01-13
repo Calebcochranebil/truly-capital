@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { useParams } from "next/navigation";
 import { Phone, Mail, ArrowLeft, FileText, MessageSquare } from "lucide-react";
 import { Navbar, InnerFooter } from "@/components";
@@ -186,78 +187,92 @@ export default function TeamMemberPage() {
         </div>
       </div>
 
-      {/* Hero Section with Profile */}
-      <section className="relative bg-forest-deep pt-12 pb-32 overflow-hidden">
-        {/* Background decorations */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-20 w-96 h-96 bg-gold rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-20 w-64 h-64 bg-gold rounded-full blur-3xl" />
+      {/* Hero Section with Logo and Bio */}
+      <section className="relative min-h-[60vh] overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/about-hero.jpg"
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-white via-white/95 to-white/80" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
-            {/* Profile Info */}
-            <div className="flex-1 text-center lg:text-left">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 }}
-                className="font-display text-5xl md:text-6xl text-white mb-3"
-              >
-                {member.name}
-              </motion.h1>
+        <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
+          <div className="grid lg:grid-cols-[280px_1fr] gap-12 items-start">
+            {/* Logo */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center lg:justify-start"
+            >
+              <Image
+                src="/trulylogo.svg"
+                alt="Truly Investor Capital"
+                width={220}
+                height={220}
+                className="w-[180px] lg:w-[220px]"
+              />
+            </motion.div>
 
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gold text-xl md:text-2xl mb-2"
-              >
+            {/* Content */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+            >
+              <span className="inline-block text-forest-deep/60 text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+                Expert Service
+              </span>
+
+              <h1 className="font-display text-4xl md:text-5xl text-forest-deep mb-2">
+                Meet {member.name}
+              </h1>
+
+              <p className="text-gold text-lg md:text-xl font-medium mb-2">
                 {member.title}
-              </motion.p>
+              </p>
 
               {member.nmls && (
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.25 }}
-                  className="text-white/50 text-sm mb-6"
-                >
+                <p className="text-forest-deep/50 text-sm mb-6">
                   NMLS# {member.nmls}
-                </motion.p>
+                </p>
               )}
 
+              {/* Bio */}
+              <div className="space-y-4 mb-8">
+                {member.bio.map((paragraph, index) => (
+                  <p key={index} className="text-forest-deep/70 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
               {/* Contact Info */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
-              >
+              <div className="flex flex-wrap gap-4 mb-6">
                 <a
                   href={`tel:${member.phone.replace(/\./g, "")}`}
-                  className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/15 px-6 py-3 rounded transition-colors"
+                  className="flex items-center gap-2 text-forest-deep hover:text-gold transition-colors"
                 >
-                  <Phone className="w-5 h-5 text-gold" />
-                  <span className="text-white">{member.phone}</span>
+                  <Phone className="w-4 h-4 text-gold" />
+                  <span>{member.phone}</span>
                 </a>
                 <a
                   href={`mailto:${member.email}`}
-                  className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/15 px-6 py-3 rounded transition-colors"
+                  className="flex items-center gap-2 text-forest-deep hover:text-gold transition-colors"
                 >
-                  <Mail className="w-5 h-5 text-gold" />
-                  <span className="text-white text-sm">{member.email}</span>
+                  <Mail className="w-4 h-4 text-gold" />
+                  <span>{member.email}</span>
                 </a>
-              </motion.div>
+              </div>
 
               {/* Action Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              >
-                <a href="tel:8662192294" className="btn-primary flex items-center justify-center gap-2">
+              <div className="flex flex-wrap gap-4">
+                <a href="tel:8662192294" className="btn-primary flex items-center gap-2">
                   <FileText className="w-4 h-4" />
                   Request A Quote
                 </a>
@@ -265,44 +280,14 @@ export default function TeamMemberPage() {
                   href="https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary flex items-center justify-center gap-2"
+                  className="bg-forest-deep text-white px-6 py-3 font-semibold text-sm tracking-wider uppercase hover:bg-forest transition-colors flex items-center gap-2"
                 >
                   <MessageSquare className="w-4 h-4" />
                   Apply Now
                 </a>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section className="py-20 -mt-16 relative z-10">
-        <div className="max-w-4xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-white rounded-lg shadow-xl p-8 md:p-12"
-          >
-            <h2 className="font-display text-3xl text-forest-deep mb-8 pb-4 border-b border-cream-warm">
-              About Me
-            </h2>
-
-            <div className="space-y-6">
-              {member.bio.map((paragraph, index) => (
-                <motion.p
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="text-slate leading-relaxed"
-                >
-                  {paragraph}
-                </motion.p>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
 
