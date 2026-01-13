@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2, Wrench, HardHat, Layers, ArrowRight, Check } from "lucide-react";
+import { Building2, Wrench, HardHat, Layers, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const products = [
@@ -89,7 +89,7 @@ export default function Products() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group bg-white border border-cream-warm p-5 sm:p-6 md:p-8 relative overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500"
+            className="group bg-white border border-cream-warm p-5 sm:p-6 md:p-8 relative overflow-hidden hover:shadow-xl transition-all duration-500"
           >
             {/* Top accent line */}
             <div className="absolute top-0 left-0 h-1 bg-gold w-0 group-hover:w-full transition-all duration-500" />
@@ -108,12 +108,10 @@ export default function Products() {
             </p>
 
             {/* Features */}
-            <ul className="space-y-3 mb-8">
+            <ul className="space-y-2 mb-8">
               {product.features.map((feature) => (
-                <li key={feature} className="flex items-start gap-3">
-                  <span className="w-5 h-5 bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <Check className="w-3 h-3 text-gold" />
-                  </span>
+                <li key={feature} className="flex items-start gap-2">
+                  <span className="w-1.5 h-1.5 bg-gold rounded-full mt-2 flex-shrink-0" />
                   <span className="text-slate text-sm">{feature}</span>
                 </li>
               ))}
