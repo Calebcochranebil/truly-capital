@@ -82,7 +82,8 @@ export default function BridgePage() {
                 </span>
 
                 <h1 className="font-display text-5xl md:text-6xl text-white mb-6">
-                  Bridge <span className="text-gold">Loans</span>
+                  Bridge
+                  <span className="block text-gold">Loans</span>
                 </h1>
 
                 <p className="text-white/80 text-xl leading-relaxed mb-8">

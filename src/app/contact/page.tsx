@@ -88,7 +88,8 @@ export default function ContactPage() {
                 </span>
 
                 <h1 className="font-display text-5xl md:text-6xl text-white mb-6">
-                  Contact <span className="text-gold">Us</span>
+                  Get In
+                  <span className="block text-gold">Touch</span>
                 </h1>
 
                 <p className="text-white/80 text-xl leading-relaxed mb-8">
