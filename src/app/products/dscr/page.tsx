@@ -171,8 +171,7 @@ export default function DSCRPage() {
               </span>
 
               <h1 className="font-display text-5xl md:text-6xl text-white mb-6">
-                DSCR
-                <span className="block text-gold">Rental Loans</span>
+                DSCR Rental <span className="text-gold">Loans</span>
               </h1>
 
               <p className="text-white/80 text-xl leading-relaxed mb-8">

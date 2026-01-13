@@ -264,9 +264,9 @@ export default function Navbar({ currentPage }: NavbarProps) {
               <Image
                 src="/trulylogo.svg"
                 alt="Truly Investor Capital"
-                width={220}
-                height={75}
-                className={`h-auto w-[160px] sm:w-[180px] md:w-[220px] transition-all duration-300 ${isScrolled ? "scale-90" : ""}`}
+                width={190}
+                height={65}
+                className={`h-auto w-[140px] sm:w-[160px] md:w-[190px] transition-all duration-300 ${isScrolled ? "scale-90" : ""}`}
                 priority
               />
             </Link>
