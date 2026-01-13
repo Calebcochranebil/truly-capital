@@ -378,17 +378,11 @@ export default function BrokerPartnersPage() {
       </section>
 
       {/* CTA Section */}
-      <section id="register" className="py-24 md:py-32 bg-white relative overflow-hidden">
-        {/* Background pattern */}
-        <div className="absolute inset-0 opacity-[0.02]">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `linear-gradient(45deg, #1a3a2f 25%, transparent 25%),
-                             linear-gradient(-45deg, #1a3a2f 25%, transparent 25%),
-                             linear-gradient(45deg, transparent 75%, #1a3a2f 75%),
-                             linear-gradient(-45deg, transparent 75%, #1a3a2f 75%)`,
-            backgroundSize: '20px 20px',
-            backgroundPosition: '0 0, 0 10px, 10px -10px, -10px 0px'
-          }} />
+      <section id="register" className="py-24 md:py-32 bg-forest-deep relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gold rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold rounded-full blur-3xl" />
         </div>
 
         <div className="max-w-4xl mx-auto px-6 md:px-12 text-center relative">
@@ -398,16 +392,16 @@ export default function BrokerPartnersPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+            <span className="inline-block bg-gold/10 text-gold px-4 sm:px-6 py-2 text-xs tracking-[0.2em] uppercase mb-4 sm:mb-6 border border-gold/20">
               Ready to Grow?
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-forest-deep leading-[1.1] mb-6">
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6">
               Take the Next Step
             </h2>
-            <p className="text-xl text-forest/60 mb-4">
+            <p className="text-xl text-white/70 mb-4">
               Call <a href="tel:8662192294" className="text-gold font-semibold hover:underline">866-219-2294</a> today
             </p>
-            <p className="text-forest/40 mb-10">
+            <p className="text-white/50 mb-10">
               or register online to get started
             </p>
 
@@ -415,14 +409,13 @@ export default function BrokerPartnersPage() {
               href="https://applications.trulyinvestorcapital.com/form-6571272/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center justify-center gap-3 bg-forest-deep text-white px-12 py-5 font-semibold tracking-wide overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-forest-deep/20"
+              className="btn-primary inline-flex items-center justify-center gap-3"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-gold/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
-              <span className="relative">Register Now</span>
-              <ChevronRight className="relative w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span>Register Now</span>
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
 
-            <p className="mt-8 text-forest/40 text-sm">
+            <p className="mt-8 text-white/40 text-sm">
               Join thousands of successful brokers already partnering with Truly
             </p>
           </motion.div>
