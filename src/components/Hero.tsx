@@ -156,11 +156,23 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="flex absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-4">
+      <div className="flex absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-3">
         <span className="text-white/50 text-xs tracking-[0.2em] uppercase">
           Scroll
         </span>
-        <div className="w-px h-[40px] sm:h-[60px] bg-gradient-to-b from-gold to-transparent animate-scroll-pulse" />
+        <motion.div
+          className="w-[2px] h-[60px] bg-gradient-to-b from-gold to-transparent"
+          animate={{
+            opacity: [1, 0.4, 1],
+            scaleY: [1, 0.6, 1]
+          }}
+          transition={{
+            duration: 2,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          style={{ originY: 0 }}
+        />
       </div>
     </section>
   );
