@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FileEdit, CheckCircle, Banknote } from "lucide-react";
 
 const steps = [
   {
@@ -8,18 +9,21 @@ const steps = [
     title: "Apply Online",
     description:
       "Complete our simple application in minutes. No extensive documentation needed upfront.",
+    icon: FileEdit,
   },
   {
     number: "02",
     title: "Get Pre-Approved",
     description:
       "Receive a pre-approval decision within 24 hours to move fast on opportunities.",
+    icon: CheckCircle,
   },
   {
     number: "03",
     title: "Close & Fund",
     description:
       "Our streamlined process means closing in as few as 20 days.",
+    icon: Banknote,
   },
 ];
 
@@ -56,13 +60,15 @@ export default function Process() {
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="flex-1 text-center px-4 sm:px-8 mb-8 md:mb-0"
             >
-              {/* Number Circle */}
+              {/* Icon Circle */}
               <div className="relative z-10 mx-auto mb-4 sm:mb-6 md:mb-8 group">
-                <div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] bg-white border-[3px] border-gold rounded-full flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-gold group-hover:scale-110">
-                  <span className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold text-forest transition-colors duration-300 group-hover:text-white">
-                    {step.number}
-                  </span>
+                <div className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] bg-white border-[3px] border-gold rounded-full flex items-center justify-center mx-auto shadow-lg transition-all duration-300 group-hover:bg-gold group-hover:scale-110 group-hover:shadow-[0_10px_40px_rgba(201,169,98,0.4)]">
+                  <step.icon className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-gold transition-colors duration-300 group-hover:text-white" />
                 </div>
+                {/* Step number badge */}
+                <span className="absolute -top-1 -right-1 w-7 h-7 sm:w-8 sm:h-8 bg-forest-deep text-white text-xs sm:text-sm font-bold rounded-full flex items-center justify-center shadow-md">
+                  {step.number}
+                </span>
               </div>
 
               {/* Content */}

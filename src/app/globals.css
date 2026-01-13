@@ -16,11 +16,15 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-gold text-forest-deep px-5 py-3 sm:px-8 sm:py-4 font-semibold text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase relative overflow-hidden transition-all duration-300 text-center;
+    @apply bg-gold text-forest-deep px-5 py-3 sm:px-8 sm:py-4 font-semibold text-xs sm:text-sm tracking-wider sm:tracking-widest uppercase relative overflow-hidden transition-all duration-300 text-center shadow-md;
   }
 
   .btn-primary:hover {
-    @apply -translate-y-0.5 shadow-[0_10px_30px_rgba(201,169,98,0.4)];
+    @apply -translate-y-1 shadow-[0_15px_40px_rgba(201,169,98,0.5)];
+  }
+
+  .btn-primary:active {
+    @apply translate-y-0 shadow-md;
   }
 
   .btn-secondary {
@@ -28,7 +32,11 @@
   }
 
   .btn-secondary:hover {
-    @apply border-gold text-gold -translate-y-0.5;
+    @apply border-gold text-gold -translate-y-1 shadow-[0_10px_30px_rgba(201,169,98,0.2)];
+  }
+
+  .btn-secondary:active {
+    @apply translate-y-0;
   }
 
   .btn-nav {

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -54,11 +55,13 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className="group p-5 sm:p-8 md:p-10 bg-cream transition-all duration-300 hover:bg-forest"
+            className="group p-5 sm:p-8 md:p-10 bg-cream shadow-sm hover:shadow-xl transition-all duration-300 hover:bg-forest"
           >
-            {/* Quote Icon */}
-            <div className="font-display text-5xl sm:text-6xl md:text-7xl leading-none text-gold/30 mb-3 sm:mb-4 transition-colors duration-300 group-hover:text-gold">
-              "
+            {/* Star Rating */}
+            <div className="flex gap-1 mb-4">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 fill-gold text-gold" />
+              ))}
             </div>
 
             {/* Quote Text */}

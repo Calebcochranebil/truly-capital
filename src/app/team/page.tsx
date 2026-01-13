@@ -137,7 +137,9 @@ function TeamMemberCard({ member }: { member: typeof teamMembers[0] }) {
   return (
     <motion.div variants={cardVariants}>
       <Link href={`/team/${member.id}`} className="group block">
-        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-cream-warm">
+        <div className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 border border-cream-warm relative">
+          {/* Top accent line */}
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           {/* Content */}
           <div className="p-6">
             <h3 className="font-display text-2xl text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">
