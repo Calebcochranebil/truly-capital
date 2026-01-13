@@ -79,8 +79,8 @@ export default function Hero() {
         }}
       />
 
-      {/* Floating Shapes - Hidden on mobile for performance */}
-      <div className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Floating Shapes */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-[10%] right-[10%] w-[300px] h-[300px] border border-gold/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-float-slow will-change-transform"
           style={{ animationDelay: '0s' }}
