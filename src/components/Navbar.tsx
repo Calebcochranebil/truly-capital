@@ -255,7 +255,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             : "bg-transparent"
         }`}
       >
-        <div className="max-w-[1400px] mx-auto px-6 md:px-12">
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
           <div className={`flex justify-between items-center transition-all duration-500 ${
             isScrolled ? "h-[70px]" : "h-[90px]"
           }`}>
@@ -266,7 +266,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 alt="Truly Investor Capital"
                 width={220}
                 height={75}
-                className={`h-auto w-[140px] sm:w-[180px] md:w-[220px] transition-all duration-300 ${isScrolled ? "scale-90" : ""}`}
+                className={`h-auto w-[160px] sm:w-[180px] md:w-[220px] transition-all duration-300 ${isScrolled ? "scale-90" : ""}`}
                 priority
               />
             </Link>
