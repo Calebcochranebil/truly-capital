@@ -83,8 +83,8 @@ export default function Navbar({ currentPage }: NavbarProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 bg-forest-deep/80 backdrop-blur-sm z-[998]"
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 bg-forest-deep/90 z-[998]"
             onClick={closeDropdown}
           />
         )}
@@ -94,17 +94,17 @@ export default function Navbar({ currentPage }: NavbarProps) {
       <AnimatePresence>
         {isDropdownOpen && (
           <motion.div
-            initial={{ y: "-100%", opacity: 0.8 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: "-100%", opacity: 0.8 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
             className="fixed top-0 left-0 right-0 bottom-0 bg-forest-deep z-[1001] overflow-y-auto"
           >
             {/* Close button */}
             <motion.button
-              initial={{ opacity: 0, rotate: -90 }}
-              animate={{ opacity: 1, rotate: 0 }}
-              transition={{ delay: 0.3, duration: 0.3 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.15 }}
               onClick={closeDropdown}
               className="absolute top-6 right-6 md:right-12 w-11 h-11 rounded-full border border-white/10 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold hover:scale-110 group z-[1001]"
             >
@@ -115,9 +115,9 @@ export default function Navbar({ currentPage }: NavbarProps) {
               <div className="grid lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-16">
                 {/* Left Side */}
                 <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2, duration: 0.4 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
                   className="lg:border-r border-white/5 lg:pr-12"
                 >
                   <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
@@ -148,9 +148,9 @@ export default function Navbar({ currentPage }: NavbarProps) {
                   {dropdownItems.map((item, index) => (
                     <motion.div
                       key={item.number}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.15 + index * 0.08, duration: 0.4 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: index * 0.03, duration: 0.2 }}
                     >
                       <Link
                         href={item.href}
@@ -186,9 +186,9 @@ export default function Navbar({ currentPage }: NavbarProps) {
 
               {/* Quick Links - Mobile */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.4 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.1, duration: 0.2 }}
                 className="lg:hidden mt-8 pt-8 border-t border-white/10"
               >
                 <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
@@ -210,9 +210,9 @@ export default function Navbar({ currentPage }: NavbarProps) {
 
               {/* Login Section */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.4 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.15, duration: 0.2 }}
                 className="mt-8 pt-8 border-t border-white/10"
               >
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
