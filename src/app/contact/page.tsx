@@ -55,6 +55,7 @@ export default function ContactPage() {
               src="/about-hero.jpg"
               alt="Contact Us"
               fill
+              sizes="100vw"
               className="object-cover opacity-30"
               priority
             />

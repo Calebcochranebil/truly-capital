@@ -74,6 +74,7 @@ export default function BrokerPartnersPage() {
             src="/broker-hero.jpg"
             alt="Luxury property"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -205,6 +206,7 @@ export default function BrokerPartnersPage() {
                   src="/broker-meeting.jpg"
                   alt="Professional meeting"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 {/* Gold corner accent */}

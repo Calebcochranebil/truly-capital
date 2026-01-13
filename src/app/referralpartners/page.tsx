@@ -88,6 +88,7 @@ export default function ReferralPartnersPage() {
             src="/referral-hero.jpg"
             alt="Modern architecture"
             fill
+            sizes="100vw"
             className="object-cover"
             priority
           />
@@ -215,6 +216,7 @@ export default function ReferralPartnersPage() {
                   src="/referral-property.jpg"
                   alt="Luxury property with pool"
                   fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
               </div>
