@@ -155,12 +155,12 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Hidden on mobile */}
-      <div className="hidden sm:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-4">
+      {/* Scroll Indicator */}
+      <div className="flex absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-4">
         <span className="text-white/50 text-xs tracking-[0.2em] uppercase">
           Scroll
         </span>
-        <div className="w-px h-[60px] bg-gradient-to-b from-gold to-transparent animate-pulse" />
+        <div className="w-px h-[40px] sm:h-[60px] bg-gradient-to-b from-gold to-transparent animate-scroll-pulse" />
       </div>
     </section>
   );
