@@ -28,16 +28,27 @@ const config: Config = {
         sans: ["var(--font-sans)", "DM Sans", "sans-serif"],
       },
       animation: {
-        float: "float 20s ease-in-out infinite",
+        "float-slow": "floatSlow 20s ease-in-out infinite",
+        "float-medium": "floatMedium 15s ease-in-out infinite",
+        "float-fast": "floatFast 12s ease-in-out infinite",
         "scroll-pulse": "scrollPulse 2s ease-in-out infinite",
         underline: "underline 1s ease forwards",
       },
       keyframes: {
-        float: {
+        floatSlow: {
           "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
-          "25%": { transform: "translate(20px, -30px) rotate(5deg)" },
-          "50%": { transform: "translate(-10px, 20px) rotate(-5deg)" },
-          "75%": { transform: "translate(30px, 10px) rotate(3deg)" },
+          "25%": { transform: "translate(15px, -20px) rotate(3deg)" },
+          "50%": { transform: "translate(-10px, 15px) rotate(-3deg)" },
+          "75%": { transform: "translate(20px, 5px) rotate(2deg)" },
+        },
+        floatMedium: {
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
+          "33%": { transform: "translate(-15px, 20px) rotate(-4deg)" },
+          "66%": { transform: "translate(10px, -15px) rotate(4deg)" },
+        },
+        floatFast: {
+          "0%, 100%": { transform: "translate(0, 0) rotate(0deg)" },
+          "50%": { transform: "translate(12px, -12px) rotate(5deg)" },
         },
         scrollPulse: {
           "0%, 100%": { opacity: "1", height: "60px" },

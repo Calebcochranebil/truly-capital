@@ -81,9 +81,18 @@ export default function Hero() {
 
       {/* Floating Shapes - Hidden on mobile for performance */}
       <div className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[10%] right-[10%] w-[300px] h-[300px] border border-gold/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-pulse" />
-        <div className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] border border-gold/20 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%]" />
-        <div className="absolute top-[40%] right-[25%] w-[150px] h-[150px] border border-gold/20 rounded-[40%_60%_65%_35%_/_40%_45%_55%_60%]" />
+        <div
+          className="absolute top-[10%] right-[10%] w-[300px] h-[300px] border border-gold/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-float-slow will-change-transform"
+          style={{ animationDelay: '0s' }}
+        />
+        <div
+          className="absolute bottom-[20%] left-[5%] w-[200px] h-[200px] border border-gold/20 rounded-[60%_40%_30%_70%_/_60%_30%_70%_40%] animate-float-medium will-change-transform"
+          style={{ animationDelay: '-5s' }}
+        />
+        <div
+          className="absolute top-[40%] right-[25%] w-[150px] h-[150px] border border-gold/20 rounded-[40%_60%_65%_35%_/_40%_45%_55%_60%] animate-float-fast will-change-transform"
+          style={{ animationDelay: '-10s' }}
+        />
       </div>
 
       {/* Content */}
