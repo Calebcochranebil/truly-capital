@@ -24,8 +24,8 @@ const config: Config = {
         slate: "#4a5568",
       },
       fontFamily: {
-        display: ["var(--font-display)", "Cormorant Garamond", "serif"],
-        sans: ["var(--font-sans)", "DM Sans", "sans-serif"],
+        display: ["Cormorant Garamond", "serif"],
+        sans: ["DM Sans", "sans-serif"],
       },
       animation: {
         "float-slow": "floatSlow 20s ease-in-out infinite",

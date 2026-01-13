@@ -79,8 +79,8 @@ export default function Hero() {
         }}
       />
 
-      {/* Floating Shapes */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
+      {/* Floating Shapes - Hidden on mobile */}
+      <div className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden">
         <div
           className="absolute top-[10%] right-[10%] w-[300px] h-[300px] border border-gold/20 rounded-[30%_70%_70%_30%_/_30%_30%_70%_70%] animate-float-slow will-change-transform"
           style={{ animationDelay: '0s' }}
@@ -155,8 +155,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="flex absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-3">
+      {/* Scroll Indicator - Hidden on mobile */}
+      <div className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-3">
         <span className="text-white/50 text-xs tracking-[0.2em] uppercase">
           Scroll
         </span>
