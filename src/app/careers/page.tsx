@@ -9,32 +9,30 @@ const benefits = [
   {
     icon: TrendingUp,
     title: "Growth Opportunities",
-    description: "Build a career in a fast-growing company with clear paths for advancement and professional development.",
+    description: "Clear paths for advancement in a fast-growing company.",
   },
   {
     icon: Users,
     title: "Collaborative Culture",
-    description: "Join a team that values collaboration, innovation, and mutual support in achieving shared goals.",
+    description: "A team that values innovation and mutual support.",
   },
   {
     icon: Award,
     title: "Industry Leaders",
-    description: "Work alongside experienced professionals who are shaping the future of real estate investment lending.",
+    description: "Work alongside experienced real estate lending professionals.",
   },
   {
     icon: Heart,
     title: "People First",
-    description: "We believe our people are our greatest asset. Experience a workplace that invests in its team members.",
+    description: "A workplace that invests in its team members.",
   },
 ];
 
 const values = [
   "Integrity in every transaction",
-  "Excellence in service delivery",
-  "Innovation in lending solutions",
-  "Partnership-driven approach",
-  "Commitment to investor success",
-  "Continuous improvement mindset",
+  "Excellence in service",
+  "Innovation in lending",
+  "Commitment to success",
 ];
 
 export default function CareersPage() {
@@ -75,9 +73,7 @@ export default function CareersPage() {
                 </h1>
 
                 <p className="text-white/80 text-xl leading-relaxed mb-8">
-                  Truly Investor Capital is always seeking exceptional talent to join our growing team.
-                  If passion for real estate finance and a drive for excellence define your work ethic,
-                  we want to hear from you.
+                  We're always seeking exceptional talent to join our growing team.
                 </p>
 
                 <a
@@ -101,8 +97,7 @@ export default function CareersPage() {
                   <h3 className="text-gold font-display text-2xl">Open Positions</h3>
                 </div>
                 <p className="text-white/70 leading-relaxed mb-6">
-                  Interested in joining a dynamic team at the forefront of real estate investment lending?
-                  Send your resume and a brief introduction to learn about current opportunities.
+                  Send your resume to learn about current opportunities.
                 </p>
                 <div className="flex items-center gap-3 py-4 border-t border-white/10">
                   <Mail className="w-5 h-5 text-gold" />
@@ -129,9 +124,6 @@ export default function CareersPage() {
             >
               <span className="section-tag">Why Truly</span>
               <h2 className="section-title">Why Join Our Team?</h2>
-              <p className="section-subtitle max-w-2xl mx-auto">
-                Be part of a company that values innovation, integrity, and the success of every team member.
-              </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -165,12 +157,7 @@ export default function CareersPage() {
                 viewport={{ once: true }}
               >
                 <span className="section-tag">Our Values</span>
-                <h2 className="section-title">What We Stand For</h2>
-                <p className="text-slate leading-relaxed mb-8">
-                  At Truly Investor Capital, our values guide everything we do. We're looking for
-                  team members who share our commitment to excellence and want to make a meaningful
-                  impact in the real estate investment industry.
-                </p>
+                <h2 className="section-title mb-6">What We Stand For</h2>
                 <ul className="space-y-3">
                   {values.map((value) => (
                     <li key={value} className="flex items-center gap-3">
@@ -187,15 +174,9 @@ export default function CareersPage() {
                 viewport={{ once: true }}
                 className="bg-forest-deep p-8 rounded-lg"
               >
-                <h3 className="font-display text-2xl text-white mb-4">Ready to Make an Impact?</h3>
-                <p className="text-white/70 leading-relaxed mb-6">
-                  We're building something special at Truly Investor Capital, and the right people
-                  make all the difference. If you're ready to grow, contribute, and be part of a
-                  winning team, reach out today.
-                </p>
+                <h3 className="font-display text-2xl text-white mb-4">Ready to Join?</h3>
                 <p className="text-white/70 leading-relaxed mb-8">
-                  Send your resume and tell us why you'd be a great fit. We review every application
-                  and respond to all qualified candidates.
+                  Send your resume and tell us why you'd be a great fit.
                 </p>
                 <a
                   href="mailto:careers@trulyinvestorcap.com"
@@ -220,16 +201,12 @@ export default function CareersPage() {
               <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
                 Your Next Chapter Starts Here
               </h2>
-              <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
-                Join a team that's transforming real estate investment lending.
-                Inquire about open positions and take the first step toward an exciting career.
-              </p>
               <a
                 href="mailto:careers@trulyinvestorcap.com"
                 className="btn-primary inline-flex items-center gap-2"
               >
                 <Mail className="w-4 h-4" />
-                Contact Us About Opportunities
+                Get In Touch
               </a>
             </motion.div>
           </div>
