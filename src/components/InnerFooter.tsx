@@ -42,8 +42,8 @@ export default function InnerFooter() {
               className="h-auto w-[160px] mx-auto"
             />
           </Link>
-          <p className="text-white/60 text-sm leading-relaxed mb-4 max-w-xs mx-auto">
-            Innovative lending solutions for real estate investors across the nation.
+          <p className="text-white/60 text-sm leading-relaxed mb-4 max-w-[280px] mx-auto text-balance">
+            Innovative lending solutions for real estate investors nationwide.
           </p>
           <a
             href="tel:8662192294"

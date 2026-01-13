@@ -69,7 +69,7 @@ export default function Process() {
               <h3 className="font-display text-xl sm:text-2xl font-semibold text-forest-deep mb-2 sm:mb-3">
                 {step.title}
               </h3>
-              <p className="text-slate text-sm sm:text-base leading-relaxed">{step.description}</p>
+              <p className="text-slate text-sm sm:text-base leading-relaxed text-balance max-w-[250px] mx-auto">{step.description}</p>
             </motion.div>
           ))}
         </div>

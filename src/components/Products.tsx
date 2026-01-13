@@ -103,7 +103,7 @@ export default function Products() {
             <h3 className="font-display text-xl sm:text-2xl text-forest-deep mb-2 sm:mb-3">
               {product.title}
             </h3>
-            <p className="text-slate mb-6 leading-relaxed">
+            <p className="text-slate mb-6 leading-relaxed text-balance">
               {product.description}
             </p>
 

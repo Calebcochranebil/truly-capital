@@ -115,9 +115,8 @@ export default function Hero() {
               />
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-6 sm:mb-10 max-w-lg">
-            We provide fast, streamlined real estate lending solutions for direct borrowers
-            and broker partners, built to support investor success.
+          <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-6 sm:mb-10 max-w-lg text-balance">
+            We provide fast, streamlined real estate lending solutions for direct borrowers and broker partners, built to support investor success.
           </p>
           <div className="flex flex-wrap gap-4">
             <a href="https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z" target="_blank" rel="noopener noreferrer" className="btn-primary">Apply Now</a>

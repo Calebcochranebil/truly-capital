@@ -45,10 +45,12 @@
 
   .section-title {
     @apply font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-forest-deep leading-tight mb-3 sm:mb-4;
+    text-wrap: balance;
   }
 
   .section-subtitle {
-    @apply text-slate text-sm sm:text-base md:text-lg leading-relaxed;
+    @apply text-slate text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto;
+    text-wrap: balance;
   }
 }
 

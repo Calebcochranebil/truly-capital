@@ -21,12 +21,11 @@ export default function CTA() {
         <span className="inline-block bg-gold/20 text-gold px-4 sm:px-6 py-2 text-xs tracking-[0.2em] uppercase mb-4 sm:mb-6">
           Ready to Get Started?
         </span>
-        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-white leading-tight mb-4 sm:mb-6">
+        <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium text-white leading-tight mb-4 sm:mb-6 text-balance">
           Let's Fund the Next Deal
         </h2>
-        <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 sm:mb-12">
-          Speak with one of our lending experts today and discover how Truly
-          Investor Capital can help achieve real estate investment goals.
+        <p className="text-white/70 text-base sm:text-lg leading-relaxed mb-8 sm:mb-12 text-balance max-w-2xl mx-auto">
+          Speak with one of our lending experts today and discover how Truly Investor Capital can help achieve real estate investment goals.
         </p>
         <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center">
           <a href="https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z" target="_blank" rel="noopener noreferrer" className="btn-primary">Apply Now</a>
