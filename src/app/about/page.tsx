@@ -175,8 +175,8 @@ export default function AboutPage() {
               Leadership
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-forest-deep leading-tight">
-              The Leaders Behind the
-              <span className="block text-gold">Truly Difference</span>
+              The Leaders Behind
+              <span className="block text-gold">The Truly Difference</span>
             </h2>
           </motion.div>
 
