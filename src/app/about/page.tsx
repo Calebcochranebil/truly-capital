@@ -175,7 +175,7 @@ export default function AboutPage() {
               Leadership
             </span>
             <h2 className="font-display text-4xl md:text-5xl text-forest-deep leading-tight">
-              Meet Our Team
+              Truly Exceptional Leadership
             </h2>
           </motion.div>
 
