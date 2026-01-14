@@ -112,13 +112,13 @@ export default function Navbar({ currentPage }: NavbarProps) {
             </motion.button>
 
             <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 sm:pt-28 pb-24">
-              <div className="grid lg:grid-cols-[1fr_2.5fr] gap-12 lg:gap-16">
+              <div className="grid lg:grid-cols-[1fr_2.5fr] xl:grid-cols-1 gap-12 lg:gap-16 xl:gap-10">
                 {/* Left Side */}
                 <motion.div
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.2 }}
-                  className="lg:border-r border-white/5 lg:pr-12"
+                  className="lg:border-r xl:border-r-0 border-white/5 lg:pr-12 xl:pr-0 xl:text-center xl:max-w-2xl xl:mx-auto"
                 >
                   <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
                     Navigation
@@ -144,7 +144,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 </motion.div>
 
                 {/* Right Side - Cards */}
-                <div className="grid sm:grid-cols-2 gap-3">
+                <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-3">
                   {dropdownItems.map((item, index) => (
                     <motion.div
                       key={item.number}
