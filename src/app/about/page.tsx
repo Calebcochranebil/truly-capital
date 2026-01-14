@@ -22,6 +22,24 @@ import Link from "next/link";
 import Image from "next/image";
 import { Navbar, InnerFooter } from "@/components";
 
+const leadership = [
+  {
+    name: "Kristopher Martin",
+    title: "Founder & CEO",
+    initials: "KM",
+  },
+  {
+    name: "Darin Judis",
+    title: "President",
+    initials: "DJ",
+  },
+  {
+    name: "Shahin Ilbeig",
+    title: "EVP of Operations",
+    initials: "SI",
+  },
+];
+
 const loanTypes = [
   { icon: Hammer, label: "Fix & Flip" },
   { icon: Building2, label: "Bridge" },
@@ -141,6 +159,51 @@ export default function AboutPage() {
               and brokers actually need—speed, reliability, and respect.
             </motion.p>
           </div>
+        </div>
+      </section>
+
+      {/* Leadership Section */}
+      <section className="py-20 md:py-24 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-12"
+          >
+            <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+              Leadership
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl text-forest-deep leading-tight">
+              Meet Our Team
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+          >
+            {leadership.map((leader, index) => (
+              <motion.div
+                key={index}
+                variants={fadeInUp}
+                className="text-center group"
+              >
+                <div className="w-24 h-24 mx-auto mb-5 bg-forest-deep text-white rounded-full flex items-center justify-center font-display text-2xl group-hover:bg-gold transition-colors duration-300">
+                  {leader.initials}
+                </div>
+                <h3 className="font-display text-xl text-forest-deep mb-1">
+                  {leader.name}
+                </h3>
+                <p className="text-gold font-medium text-sm tracking-wide">
+                  {leader.title}
+                </p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </section>
 

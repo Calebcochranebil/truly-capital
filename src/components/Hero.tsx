@@ -103,7 +103,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-4 sm:mb-6">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-4 sm:mb-6">
             <span className="block">Investor Lending</span>
             <span className="text-gold relative inline-block">
               Made Simple
