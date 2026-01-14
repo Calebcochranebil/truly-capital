@@ -31,7 +31,7 @@ const dropdownItems = [
   {
     number: "04",
     title: "Contact Us",
-    description: "866-219-2294 | info@trulyinvestorcap.com | 3133 W Frye Road, Suite 205, Chandler AZ 85226",
+    description: "info@trulyinvestorcap.com",
     href: "/contact",
     icon: Phone,
   },
