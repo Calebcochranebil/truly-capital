@@ -132,8 +132,8 @@ export default function InnerFooter() {
             </ul>
           </div>
 
-          {/* Location */}
-          <div className="col-span-2 sm:col-span-1 text-center sm:text-left mt-4 sm:mt-0">
+          {/* Location - Hidden on mobile */}
+          <div className="hidden sm:block sm:col-span-1 text-left">
             <h4 className="font-display text-lg text-gold mb-4 sm:mb-5">Location</h4>
             <div className="inline-flex sm:flex items-start gap-3 text-forest-deep/60 text-sm">
               <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
