@@ -144,25 +144,25 @@ export default function InnerFooter() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-forest-deep/10 pt-8">
+        <div className="border-t border-forest-deep/10 pt-6 sm:pt-8">
           {/* Bottom Links */}
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <Link href="/careers" className="text-forest-deep/60 hover:text-gold text-sm transition-colors">
+          <div className="flex justify-center items-center gap-3 sm:gap-6 mb-6 sm:mb-8">
+            <Link href="/careers" className="text-forest-deep/60 hover:text-gold text-xs sm:text-sm transition-colors">
               Careers
             </Link>
-            <span className="text-white/20">|</span>
-            <Link href="/privacy" className="text-forest-deep/60 hover:text-gold text-sm transition-colors">
-              Privacy Policy
+            <span className="text-forest-deep/20">|</span>
+            <Link href="/privacy" className="text-forest-deep/60 hover:text-gold text-xs sm:text-sm transition-colors">
+              Privacy
             </Link>
-            <span className="text-white/20">|</span>
+            <span className="text-forest-deep/20">|</span>
             <a
               href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/71640"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-forest-deep/60 hover:text-gold text-sm transition-colors inline-flex items-center gap-1"
+              className="text-forest-deep/60 hover:text-gold text-xs sm:text-sm transition-colors inline-flex items-center gap-1"
             >
-              NMLS Consumer Access
-              <ExternalLink className="w-3 h-3" />
+              NMLS
+              <ExternalLink className="w-3 h-3 hidden sm:inline" />
             </a>
           </div>
 
