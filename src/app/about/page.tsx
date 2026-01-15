@@ -84,8 +84,8 @@ const lendingStates = [
   "Washington D.C."
 ];
 
-const notLendingStates = ["Hawaii", "Mississippi", "Missouri", "New York", "Vermont", "West Virginia"];
-const creditExceptionStates: string[] = [];
+const notLendingStates = ["Mississippi", "Missouri", "New York", "Vermont", "West Virginia"];
+const creditExceptionStates = ["Alaska", "Hawaii"];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -374,7 +374,7 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Legend and Details */}
-          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Lending States */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -421,7 +421,31 @@ export default function AboutPage() {
               </ul>
             </motion.div>
 
-            </div>
+            {/* Credit Exception States */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white p-6 shadow-md"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-4 h-4 bg-gray-400 rounded-sm" />
+                <h3 className="font-display text-lg text-forest-deep">Credit Exception</h3>
+              </div>
+              <p className="text-forest/60 text-sm mb-4">
+                Approval subject to Credit Exception & Collateral Review:
+              </p>
+              <ul className="space-y-2">
+                {creditExceptionStates.map((state, i) => (
+                  <li key={i} className="flex items-center gap-2 text-forest/70 text-sm">
+                    <AlertCircle className="w-4 h-4 text-amber-500" />
+                    {state}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </div>
 
           {/* NMLS Notice */}
           <motion.div
