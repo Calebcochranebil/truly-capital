@@ -5,12 +5,10 @@ import Image from "next/image";
 import { Phone, Mail, MapPin, ExternalLink, Instagram, Linkedin, Facebook } from "lucide-react";
 
 const quickLinks = [
-  { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
   { label: "Our Team", href: "/team" },
+  { label: "Contact Us", href: "/contact" },
   { label: "Broker Partners", href: "/brokerpartners" },
   { label: "Referral Partners", href: "/referralpartners" },
-  { label: "Contact Us", href: "/contact" },
 ];
 
 const productLinks = [
