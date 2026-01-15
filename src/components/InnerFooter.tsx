@@ -29,9 +29,9 @@ export default function InnerFooter() {
     <footer className="bg-white text-forest-deep">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16">
-        {/* Brand & Contact - Centered on mobile */}
-        <div className="text-center sm:text-left mb-10 sm:hidden">
-          <Link href="/" className="inline-block mb-4">
+        {/* Brand & Social - Centered on mobile */}
+        <div className="text-center mb-10 sm:hidden">
+          <Link href="/" className="inline-block mb-6">
             <Image
               src="/trulylogo.png"
               alt="Truly Investor Capital"
@@ -40,14 +40,7 @@ export default function InnerFooter() {
               className="h-auto w-[160px] mx-auto"
             />
           </Link>
-          <a
-            href="tel:8662192294"
-            className="inline-flex items-center gap-2 text-forest-deep/70 hover:text-gold transition-colors text-sm mb-4"
-          >
-            <Phone className="w-4 h-4 text-gold" />
-            866-219-2294
-          </a>
-          <div className="flex gap-3 justify-center mt-4">
+          <div className="flex gap-3 justify-center">
             {socialLinks.map((social) => (
               <a
                 key={social.label}
