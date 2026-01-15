@@ -74,18 +74,18 @@ const values = [
 ];
 
 const lendingStates = [
-  "Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
   "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa",
   "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
-  "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
-  "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
-  "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
-  "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Virginia",
-  "Washington", "West Virginia", "Wisconsin", "Wyoming", "Washington D.C."
+  "Michigan", "Minnesota", "Montana", "Nebraska", "Nevada", "New Hampshire",
+  "New Jersey", "New Mexico", "North Carolina", "North Dakota", "Ohio", "Oklahoma",
+  "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", "South Dakota",
+  "Tennessee", "Texas", "Utah", "Virginia", "Washington", "Wisconsin", "Wyoming",
+  "Washington D.C."
 ];
 
-const creditExceptionStates = ["Alaska", "Hawaii"];
-const notLendingStates = ["Vermont"];
+const notLendingStates = ["Hawaii", "Mississippi", "Missouri", "New York", "Vermont", "West Virginia"];
+const creditExceptionStates: string[] = [];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -374,7 +374,7 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Legend and Details */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
             {/* Lending States */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -421,31 +421,7 @@ export default function AboutPage() {
               </ul>
             </motion.div>
 
-            {/* Credit Exception States */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="bg-white p-6 shadow-md"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm" />
-                <h3 className="font-display text-lg text-forest-deep">Credit Exception</h3>
-              </div>
-              <p className="text-forest/60 text-sm mb-4">
-                Approval subject to Credit Exception & Collateral Review:
-              </p>
-              <ul className="space-y-2">
-                {creditExceptionStates.map((state, i) => (
-                  <li key={i} className="flex items-center gap-2 text-forest/70 text-sm">
-                    <AlertCircle className="w-4 h-4 text-amber-500" />
-                    {state}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+            </div>
 
           {/* NMLS Notice */}
           <motion.div
