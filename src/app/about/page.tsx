@@ -25,8 +25,13 @@ import { Navbar, InnerFooter } from "@/components";
 const leadership = [
   {
     name: "Kristopher Martin",
-    title: "Founder & CEO",
+    title: "Co-CEO",
     initials: "KM",
+  },
+  {
+    name: "Stephen Lippens",
+    title: "Co-CEO",
+    initials: "SL",
   },
   {
     name: "Darin Judis",
@@ -69,18 +74,18 @@ const values = [
 ];
 
 const lendingStates = [
-  "Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut", 
-  "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa", 
-  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts", 
-  "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska", 
-  "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina", 
-  "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island", "South Carolina", 
-  "Tennessee", "Texas", "Utah", "Virginia", "Washington", "West Virginia", 
-  "Wisconsin", "Wyoming", "Washington D.C."
+  "Alabama", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
+  "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa",
+  "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
+  "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
+  "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
+  "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
+  "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Virginia",
+  "Washington", "West Virginia", "Wisconsin", "Wyoming", "Washington D.C."
 ];
 
 const creditExceptionStates = ["Alaska", "Hawaii"];
-const notLendingStates = ["Nevada", "North Dakota", "South Dakota", "Vermont"];
+const notLendingStates = ["Nevada", "Vermont"];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -182,7 +187,7 @@ export default function AboutPage() {
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
-            className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto"
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
           >
             {leadership.map((leader, index) => (
               <motion.div
@@ -391,37 +396,12 @@ export default function AboutPage() {
               </div>
             </motion.div>
 
-            {/* Credit Exception States */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-white p-6 shadow-md"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-4 h-4 bg-gray-400 rounded-sm" />
-                <h3 className="font-display text-lg text-forest-deep">Credit Exception</h3>
-              </div>
-              <p className="text-forest/60 text-sm mb-4">
-                Approval subject to Credit Exception & Collateral Review:
-              </p>
-              <ul className="space-y-2">
-                {creditExceptionStates.map((state, i) => (
-                  <li key={i} className="flex items-center gap-2 text-forest/70 text-sm">
-                    <AlertCircle className="w-4 h-4 text-amber-500" />
-                    {state}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-
             {/* Not Lending States */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
+              transition={{ delay: 0.2 }}
               className="bg-white p-6 shadow-md"
             >
               <div className="flex items-center gap-3 mb-4">
@@ -435,6 +415,31 @@ export default function AboutPage() {
                 {notLendingStates.map((state, i) => (
                   <li key={i} className="flex items-center gap-2 text-forest/70 text-sm">
                     <XCircle className="w-4 h-4 text-red-400" />
+                    {state}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            {/* Credit Exception States */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white p-6 shadow-md"
+            >
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-4 h-4 bg-gray-400 rounded-sm" />
+                <h3 className="font-display text-lg text-forest-deep">Credit Exception</h3>
+              </div>
+              <p className="text-forest/60 text-sm mb-4">
+                Approval subject to Credit Exception & Collateral Review:
+              </p>
+              <ul className="space-y-2">
+                {creditExceptionStates.map((state, i) => (
+                  <li key={i} className="flex items-center gap-2 text-forest/70 text-sm">
+                    <AlertCircle className="w-4 h-4 text-amber-500" />
                     {state}
                   </li>
                 ))}

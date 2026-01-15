@@ -38,7 +38,7 @@ const departments = [
     title: "Customer Service Escalations",
     phone: "866-219-2294",
     email: "customersupport@trulyinvestorcap.com",
-    description: "For escalations, complaints, or urgent matters requiring attention.",
+    description: "For escalations or urgent matters requiring attention.",
   },
 ];
 
@@ -161,7 +161,7 @@ export default function ContactPage() {
                     <div>
                       <span className="text-white/70 text-sm block mb-1">Hours</span>
                       <span className="text-white font-semibold">
-                        Mon - Fri: 8:00 AM - 6:00 PM MST
+                        Mon - Fri: 8:00 AM - 5:00 PM MST
                       </span>
                     </div>
                   </div>

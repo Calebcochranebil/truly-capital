@@ -251,8 +251,8 @@ export default function Navbar({ currentPage }: NavbarProps) {
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         className={`fixed top-0 left-0 right-0 z-[1000] transition-all duration-500 ${
           isScrolled
-            ? "bg-forest-deep/95 backdrop-blur-xl shadow-lg shadow-black/10"
-            : "bg-transparent"
+            ? "bg-white shadow-lg shadow-black/5"
+            : "bg-white"
         }`}
       >
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
@@ -262,7 +262,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             {/* Logo */}
             <Link href="/" className="relative z-10 flex-shrink-0">
               <Image
-                src="/trulylogo.svg"
+                src="/trulylogo.png"
                 alt="Truly Investor Capital"
                 width={190}
                 height={65}
@@ -281,12 +281,12 @@ export default function Navbar({ currentPage }: NavbarProps) {
                     onMouseEnter={() => setHoveredLink("explore")}
                     onMouseLeave={() => setHoveredLink(null)}
                     className={`relative px-4 py-2 flex items-center gap-1.5 text-[0.8rem] font-medium tracking-[0.1em] uppercase transition-all duration-300 ${
-                      isDropdownOpen ? "text-gold" : "text-white/90 hover:text-white"
+                      isDropdownOpen ? "text-gold" : "text-forest-deep/90 hover:text-forest-deep"
                     }`}
                   >
                     {/* Hover background */}
                     <motion.span
-                      className="absolute inset-0 bg-white/5 rounded-sm"
+                      className="absolute inset-0 bg-forest-deep/5 rounded-sm"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: hoveredLink === "explore" || isDropdownOpen ? 1 : 0 }}
                       transition={{ duration: 0.2 }}
@@ -301,7 +301,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 </li>
 
                 {/* Divider */}
-                <li className="w-px h-4 bg-white/10 mx-2" />
+                <li className="w-px h-4 bg-forest-deep/20 mx-2" />
 
                 {/* Other Nav Links */}
                 {navLinks.filter((item) => item.href !== currentPage).map((item) => (
@@ -310,11 +310,11 @@ export default function Navbar({ currentPage }: NavbarProps) {
                       href={item.href}
                       onMouseEnter={() => setHoveredLink(item.label)}
                       onMouseLeave={() => setHoveredLink(null)}
-                      className="relative px-4 py-2 block text-[0.8rem] font-medium tracking-[0.1em] uppercase text-white/70 hover:text-white transition-colors duration-300"
+                      className="relative px-4 py-2 block text-[0.8rem] font-medium tracking-[0.1em] uppercase text-forest-deep/70 hover:text-forest-deep transition-colors duration-300"
                     >
                       {/* Hover background */}
                       <motion.span
-                        className="absolute inset-0 bg-white/5 rounded-sm"
+                        className="absolute inset-0 bg-forest-deep/5 rounded-sm"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: hoveredLink === item.label ? 1 : 0 }}
                         transition={{ duration: 0.2 }}
@@ -337,7 +337,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             <div className="flex items-center gap-4 md:gap-6">
               <a
                 href="tel:8662192294"
-                className="hidden md:flex items-center gap-2 text-white/80 hover:text-gold font-medium text-sm tracking-wide transition-colors duration-300"
+                className="hidden md:flex items-center gap-2 text-forest-deep/80 hover:text-gold font-medium text-sm tracking-wide transition-colors duration-300"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
                 866-219-2294
@@ -352,7 +352,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="lg:hidden w-10 h-10 flex items-center justify-center text-white/80 hover:text-white transition-colors"
+                className="lg:hidden w-10 h-10 flex items-center justify-center text-forest-deep/80 hover:text-forest-deep transition-colors"
               >
                 <Menu className="w-5 h-5" />
               </button>

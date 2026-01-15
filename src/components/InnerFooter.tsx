@@ -28,26 +28,26 @@ const socialLinks = [
 
 export default function InnerFooter() {
   return (
-    <footer className="bg-forest-deep text-white">
+    <footer className="bg-white text-forest-deep">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-10 sm:py-12 md:py-16">
         {/* Brand & Contact - Centered on mobile */}
         <div className="text-center sm:text-left mb-10 sm:hidden">
           <Link href="/" className="inline-block mb-4">
             <Image
-              src="/trulylogo.svg"
+              src="/trulylogo.png"
               alt="Truly Investor Capital"
               width={180}
               height={60}
               className="h-auto w-[160px] mx-auto"
             />
           </Link>
-          <p className="text-white/60 text-sm leading-relaxed mb-4 max-w-[280px] mx-auto text-balance">
+          <p className="text-forest-deep/60 text-sm leading-relaxed mb-4 max-w-[280px] mx-auto text-balance">
             Innovative lending solutions for real estate investors nationwide.
           </p>
           <a
             href="tel:8662192294"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-gold transition-colors text-sm mb-4"
+            className="inline-flex items-center gap-2 text-forest-deep/70 hover:text-gold transition-colors text-sm mb-4"
           >
             <Phone className="w-4 h-4 text-gold" />
             866-219-2294
@@ -60,7 +60,7 @@ export default function InnerFooter() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={social.label}
-                className="w-10 h-10 border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold"
+                className="w-10 h-10 border border-forest-deep/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold"
               >
                 <social.icon className="w-4 h-4" />
               </a>
@@ -73,20 +73,20 @@ export default function InnerFooter() {
           <div className="hidden sm:block lg:col-span-1">
             <Link href="/" className="inline-block mb-6">
               <Image
-                src="/trulylogo.svg"
+                src="/trulylogo.png"
                 alt="Truly Investor Capital"
                 width={220}
                 height={75}
                 className="h-auto w-[140px] sm:w-[180px] md:w-[220px]"
               />
             </Link>
-            <p className="text-white/60 text-sm leading-relaxed mb-6">
+            <p className="text-forest-deep/60 text-sm leading-relaxed mb-6">
               Innovative lending solutions for real estate investors across the nation.
             </p>
             <div className="space-y-3">
               <a
                 href="tel:8662192294"
-                className="flex items-center gap-3 text-white/70 hover:text-gold transition-colors text-sm"
+                className="flex items-center gap-3 text-forest-deep/70 hover:text-gold transition-colors text-sm"
               >
                 <Phone className="w-4 h-4 text-gold" />
                 866-219-2294
@@ -100,7 +100,7 @@ export default function InnerFooter() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 border border-white/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold"
+                  className="w-9 h-9 border border-forest-deep/20 flex items-center justify-center transition-all duration-300 hover:bg-gold hover:border-gold"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>
@@ -116,7 +116,7 @@ export default function InnerFooter() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-gold text-sm transition-colors"
+                    className="text-forest-deep/60 hover:text-gold text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -133,7 +133,7 @@ export default function InnerFooter() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-white/60 hover:text-gold text-sm transition-colors"
+                    className="text-forest-deep/60 hover:text-gold text-sm transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -145,7 +145,7 @@ export default function InnerFooter() {
           {/* Location */}
           <div className="col-span-2 sm:col-span-1 text-center sm:text-left mt-4 sm:mt-0">
             <h4 className="font-display text-lg text-gold mb-4 sm:mb-5">Location</h4>
-            <div className="inline-flex sm:flex items-start gap-3 text-white/60 text-sm">
+            <div className="inline-flex sm:flex items-start gap-3 text-forest-deep/60 text-sm">
               <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
               <address className="not-italic leading-relaxed text-left">
                 Truly Investor Capital<br />
@@ -155,20 +155,20 @@ export default function InnerFooter() {
               </address>
             </div>
             <div className="mt-4">
-              <span className="text-white/40 text-xs">NMLS # 71640</span>
+              <span className="text-forest-deep/40 text-xs">NMLS # 71640</span>
             </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-forest-deep/10 pt-8">
           {/* Bottom Links */}
           <div className="flex flex-wrap justify-center gap-6 mb-8">
-            <Link href="/careers" className="text-white/60 hover:text-gold text-sm transition-colors">
+            <Link href="/careers" className="text-forest-deep/60 hover:text-gold text-sm transition-colors">
               Careers
             </Link>
             <span className="text-white/20">|</span>
-            <Link href="/privacy" className="text-white/60 hover:text-gold text-sm transition-colors">
+            <Link href="/privacy" className="text-forest-deep/60 hover:text-gold text-sm transition-colors">
               Privacy Policy
             </Link>
             <span className="text-white/20">|</span>
@@ -176,7 +176,7 @@ export default function InnerFooter() {
               href="https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/71640"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/60 hover:text-gold text-sm transition-colors inline-flex items-center gap-1"
+              className="text-forest-deep/60 hover:text-gold text-sm transition-colors inline-flex items-center gap-1"
             >
               NMLS Consumer Access
               <ExternalLink className="w-3 h-3" />
@@ -184,16 +184,16 @@ export default function InnerFooter() {
           </div>
 
           {/* Copyright */}
-          <div className="text-center text-white/40 text-sm mb-6">
+          <div className="text-center text-forest-deep/40 text-sm mb-6">
             © 2025 Truly Investor Capital. All Rights Reserved.
           </div>
         </div>
       </div>
 
       {/* Disclosure Section */}
-      <div className="bg-forest-deep border-t border-white/5">
+      <div className="bg-cream border-t border-forest-deep/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-6 sm:py-8">
-          <p className="text-white/30 text-xs leading-relaxed text-center">
+          <p className="text-forest-deep/50 text-xs leading-relaxed text-center">
             Truly Investor Capital, a division of Oaktree Funding Corp., 3133 West Frye Road, Suite #205
             Chandler, AZ 85226 (NMLS # 71640 | In the following states AZ, CA, ID, MN, OR, UT loans are
             originated and made in the name of Oaktree Funding Corp. NMLS #71640 pursuant to the laws of
