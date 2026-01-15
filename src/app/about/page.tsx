@@ -78,14 +78,14 @@ const lendingStates = [
   "Delaware", "Florida", "Georgia", "Idaho", "Illinois", "Indiana", "Iowa",
   "Kansas", "Kentucky", "Louisiana", "Maine", "Maryland", "Massachusetts",
   "Michigan", "Minnesota", "Mississippi", "Missouri", "Montana", "Nebraska",
-  "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
+  "Nevada", "New Hampshire", "New Jersey", "New Mexico", "New York", "North Carolina",
   "North Dakota", "Ohio", "Oklahoma", "Oregon", "Pennsylvania", "Rhode Island",
   "South Carolina", "South Dakota", "Tennessee", "Texas", "Utah", "Virginia",
   "Washington", "West Virginia", "Wisconsin", "Wyoming", "Washington D.C."
 ];
 
 const creditExceptionStates = ["Alaska", "Hawaii"];
-const notLendingStates = ["Nevada", "Vermont"];
+const notLendingStates = ["Vermont"];
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
