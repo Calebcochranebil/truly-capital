@@ -40,9 +40,6 @@ export default function InnerFooter() {
               className="h-auto w-[160px] mx-auto"
             />
           </Link>
-          <p className="text-forest-deep/60 text-sm leading-relaxed mb-4 max-w-[280px] mx-auto text-balance">
-            Innovative lending solutions for real estate investors nationwide.
-          </p>
           <a
             href="tel:8662192294"
             className="inline-flex items-center gap-2 text-forest-deep/70 hover:text-gold transition-colors text-sm mb-4"
@@ -69,7 +66,7 @@ export default function InnerFooter() {
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
           {/* Brand & Contact - Desktop only */}
           <div className="hidden sm:block lg:col-span-1">
-            <Link href="/" className="inline-block mb-6">
+            <Link href="/" className="inline-block mb-4">
               <Image
                 src="/trulylogo.png"
                 alt="Truly Investor Capital"
@@ -78,19 +75,14 @@ export default function InnerFooter() {
                 className="h-auto w-[140px] sm:w-[180px] md:w-[220px]"
               />
             </Link>
-            <p className="text-forest-deep/60 text-sm leading-relaxed mb-6">
-              Innovative lending solutions for real estate investors across the nation.
-            </p>
-            <div className="space-y-3">
-              <a
-                href="tel:8662192294"
-                className="flex items-center gap-3 text-forest-deep/70 hover:text-gold transition-colors text-sm"
-              >
-                <Phone className="w-4 h-4 text-gold" />
-                866-219-2294
-              </a>
-            </div>
-            <div className="flex gap-3 mt-6">
+            <a
+              href="tel:8662192294"
+              className="flex items-center gap-3 text-forest-deep/70 hover:text-gold transition-colors text-sm mb-4"
+            >
+              <Phone className="w-4 h-4 text-gold" />
+              866-219-2294
+            </a>
+            <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.label}
