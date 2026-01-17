@@ -35,7 +35,7 @@ const products = [
     icon: Building2,
     title: "DSCR Loans",
     description:
-      "Finance properties or portfolios based on rental income, not personal income.",
+      "Finance based on rental income, not personal income.",
     features: [
       "No personal income verification",
       "Purchase, refinance, or cash-out",
@@ -48,7 +48,7 @@ const products = [
     icon: Layers,
     title: "Bridge Loans",
     description:
-      "Short-term financing to bridge gaps or transition to permanent loans.",
+      "Short-term financing to bridge gaps between loans.",
     features: [
       "12 month terms",
       "No prepayment penalties",
