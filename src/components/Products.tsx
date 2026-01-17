@@ -9,7 +9,7 @@ const products = [
     icon: Wrench,
     title: "Rehab Loans",
     description:
-      "Finance fix and flip projects with flexible terms and fast funding to maximize renovation returns.",
+      "Finance fix and flip projects with flexible terms and fast funding designed to help investors maximize their renovation returns.",
     features: [
       "Fix & flip financing",
       "Up to 90% of purchase price",
@@ -22,7 +22,7 @@ const products = [
     icon: HardHat,
     title: "Construction Loans",
     description:
-      "Ground-up construction financing with flexible draw schedules to bring development visions to life.",
+      "Ground-up construction financing with flexible draw schedules designed to help investors bring their development visions to life.",
     features: [
       "Ground-up construction",
       "Spec & custom builds",
