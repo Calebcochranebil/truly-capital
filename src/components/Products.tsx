@@ -9,7 +9,7 @@ const products = [
     icon: Wrench,
     title: "Rehab Loans",
     description:
-      "Finance fix and flip projects with flexible terms and fast funding to help investors maximize their renovation returns.",
+      "Finance fix and flip projects with flexible terms and fast funding.",
     features: [
       "Fix & flip financing",
       "Up to 90% of purchase price",
@@ -22,7 +22,7 @@ const products = [
     icon: HardHat,
     title: "Construction Loans",
     description:
-      "Ground-up construction financing with flexible draw schedules designed to help investors bring their development visions to life.",
+      "Ground-up construction financing with flexible draw schedules.",
     features: [
       "Ground-up construction",
       "Spec & custom builds",
@@ -35,7 +35,7 @@ const products = [
     icon: Building2,
     title: "DSCR Loans",
     description:
-      "Finance single properties or entire portfolios based on rental income rather than personal income verification.",
+      "Finance properties or portfolios based on rental income, not personal income.",
     features: [
       "No personal income verification",
       "Purchase, refinance, or cash-out",
@@ -48,7 +48,7 @@ const products = [
     icon: Layers,
     title: "Bridge Loans",
     description:
-      "Strategic flexibility with short-term financing to execute an exit strategy or transition to permanent financing.",
+      "Short-term financing to bridge gaps or transition to permanent loans.",
     features: [
       "12 month terms",
       "No prepayment penalties",
