@@ -6,6 +6,7 @@ import {
   Testimonials,
   CTA,
   InnerFooter,
+  PopupTrigger,
 } from "@/components";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <Testimonials />
       <CTA />
       <InnerFooter />
+      <PopupTrigger delaySeconds={10} />
     </main>
   );
 }

@@ -7,3 +7,5 @@ export { default as Testimonials } from "./Testimonials";
 export { default as CTA } from "./CTA";
 export { default as Footer } from "./Footer";
 export { default as InnerFooter } from "./InnerFooter";
+export { default as PopupForm } from "./PopupForm";
+export { default as PopupTrigger } from "./PopupTrigger";
