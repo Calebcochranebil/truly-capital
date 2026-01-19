@@ -91,7 +91,7 @@ const teamMembersData: Record<string, {
   },
   "kevin-kavanaugh": {
     name: "Kevin Kavanaugh",
-    title: "Vice President, National Sales Manager",
+    title: "Regional Sales Manager",
     phone: "480.856.9158",
     email: "kkavanaugh@trulyinvestorcap.com",
     image: "/team/kevin-kavanaugh.jpg",
