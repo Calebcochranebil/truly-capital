@@ -256,17 +256,17 @@ export default function TeamMemberPage() {
               >
                 <a
                   href={`tel:${member.phone.replace(/\./g, "")}`}
-                  className="flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-white/15 px-4 sm:px-6 py-2.5 sm:py-3 rounded transition-colors"
+                  className="group flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-gold/20 p-3 sm:px-5 sm:py-3 rounded-full sm:rounded transition-all duration-300"
                 >
-                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
-                  <span className="text-white text-sm sm:text-base">{member.phone}</span>
+                  <Phone className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
+                  <span className="text-white text-sm hidden sm:inline">{member.phone}</span>
                 </a>
                 <a
                   href={`mailto:${member.email}`}
-                  className="flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-white/15 px-4 sm:px-6 py-2.5 sm:py-3 rounded transition-colors"
+                  className="group flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-gold/20 p-3 sm:px-5 sm:py-3 rounded-full sm:rounded transition-all duration-300"
                 >
-                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
-                  <span className="text-white text-xs sm:text-sm truncate max-w-[200px] sm:max-w-none">{member.email}</span>
+                  <Mail className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
+                  <span className="text-white text-sm hidden sm:inline truncate max-w-[200px]">{member.email}</span>
                 </a>
               </motion.div>
 
@@ -321,102 +321,92 @@ export default function TeamMemberPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-white rounded-lg shadow-xl p-5 sm:p-8 md:p-12"
+            className="bg-white rounded-lg shadow-xl overflow-hidden"
           >
-            <h2 className="font-display text-2xl sm:text-3xl text-forest-deep mb-6 sm:mb-8 pb-4 border-b border-cream-warm">
-              About Me
-            </h2>
+            {/* Gold accent bar */}
+            <div className="h-1 bg-gradient-to-r from-gold via-gold/80 to-gold/40" />
 
-            <div className="space-y-4 sm:space-y-6">
-              {member.bio.map((paragraph, index) => (
-                <motion.p
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="text-slate text-sm sm:text-base leading-relaxed"
-                >
-                  {paragraph}
-                </motion.p>
-              ))}
+            <div className="p-5 sm:p-8 md:p-12">
+              <div className="flex items-center gap-3 mb-6 sm:mb-8">
+                <div className="w-1 h-8 bg-gold rounded-full" />
+                <h2 className="font-display text-2xl sm:text-3xl text-forest-deep">
+                  About Me
+                </h2>
+              </div>
+
+              <div className="space-y-4 sm:space-y-6">
+                {member.bio.map((paragraph, index) => (
+                  <motion.p
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                    className="text-slate text-sm sm:text-base leading-relaxed"
+                  >
+                    {paragraph}
+                  </motion.p>
+                ))}
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-12 sm:py-16 bg-cream-warm">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="font-display text-2xl sm:text-3xl text-forest-deep mb-3 sm:mb-4"
-          >
-            Ready to Work Together?
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-slate text-sm sm:text-base mb-6 sm:mb-8"
-          >
-            Reach out to {member.name.split(" ")[0]} today to discuss financing needs.
-          </motion.p>
+      {/* Other Team Members */}
+      <section className="py-12 sm:py-16 bg-gradient-to-b from-cream to-cream-warm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
+            className="text-center mb-8"
           >
-            <a
-              href={`tel:${member.phone.replace(/\./g, "")}`}
-              className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
-            >
-              Call {member.phone}
-            </a>
-            <a
-              href={`mailto:${member.email}`}
-              className="bg-forest-deep text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold text-xs sm:text-sm tracking-widest uppercase hover:bg-forest transition-colors"
-            >
-              Send Email
-            </a>
+            <span className="text-gold text-xs tracking-[0.2em] uppercase">Our Team</span>
+            <h3 className="font-display text-xl sm:text-2xl text-forest-deep mt-2">
+              Work With Another Expert
+            </h3>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Other Team Members */}
-      <section className="py-12 sm:py-16 bg-cream">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h3 className="font-display text-xl sm:text-2xl text-forest-deep text-center mb-6 sm:mb-8">
-            Meet Other Team Members
-          </h3>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {Object.entries(teamMembersData)
               .filter(([id]) => id !== memberId)
-              .slice(0, 6)
-              .map(([id, m]) => (
-                <Link
+              .slice(0, 4)
+              .map(([id, m], index) => (
+                <motion.div
                   key={id}
-                  href={`/team/${id}`}
-                  className="group flex items-center gap-2 bg-white px-3 sm:px-4 py-2 sm:py-3 rounded-full shadow-sm hover:shadow-md transition-all border border-cream-warm"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
                 >
-                  <span className="text-forest-deep group-hover:text-gold transition-colors font-medium text-sm sm:text-base">
-                    {m.name}
-                  </span>
-                </Link>
+                  <Link
+                    href={`/team/${id}`}
+                    className="group block bg-white p-4 sm:p-5 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gold/20 text-center"
+                  >
+                    <span className="text-forest-deep group-hover:text-gold transition-colors font-medium text-sm sm:text-base block">
+                      {m.name}
+                    </span>
+                    <span className="text-slate/60 text-xs mt-1 block">
+                      {m.title.split(',')[0]}
+                    </span>
+                  </Link>
+                </motion.div>
               ))}
           </div>
-          <div className="text-center mt-6 sm:mt-8">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-center mt-8"
+          >
             <Link
               href="/team"
-              className="text-gold hover:text-forest-deep transition-colors font-medium text-sm sm:text-base"
+              className="inline-flex items-center gap-2 text-forest-deep hover:text-gold transition-colors font-medium text-sm group"
             >
-              View All Team Members →
+              View All Team Members
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
       </main>
