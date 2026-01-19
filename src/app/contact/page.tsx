@@ -52,7 +52,7 @@ export default function ContactPage() {
           {/* Background Image */}
           <div className="absolute inset-0">
             <Image
-              src="/about-hero.jpg"
+              src="/contact-hero.jpg"
               alt="Contact Us"
               fill
               className="object-cover opacity-30"
