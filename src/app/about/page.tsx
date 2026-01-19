@@ -182,12 +182,8 @@ export default function AboutPage() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">
+            <h2 className="font-display text-4xl md:text-5xl text-forest-deep">
               Executive Team
-            </span>
-            <h2 className="font-display text-4xl md:text-5xl text-forest-deep leading-tight">
-              The Leaders Behind
-              <span className="block text-gold">The Truly Difference</span>
             </h2>
           </motion.div>
 
