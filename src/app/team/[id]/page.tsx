@@ -252,7 +252,7 @@ export default function TeamMemberPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6 sm:mb-8"
+                className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start mb-6 sm:mb-8"
               >
                 <a
                   href={`tel:${member.phone.replace(/\./g, "")}`}
@@ -275,7 +275,7 @@ export default function TeamMemberPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
+                className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start"
               >
                 <a href="tel:8662192294" className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4">
                   <FileText className="w-4 h-4" />
