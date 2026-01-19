@@ -141,31 +141,31 @@ function TeamMemberCard({ member }: { member: typeof teamMembers[0] }) {
           {/* Top accent line */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           {/* Content */}
-          <div className="p-6">
-            <h3 className="font-display text-2xl text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">
+          <div className="p-4 sm:p-6">
+            <h3 className="font-display text-xl sm:text-2xl text-forest-deep mb-1 group-hover:text-gold transition-colors duration-300">
               {member.name}
             </h3>
-            <p className="text-slate text-sm mb-4">{member.title}</p>
+            <p className="text-slate text-xs sm:text-sm mb-3 sm:mb-4">{member.title}</p>
             {member.nmls && (
-              <p className="text-slate/70 text-xs mb-4">NMLS# {member.nmls}</p>
+              <p className="text-slate/70 text-xs mb-3 sm:mb-4">NMLS# {member.nmls}</p>
             )}
 
             {/* Contact Info */}
-            <div className="space-y-2 pt-4 border-t border-cream-warm">
+            <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4 border-t border-cream-warm">
               <a
                 href={`tel:${member.phone.replace(/\./g, "")}`}
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 text-sm text-slate hover:text-gold transition-colors"
+                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors"
               >
-                <Phone className="w-4 h-4 text-gold" />
+                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
                 {member.phone}
               </a>
               <a
                 href={`mailto:${member.email}`}
                 onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 text-sm text-slate hover:text-gold transition-colors truncate"
+                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors"
               >
-                <Mail className="w-4 h-4 text-gold" />
+                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
                 <span className="truncate">{member.email}</span>
               </a>
             </div>
@@ -231,10 +231,10 @@ export default function TeamPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <span className="section-tag">Leadership</span>
-            <h2 className="section-title">Guiding Our Vision</h2>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">Guiding Our Vision</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
               Experienced leaders driving excellence in real estate investment lending.
             </p>
@@ -245,7 +245,7 @@ export default function TeamPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto"
+            className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto"
           >
             {leadership.map((member) => (
               <TeamMemberCard key={member.id} member={member} />
@@ -262,10 +262,10 @@ export default function TeamPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <span className="section-tag">Sales Team</span>
-            <h2 className="section-title">Dedicated Partners</h2>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">Dedicated Partners</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
               Regional experts ready to help navigate the financing process with personalized service.
             </p>
@@ -276,7 +276,7 @@ export default function TeamPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
           >
             {salesTeam.map((member) => (
               <TeamMemberCard key={member.id} member={member} />

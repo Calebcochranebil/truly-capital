@@ -14,6 +14,7 @@ const teamMembersData: Record<string, {
   phone: string;
   email: string;
   image: string;
+  hasPhoto?: boolean;
   bio: string[];
 }> = {
   "darin-judis": {
@@ -139,6 +140,7 @@ const teamMembersData: Record<string, {
     phone: "213.822.4733",
     email: "blewis@trulyinvestorcap.com",
     image: "/team/barton-lewis.jpg",
+    hasPhoto: true,
     bio: [
       "With over 15 years of mortgage experience in roles like Senior Account Executive, EVP, and Operations Director, Barton Lewis is committed to supporting your real estate investment goals at Truly Investor Capital. He brings deep knowledge of our tailored loan products—Rehab, Bridge, New Construction, Single Property Rental, Multifamily Rental, and Portfolio Loans—to guide you through every step of the financing process with clarity and care.",
       "At Truly, Barton lives our mission: People, Partnerships, and Process. He focuses on understanding your unique needs, offering clear guidance, and ensuring a smooth, stress-free experience with fast closings. His work supports Truly's reputation for reliable execution and attention to detail on all loan sizes, and he's here to make your financing journey seamless as an expert in all of our programs.",
@@ -174,8 +176,8 @@ export default function TeamMemberPage() {
       <Navbar currentPage="/team" />
       <main className="min-h-screen bg-cream">
         {/* Back Navigation */}
-        <div className="bg-forest-deep pt-24 pb-4">
-        <div className="max-w-7xl mx-auto px-6">
+      <div className="bg-forest-deep pt-24 sm:pt-28 pb-6 sm:pb-8">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Link
             href="/team"
             className="inline-flex items-center gap-2 text-white/70 hover:text-gold transition-colors"
@@ -187,22 +189,40 @@ export default function TeamMemberPage() {
       </div>
 
       {/* Hero Section with Profile */}
-      <section className="relative bg-forest-deep pt-12 pb-32 overflow-hidden">
+      <section className="relative bg-forest-deep pt-8 pb-20 overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-20 w-96 h-96 bg-gold rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-20 w-64 h-64 bg-gold rounded-full blur-3xl" />
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
+          {/* Mobile Photo - shown above content on small screens */}
+          {member.hasPhoto && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="flex justify-center mb-8 lg:hidden"
+            >
+              <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-gold/30 shadow-xl">
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          )}
+
+          <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
             {/* Profile Info */}
             <div className="flex-1 text-center lg:text-left">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
-                className="font-display text-5xl md:text-6xl text-white mb-3"
+                className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-2 sm:mb-3"
               >
                 {member.name}
               </motion.h1>
@@ -211,7 +231,7 @@ export default function TeamMemberPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-gold text-xl md:text-2xl mb-2"
+                className="text-gold text-lg sm:text-xl md:text-2xl mb-2"
               >
                 {member.title}
               </motion.p>
@@ -232,21 +252,21 @@ export default function TeamMemberPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8"
+                className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-6 sm:mb-8"
               >
                 <a
                   href={`tel:${member.phone.replace(/\./g, "")}`}
-                  className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/15 px-6 py-3 rounded transition-colors"
+                  className="flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-white/15 px-4 sm:px-6 py-2.5 sm:py-3 rounded transition-colors"
                 >
-                  <Phone className="w-5 h-5 text-gold" />
-                  <span className="text-white">{member.phone}</span>
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
+                  <span className="text-white text-sm sm:text-base">{member.phone}</span>
                 </a>
                 <a
                   href={`mailto:${member.email}`}
-                  className="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/15 px-6 py-3 rounded transition-colors"
+                  className="flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-white/15 px-4 sm:px-6 py-2.5 sm:py-3 rounded transition-colors"
                 >
-                  <Mail className="w-5 h-5 text-gold" />
-                  <span className="text-white text-sm">{member.email}</span>
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-gold" />
+                  <span className="text-white text-xs sm:text-sm truncate max-w-[200px] sm:max-w-none">{member.email}</span>
                 </a>
               </motion.div>
 
@@ -255,9 +275,9 @@ export default function TeamMemberPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+                className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start"
               >
-                <a href="tel:8662192294" className="btn-primary flex items-center justify-center gap-2">
+                <a href="tel:8662192294" className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4">
                   <FileText className="w-4 h-4" />
                   Request A Quote
                 </a>
@@ -265,38 +285,56 @@ export default function TeamMemberPage() {
                   href="https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-secondary flex items-center justify-center gap-2"
+                  className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
                 >
                   <MessageSquare className="w-4 h-4" />
                   Apply Now
                 </a>
               </motion.div>
             </div>
+
+            {/* Profile Photo - only shown if hasPhoto is true */}
+            {member.hasPhoto && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.3 }}
+                className="flex-shrink-0 hidden lg:block"
+              >
+                <div className="w-56 h-56 xl:w-64 xl:h-64 rounded-full overflow-hidden border-4 border-gold/30 shadow-2xl">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </motion.div>
+            )}
           </div>
         </div>
       </section>
 
       {/* About Section */}
-      <section className="py-20 -mt-16 relative z-10">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="py-12 sm:py-16 md:py-20 -mt-10 sm:-mt-16 relative z-10">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-white rounded-lg shadow-xl p-8 md:p-12"
+            className="bg-white rounded-lg shadow-xl p-5 sm:p-8 md:p-12"
           >
-            <h2 className="font-display text-3xl text-forest-deep mb-8 pb-4 border-b border-cream-warm">
+            <h2 className="font-display text-2xl sm:text-3xl text-forest-deep mb-6 sm:mb-8 pb-4 border-b border-cream-warm">
               About Me
             </h2>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {member.bio.map((paragraph, index) => (
                 <motion.p
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                  className="text-slate leading-relaxed"
+                  className="text-slate text-sm sm:text-base leading-relaxed"
                 >
                   {paragraph}
                 </motion.p>
@@ -307,13 +345,13 @@ export default function TeamMemberPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-cream-warm">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+      <section className="py-12 sm:py-16 bg-cream-warm">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-display text-3xl text-forest-deep mb-4"
+            className="font-display text-2xl sm:text-3xl text-forest-deep mb-3 sm:mb-4"
           >
             Ready to Work Together?
           </motion.h2>
@@ -322,7 +360,7 @@ export default function TeamMemberPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-slate mb-8"
+            className="text-slate text-sm sm:text-base mb-6 sm:mb-8"
           >
             Reach out to {member.name.split(" ")[0]} today to discuss financing needs.
           </motion.p>
@@ -331,17 +369,17 @@ export default function TeamMemberPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
           >
             <a
               href={`tel:${member.phone.replace(/\./g, "")}`}
-              className="btn-primary"
+              className="btn-primary text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4"
             >
               Call {member.phone}
             </a>
             <a
               href={`mailto:${member.email}`}
-              className="bg-forest-deep text-white px-8 py-4 font-semibold text-sm tracking-widest uppercase hover:bg-forest transition-colors"
+              className="bg-forest-deep text-white px-6 sm:px-8 py-3 sm:py-4 font-semibold text-xs sm:text-sm tracking-widest uppercase hover:bg-forest transition-colors"
             >
               Send Email
             </a>
@@ -350,12 +388,12 @@ export default function TeamMemberPage() {
       </section>
 
       {/* Other Team Members */}
-      <section className="py-16 bg-cream">
-        <div className="max-w-7xl mx-auto px-6">
-          <h3 className="font-display text-2xl text-forest-deep text-center mb-8">
+      <section className="py-12 sm:py-16 bg-cream">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <h3 className="font-display text-xl sm:text-2xl text-forest-deep text-center mb-6 sm:mb-8">
             Meet Other Team Members
           </h3>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
             {Object.entries(teamMembersData)
               .filter(([id]) => id !== memberId)
               .slice(0, 6)
@@ -363,18 +401,18 @@ export default function TeamMemberPage() {
                 <Link
                   key={id}
                   href={`/team/${id}`}
-                  className="group flex items-center gap-3 bg-white px-4 py-3 rounded-full shadow-sm hover:shadow-md transition-all border border-cream-warm"
+                  className="group flex items-center gap-2 bg-white px-3 sm:px-4 py-2 sm:py-3 rounded-full shadow-sm hover:shadow-md transition-all border border-cream-warm"
                 >
-                  <span className="text-forest-deep group-hover:text-gold transition-colors font-medium">
+                  <span className="text-forest-deep group-hover:text-gold transition-colors font-medium text-sm sm:text-base">
                     {m.name}
                   </span>
                 </Link>
               ))}
           </div>
-          <div className="text-center mt-8">
+          <div className="text-center mt-6 sm:mt-8">
             <Link
               href="/team"
-              className="text-gold hover:text-forest-deep transition-colors font-medium"
+              className="text-gold hover:text-forest-deep transition-colors font-medium text-sm sm:text-base"
             >
               View All Team Members →
             </Link>
