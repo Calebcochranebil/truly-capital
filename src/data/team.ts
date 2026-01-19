@@ -29,12 +29,12 @@ export const teamMembers: TeamMember[] = [
   {
     id: "lindy-pond",
     name: "Lindy Pond",
-    title: "Vice President, National Sales Manager",
+    title: "Regional Sales Manager",
     nmls: "203141",
     phone: "804.647.7866",
     email: "LPond@trulyinvestorcap.com",
     image: "/team/lindy-pond.jpg",
-    isLeadership: true,
+    isLeadership: false,
     bio: [
       "Lindy specializes in providing the best possible service to all her customers and business partners. With over 16 years' experience in the mortgage banking industry, she has the knowledge and experience to help match the right product/program to fit a client's situation.",
     ],
@@ -70,11 +70,11 @@ export const teamMembers: TeamMember[] = [
   {
     id: "kevin-kavanaugh",
     name: "Kevin Kavanaugh",
-    title: "Regional Sales Manager",
+    title: "Vice President, National Sales Manager",
     phone: "480.856.9158",
     email: "kkavanaugh@trulyinvestorcap.com",
     image: "/team/kevin-kavanaugh.jpg",
-    isLeadership: false,
+    isLeadership: true,
     bio: [
       "Kevin Kavanaugh is an accomplished Business Development Manager with more than a decade of experience driving growth in sales, marketing, and product strategy. He has a proven record of exceeding sales goals, launching new products, and strengthening profit and loss performance while leading high-performing teams.",
       "Holding a Bachelor of Science in Electrical Engineering from the Georgia Institute of Technology, Kevin also brings advanced training in solution selling and financial services. His expertise in building strong client relationships and delivering consistent results makes him a valuable asset to Truly Investor Capital.",

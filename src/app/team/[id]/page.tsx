@@ -31,7 +31,7 @@ const teamMembersData: Record<string, {
   },
   "lindy-pond": {
     name: "Lindy Pond",
-    title: "Vice President, National Sales Manager",
+    title: "Regional Sales Manager",
     nmls: "203141",
     phone: "804.647.7866",
     email: "LPond@trulyinvestorcap.com",
@@ -91,7 +91,7 @@ const teamMembersData: Record<string, {
   },
   "kevin-kavanaugh": {
     name: "Kevin Kavanaugh",
-    title: "Regional Sales Manager",
+    title: "Vice President, National Sales Manager",
     phone: "480.856.9158",
     email: "kkavanaugh@trulyinvestorcap.com",
     image: "/team/kevin-kavanaugh.jpg",
