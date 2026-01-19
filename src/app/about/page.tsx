@@ -206,7 +206,7 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, duration: 0.5 }}
-                className={`group relative ${index % 2 === 1 ? 'md:mt-12' : ''}`}
+                className="group relative"
               >
                 <div className="relative bg-white border border-forest-deep/10 p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-forest-deep/10 hover:border-gold/30 overflow-hidden">
                   {/* Top gold accent */}
