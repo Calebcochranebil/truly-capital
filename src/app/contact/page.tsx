@@ -263,9 +263,9 @@ export default function ContactPage() {
               <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
                 Ready to Get Started?
               </h2>
-              <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
+              <p className="text-white/70 text-base sm:text-lg mb-10 max-w-2xl mx-auto">
                 Our team is standing by to help find the perfect financing solution.
-                Reach out today to discuss the next deal.
+                <span className="block mt-1">Reach out today to discuss the next deal.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:8662192294" className="btn-primary">
