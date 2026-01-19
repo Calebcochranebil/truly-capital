@@ -1,3 +1,4 @@
+export { default as AnnouncementBar } from "./AnnouncementBar";
 export { default as Navbar } from "./Navbar";
 export { default as InnerNavbar } from "./InnerNavbar";
 export { default as Hero } from "./Hero";

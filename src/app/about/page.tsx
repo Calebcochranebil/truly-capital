@@ -168,44 +168,95 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-20 md:py-24 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="py-24 md:py-32 bg-gradient-to-b from-cream to-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
+        <div className="absolute top-1/2 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute top-1/3 right-0 w-80 h-80 bg-forest-deep/5 rounded-full blur-3xl" />
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 relative">
+          {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-12"
+            className="max-w-2xl mb-16"
           >
-            <h2 className="font-display text-4xl md:text-5xl text-forest-deep leading-tight">
+            <span className="inline-flex items-center gap-3 mb-4">
+              <span className="w-8 h-px bg-gold" />
+              <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
+                Executive Team
+              </span>
+            </span>
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-forest-deep leading-[1.1] mb-4">
               The Leaders Behind
               <span className="block text-gold">The Truly Difference</span>
             </h2>
+            <p className="text-forest/60 text-lg leading-relaxed">
+              Experienced professionals driving innovation in real estate lending.
+            </p>
           </motion.div>
 
-          <motion.div
-            variants={staggerContainer}
-            initial="initial"
-            whileInView="animate"
-            viewport={{ once: true }}
-            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto"
-          >
+          {/* Leadership Grid - Offset Design */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
             {leadership.map((leader, index) => (
               <motion.div
                 key={index}
-                variants={fadeInUp}
-                className="text-center group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
+                className={`group relative ${index % 2 === 1 ? 'md:mt-12' : ''}`}
               >
-                <div className="w-24 h-24 mx-auto mb-5 bg-forest-deep text-white rounded-full flex items-center justify-center font-display text-2xl group-hover:bg-gold transition-colors duration-300">
-                  {leader.initials}
+                <div className="relative bg-white border border-forest-deep/10 p-8 transition-all duration-500 hover:shadow-2xl hover:shadow-forest-deep/10 hover:border-gold/30 overflow-hidden">
+                  {/* Top gold accent */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-gold/80 to-gold/40 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+
+                  {/* Number watermark */}
+                  <span className="absolute -top-4 -right-2 font-display text-[120px] font-bold text-forest-deep/[0.03] group-hover:text-gold/10 transition-colors duration-500 select-none leading-none">
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
+
+                  <div className="relative z-10 flex items-start gap-6">
+                    {/* Initials badge */}
+                    <div className="flex-shrink-0">
+                      <div className="w-20 h-20 bg-forest-deep text-white flex items-center justify-center font-display text-2xl group-hover:bg-gold group-hover:text-forest-deep transition-all duration-300 relative overflow-hidden">
+                        <span className="relative z-10">{leader.initials}</span>
+                        <div className="absolute inset-0 bg-gold transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                      </div>
+                    </div>
+
+                    {/* Info */}
+                    <div className="flex-1 pt-1">
+                      <h3 className="font-display text-2xl text-forest-deep mb-2 group-hover:text-gold transition-colors duration-300">
+                        {leader.name}
+                      </h3>
+                      <p className="text-gold font-semibold text-sm tracking-widest uppercase mb-3">
+                        {leader.title}
+                      </p>
+                      <div className="w-12 h-px bg-gold/30 group-hover:w-20 group-hover:bg-gold transition-all duration-300" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="font-display text-xl text-forest-deep mb-1">
-                  {leader.name}
-                </h3>
-                <p className="text-gold font-medium text-sm tracking-wide">
-                  {leader.title}
-                </p>
               </motion.div>
             ))}
+          </div>
+
+          {/* Bottom CTA link */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-12 text-center"
+          >
+            <Link
+              href="/team"
+              className="inline-flex items-center gap-2 text-forest-deep/60 hover:text-gold transition-colors duration-300 group"
+            >
+              <span className="text-sm font-medium tracking-wide">Meet Our Full Team</span>
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
           </motion.div>
         </div>
       </section>

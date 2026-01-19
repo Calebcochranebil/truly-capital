@@ -1,4 +1,5 @@
 import {
+  AnnouncementBar,
   Navbar,
   Hero,
   Products,
@@ -11,6 +12,7 @@ import {
 export default function Home() {
   return (
     <main>
+      <AnnouncementBar />
       <Navbar />
       <Hero />
       <Products />

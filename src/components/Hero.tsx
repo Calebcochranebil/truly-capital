@@ -96,7 +96,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 pt-24 sm:pt-32 pb-16 grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-16 items-center relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-16 pt-32 sm:pt-40 pb-16 grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-16 items-center relative z-10">
         {/* Text Content */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
