@@ -168,7 +168,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-24 md:py-32 bg-gradient-to-b from-cream to-white relative overflow-hidden">
+      <section className="py-16 md:py-20 bg-gradient-to-b from-cream to-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
         <div className="absolute top-1/2 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl -translate-y-1/2" />
@@ -180,21 +180,15 @@ export default function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-2xl mb-16"
+            className="text-center mb-12"
           >
-            <span className="inline-flex items-center gap-3 mb-4">
-              <span className="w-8 h-px bg-gold" />
-              <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase">
-                Executive Team
-              </span>
+            <span className="text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4 block">
+              Executive Team
             </span>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-forest-deep leading-[1.1] mb-4">
+            <h2 className="font-display text-4xl md:text-5xl text-forest-deep leading-tight">
               The Leaders Behind
               <span className="block text-gold">The Truly Difference</span>
             </h2>
-            <p className="text-forest/60 text-lg leading-relaxed">
-              Experienced professionals driving innovation in real estate lending.
-            </p>
           </motion.div>
 
           {/* Leadership Grid - Offset Design */}
@@ -242,20 +236,21 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Bottom CTA link */}
+          {/* Bottom CTA button */}
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.5 }}
-            className="mt-12 text-center"
+            transition={{ delay: 0.3 }}
+            className="mt-10 text-center"
           >
             <Link
               href="/team"
-              className="inline-flex items-center gap-2 text-forest-deep/60 hover:text-gold transition-colors duration-300 group"
+              className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-forest-deep to-forest px-8 py-4 text-white font-semibold tracking-wide overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-forest-deep/25 hover:scale-[1.02]"
             >
-              <span className="text-sm font-medium tracking-wide">Meet Our Full Team</span>
-              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              <span className="absolute inset-0 bg-gradient-to-r from-gold to-gold-light opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative group-hover:text-forest-deep transition-colors duration-300">Meet Our Full Team</span>
+              <ChevronRight className="relative w-5 h-5 group-hover:text-forest-deep group-hover:translate-x-1 transition-all duration-300" />
             </Link>
           </motion.div>
         </div>
