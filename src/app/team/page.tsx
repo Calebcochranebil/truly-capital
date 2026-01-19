@@ -74,7 +74,7 @@ const teamMembers = [
   {
     id: "alex-tkachenko",
     name: "Alex Tkachenko",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "480.856.9191",
     email: "atkachenko@trulyinvestorcap.com",
     image: "/team/alex-tkachenko.jpg",
@@ -83,7 +83,7 @@ const teamMembers = [
   {
     id: "kris-kaba",
     name: "Kris Kaba",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "760.585.8931",
     email: "kkaba@trulyinvestorcap.com",
     image: "/team/kris-kaba.jpg",
@@ -92,7 +92,7 @@ const teamMembers = [
   {
     id: "james-moreno",
     name: "James Moreno",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "208.748.9159",
     email: "jmoreno@trulyinvestorcap.com",
     image: "/team/james-moreno.jpg",
@@ -101,7 +101,7 @@ const teamMembers = [
   {
     id: "barton-lewis",
     name: "Barton Lewis",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "213.822.4733",
     email: "blewis@trulyinvestorcap.com",
     image: "/team/barton-lewis.jpg",

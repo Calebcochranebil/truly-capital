@@ -99,7 +99,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "kevin-kavanaugh",
     name: "Kevin Kavanaugh",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "480.856.9158",
     email: "kkavanaugh@trulyinvestorcap.com",
     image: "/team/kevin-kavanaugh.jpg",
@@ -112,7 +112,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "alex-tkachenko",
     name: "Alex Tkachenko",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "480.856.9191",
     email: "atkachenko@trulyinvestorcap.com",
     image: "/team/alex-tkachenko.jpg",
@@ -126,7 +126,7 @@ export const teamMembers: TeamMember[] = [
   {
     id: "kris-kaba",
     name: "Kris Kaba",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "760.585.8931",
     email: "kkaba@trulyinvestorcap.com",
     image: "/team/kris-kaba.jpg",
@@ -139,20 +139,20 @@ export const teamMembers: TeamMember[] = [
   {
     id: "james-moreno",
     name: "James Moreno",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "208.748.9159",
     email: "jmoreno@trulyinvestorcap.com",
     image: "/team/james-moreno.jpg",
     isLeadership: false,
     bio: [
-      "James Moreno is a Regional Sales Advisor, bringing over 10 years of experience in financial services and investment strategy. With a strong background in client relationship management and capital growth solutions, James helps investors identify and execute opportunities that align with their long-term financial goals.",
+      "James Moreno is a Regional Sales Manager, bringing over 10 years of experience in financial services and investment strategy. With a strong background in client relationship management and capital growth solutions, James helps investors identify and execute opportunities that align with their long-term financial goals.",
       "He holds a Bachelor's degree in Finance from Texas State University and is dedicated to delivering data-driven insights and exceptional client service across the nation.",
     ],
   },
   {
     id: "barton-lewis",
     name: "Barton Lewis",
-    title: "Regional Sales Advisor",
+    title: "Regional Sales Manager",
     phone: "213.822.4733",
     email: "blewis@trulyinvestorcap.com",
     image: "/team/barton-lewis.jpg",
