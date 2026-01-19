@@ -155,23 +155,94 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator - Hidden on mobile */}
-      <div className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center gap-3">
-        <span className="text-white/50 text-xs tracking-[0.2em] uppercase">
-          Scroll
-        </span>
+      <div className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center">
         <motion.div
-          className="w-[2px] h-[60px] bg-gradient-to-b from-gold to-transparent"
+          className="relative"
           animate={{
-            opacity: [1, 0.4, 1],
-            scaleY: [1, 0.6, 1]
+            y: [0, 8, 0],
           }}
           transition={{
             duration: 2,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
-          style={{ originY: 0 }}
-        />
+        >
+          <svg
+            width="24"
+            height="60"
+            viewBox="0 0 24 60"
+            fill="none"
+            className="overflow-visible"
+          >
+            {/* Main vertical line */}
+            <motion.line
+              x1="12"
+              y1="0"
+              x2="12"
+              y2="45"
+              stroke="url(#scrollGradient)"
+              strokeWidth="2"
+              strokeLinecap="round"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: [0, 1, 1, 0] }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                times: [0, 0.3, 0.7, 1],
+              }}
+            />
+            {/* Left arrow leg */}
+            <motion.line
+              x1="12"
+              y1="45"
+              x2="4"
+              y2="35"
+              stroke="#C9A962"
+              strokeWidth="2"
+              strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{
+                pathLength: [0, 0, 1, 1, 0],
+                opacity: [0, 0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                times: [0, 0.25, 0.4, 0.7, 0.85],
+              }}
+            />
+            {/* Right arrow leg */}
+            <motion.line
+              x1="12"
+              y1="45"
+              x2="20"
+              y2="35"
+              stroke="#C9A962"
+              strokeWidth="2"
+              strokeLinecap="round"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{
+                pathLength: [0, 0, 1, 1, 0],
+                opacity: [0, 0, 1, 1, 0],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut",
+                times: [0, 0.25, 0.4, 0.7, 0.85],
+              }}
+            />
+            {/* Gradient definition */}
+            <defs>
+              <linearGradient id="scrollGradient" x1="12" y1="0" x2="12" y2="45" gradientUnits="userSpaceOnUse">
+                <stop stopColor="#C9A962" />
+                <stop offset="1" stopColor="#C9A962" stopOpacity="0.3" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </motion.div>
       </div>
     </section>
   );
