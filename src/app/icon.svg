@@ -1,0 +1,18 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Forest green circle background -->
+  <circle cx="256" cy="256" r="256" fill="#1B4D3E"/>
+
+  <!-- Gold key -->
+  <g fill="#C9A962">
+    <!-- Key bow (circular head) -->
+    <circle cx="165" cy="256" r="70" stroke="#C9A962" stroke-width="24" fill="none"/>
+
+    <!-- Key shaft -->
+    <rect x="210" y="244" width="200" height="24" rx="4"/>
+
+    <!-- Key teeth -->
+    <rect x="340" y="244" width="16" height="50" rx="2"/>
+    <rect x="370" y="244" width="16" height="35" rx="2"/>
+    <rect x="394" y="244" width="16" height="50" rx="2"/>
+  </g>
+</svg>
