@@ -23,7 +23,7 @@ function MatrixDropdown() {
         className="btn-secondary flex items-center gap-2"
       >
         <FileText className="w-4 h-4" />
-        Download Matrix
+        View Matrix
         <ChevronDown className={`w-4 h-4 transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
       <AnimatePresence>
@@ -39,7 +39,8 @@ function MatrixDropdown() {
               <a
                 key={option.label}
                 href={option.href}
-                download
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
                 className="flex items-center gap-3 px-4 py-3 text-forest-deep hover:bg-cream transition-colors text-sm font-medium"
               >

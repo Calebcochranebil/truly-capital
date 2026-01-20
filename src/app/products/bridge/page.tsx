@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowLeft, CheckCircle, Phone, Download } from "lucide-react";
+import { ArrowLeft, CheckCircle, Phone, FileText } from "lucide-react";
 import { Navbar, InnerFooter } from "@/components";
 
 // Program overview data
@@ -106,9 +106,9 @@ export default function BridgePage() {
                     <Phone className="w-4 h-4" />
                     Call 866-219-2294
                   </a>
-                  <a href="/bridge-loan-matrix.pdf" download className="btn-secondary flex items-center gap-2">
-                    <Download className="w-4 h-4" />
-                    Download Matrix
+                  <a href="/bridge-loan-matrix.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center gap-2">
+                    <FileText className="w-4 h-4" />
+                    View Matrix
                   </a>
                 </div>
               </motion.div>
@@ -247,8 +247,8 @@ export default function BridgePage() {
                 <a href="tel:8662192294" className="btn-primary">
                   Call 866-219-2294
                 </a>
-                <a href="/bridge-loan-matrix.pdf" download className="btn-secondary">
-                  Download Matrix
+                <a href="/bridge-loan-matrix.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                  View Matrix
                 </a>
               </div>
             </motion.div>

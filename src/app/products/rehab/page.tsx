@@ -105,9 +105,9 @@ export default function RehabPage() {
                     <Phone className="w-4 h-4" />
                     Call 866-219-2294
                   </a>
-                  <a href="/renovation-loan-matrix.pdf" download className="btn-secondary flex items-center gap-2">
+                  <a href="/renovation-loan-matrix.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary flex items-center gap-2">
                     <FileText className="w-4 h-4" />
-                    Download Matrix
+                    View Matrix
                   </a>
                 </div>
               </motion.div>
@@ -246,8 +246,8 @@ export default function RehabPage() {
                 <a href="tel:8662192294" className="btn-primary">
                   Call 866-219-2294
                 </a>
-                <a href="/renovation-loan-matrix.pdf" download className="btn-secondary">
-                  Download Matrix
+                <a href="/renovation-loan-matrix.pdf" target="_blank" rel="noopener noreferrer" className="btn-secondary">
+                  View Matrix
                 </a>
               </div>
             </motion.div>
