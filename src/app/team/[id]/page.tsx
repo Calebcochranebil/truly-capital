@@ -16,6 +16,10 @@ const teamMembersData: Record<string, {
   image: string;
   hasPhoto?: boolean;
   bio: string[];
+  customButtons?: {
+    primary?: { label: string; href: string };
+    secondary?: { label: string; href: string };
+  };
 }> = {
   "darin-judis": {
     name: "Darin Judis",
@@ -64,6 +68,16 @@ const teamMembersData: Record<string, {
       "While Casey helps clients build their investment portfolios, she also assists brokers and referral partners in building their book of business. She takes pride in her expertise on Truly Investor Capital's full product suite, and knowing what is best for her clients, for present and future.",
       "Truly Investor Capital provides Fix & Flip, Bridge, New Construction, DSCR/Single/Portfolio Rental loans, Multi-Family and Mixed-Use to residential real estate investors across the country, helping our clients overcome traditional financing hurdles and build long-term wealth through real estate investment. Casey Truly looks forward to helping you and your client GROW!",
     ],
+    customButtons: {
+      primary: {
+        label: "Request A Quote",
+        href: "https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z=0055c00000A66SUAAZ",
+      },
+      secondary: {
+        label: "Broker Registration",
+        href: "https://applications.trulyinvestorcapital.com/form-6571264/?T8yvhYgdEG4zFKZ5cu5pWA1Z=0055c00000A66SUAAZ",
+      },
+    },
   },
   "mike-meyers": {
     name: "Mike Meyers",
@@ -277,18 +291,23 @@ export default function TeamMemberPage() {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start"
               >
-                <a href="tel:8662192294" className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4">
+                <a
+                  href={member.customButtons?.primary?.href || "tel:8662192294"}
+                  target={member.customButtons?.primary ? "_blank" : undefined}
+                  rel={member.customButtons?.primary ? "noopener noreferrer" : undefined}
+                  className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
+                >
                   <FileText className="w-4 h-4" />
-                  Request A Quote
+                  {member.customButtons?.primary?.label || "Request A Quote"}
                 </a>
                 <a
-                  href="https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z"
+                  href={member.customButtons?.secondary?.href || "https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  Apply Now
+                  {member.customButtons?.secondary?.label || "Apply Now"}
                 </a>
               </motion.div>
             </div>
