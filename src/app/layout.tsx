@@ -4,6 +4,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Truly Investor Capital | Real Estate Investor Lending",
   description: "A fast & simple process with products made specifically for Real Estate Investors. DSCR Loans, Bridge Loans, Rehab & Construction Loans.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
