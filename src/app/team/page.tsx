@@ -5,8 +5,20 @@ import Link from "next/link";
 import { Phone, Mail } from "lucide-react";
 import { Navbar, InnerFooter } from "@/components";
 
+// Team member type
+interface TeamMember {
+  id: string;
+  name: string;
+  title: string;
+  phone: string;
+  email: string;
+  image: string;
+  isLeadership: boolean;
+  nmls?: string;
+}
+
 // Team member data
-const teamMembers = [
+const teamMembers: TeamMember[] = [
   {
     id: "darin-judis",
     name: "Darin Judis",
