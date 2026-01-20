@@ -8,7 +8,7 @@ import { Navbar, InnerFooter } from "@/components";
 export default function PrivacyPage() {
   return (
     <>
-      <Navbar />
+      <Navbar currentPage="/privacy" />
       <main className="min-h-screen bg-cream">
         {/* Hero Section */}
         <section className="relative bg-forest-deep pt-40 pb-20 overflow-hidden">

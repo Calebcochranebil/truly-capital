@@ -38,7 +38,7 @@ const values = [
 export default function CareersPage() {
   return (
     <>
-      <Navbar />
+      <Navbar currentPage="/careers" />
       <main className="min-h-screen bg-cream">
         {/* Hero Section */}
         <section className="relative bg-forest-deep pt-40 pb-20 overflow-hidden">
