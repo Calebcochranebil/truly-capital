@@ -12,7 +12,7 @@ const teamMembers = [
     name: "Darin Judis",
     title: "President, Truly Investor Capital",
     phone: "626.716.2556",
-    email: "djudis@oaktreefunding.com",
+    email: "djudis@trulyinvestorcap.com",
     image: "/team/darin-judis.jpg",
     isLeadership: true,
   },
@@ -23,6 +23,15 @@ const teamMembers = [
     phone: "480.856.9158",
     email: "kkavanaugh@trulyinvestorcap.com",
     image: "/team/kevin-kavanaugh.jpg",
+    isLeadership: true,
+  },
+  {
+    id: "jolisa-garrett",
+    name: "Jolisa Garrett",
+    title: "Processing Manager",
+    phone: "480.493.1959",
+    email: "Jgarrett@oaktreefunding.com",
+    image: "/team/jolisa-garrett.jpg",
     isLeadership: true,
   },
   {
@@ -80,16 +89,6 @@ const teamMembers = [
     isLeadership: false,
   },
   {
-    id: "lindy-pond",
-    name: "Lindy Pond",
-    title: "Regional Sales Manager",
-    nmls: "203141",
-    phone: "804.647.7866",
-    email: "LPond@trulyinvestorcap.com",
-    image: "/team/lindy-pond.jpg",
-    isLeadership: false,
-  },
-  {
     id: "alex-tkachenko",
     name: "Alex Tkachenko",
     title: "Regional Sales Manager",
@@ -105,6 +104,24 @@ const teamMembers = [
     phone: "630.670.7706",
     email: "lweber@trulyinvestorcap.com",
     image: "/team/luke-weber.jpg",
+    isLeadership: false,
+  },
+  {
+    id: "andrew-haines",
+    name: "Andrew Haines",
+    title: "Regional Sales Manager",
+    phone: "610.283.3532",
+    email: "ahaines@trulyinvestorcap.com",
+    image: "/team/andrew-haines.jpg",
+    isLeadership: false,
+  },
+  {
+    id: "brian-welborne",
+    name: "Brian Welborne",
+    title: "Regional Sales Manager",
+    phone: "866.219.2294",
+    email: "bwelborne@trulyinvestorcap.com",
+    image: "/team/brian-welborne.jpg",
     isLeadership: false,
   },
 ];
@@ -152,22 +169,28 @@ function TeamMemberCard({ member }: { member: typeof teamMembers[0] }) {
 
             {/* Contact Info */}
             <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4 border-t border-cream-warm">
-              <a
-                href={`tel:${member.phone.replace(/\./g, "")}`}
-                onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors"
+              <span
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.location.href = `tel:${member.phone.replace(/\./g, "")}`;
+                }}
+                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors cursor-pointer"
               >
                 <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
                 {member.phone}
-              </a>
-              <a
-                href={`mailto:${member.email}`}
-                onClick={(e) => e.stopPropagation()}
-                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors"
+              </span>
+              <span
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  window.location.href = `mailto:${member.email}`;
+                }}
+                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors cursor-pointer"
               >
                 <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
                 <span className="truncate">{member.email}</span>
-              </a>
+              </span>
             </div>
           </div>
         </div>
@@ -245,7 +268,7 @@ export default function TeamPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto"
+            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
           >
             {leadership.map((member) => (
               <TeamMemberCard key={member.id} member={member} />

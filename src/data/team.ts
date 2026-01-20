@@ -17,26 +17,13 @@ export const teamMembers: TeamMember[] = [
     name: "Darin Judis",
     title: "President, Truly Investor Capital",
     phone: "626.716.2556",
-    email: "djudis@oaktreefunding.com",
+    email: "djudis@trulyinvestorcap.com",
     image: "/team/darin-judis.jpg",
     isLeadership: true,
     bio: [
       "Darin is a veteran mortgage executive with over 30 years of experience driving growth and innovation in wholesale and correspondent lending. As President of Truly Investor Capital and EVP of Correspondent Lending at Oaktree Funding Corp, he leads national strategy and partnerships, delivering scalable solutions that strengthen market presence and client success.",
       "Throughout his career, Darin has held senior leadership roles at Axos Bank, IndyMac Bank, and Aames Capital Corp, consistently building high-performing teams and guiding organizations through expansion in both residential lending and real estate investment finance.",
       "Recognized for his ability to optimize operations and foster long-term partnerships, Darin has a proven track record of aligning business strategy with execution to achieve measurable results. Based in California, he continues to be a trusted leader in third-party origination, shaping the future of correspondent and wholesale lending.",
-    ],
-  },
-  {
-    id: "lindy-pond",
-    name: "Lindy Pond",
-    title: "Regional Sales Manager",
-    nmls: "203141",
-    phone: "804.647.7866",
-    email: "LPond@trulyinvestorcap.com",
-    image: "/team/lindy-pond.jpg",
-    isLeadership: false,
-    bio: [
-      "Lindy specializes in providing the best possible service to all her customers and business partners. With over 16 years' experience in the mortgage banking industry, she has the knowledge and experience to help match the right product/program to fit a client's situation.",
     ],
   },
   {
@@ -78,6 +65,18 @@ export const teamMembers: TeamMember[] = [
     bio: [
       "Kevin Kavanaugh is an accomplished Business Development Manager with more than a decade of experience driving growth in sales, marketing, and product strategy. He has a proven record of exceeding sales goals, launching new products, and strengthening profit and loss performance while leading high-performing teams.",
       "Holding a Bachelor of Science in Electrical Engineering from the Georgia Institute of Technology, Kevin also brings advanced training in solution selling and financial services. His expertise in building strong client relationships and delivering consistent results makes him a valuable asset to Truly Investor Capital.",
+    ],
+  },
+  {
+    id: "jolisa-garrett",
+    name: "Jolisa Garrett",
+    title: "Processing Manager",
+    phone: "480.493.1959",
+    email: "Jgarrett@oaktreefunding.com",
+    image: "/team/jolisa-garrett.jpg",
+    isLeadership: true,
+    bio: [
+      "Jolisa Garrett serves as the Processing Manager at Truly Investor Capital, bringing expertise and dedication to ensuring smooth loan processing operations.",
     ],
   },
   {
@@ -163,6 +162,30 @@ export const teamMembers: TeamMember[] = [
       "With 20+ years of professional mortgage, real estate, and construction experience, Luke is a trusted advisor for all his clients. He offers creative lending solutions to help his clients increase their cash flow, maximize their return on investments, and grow their businesses.",
       "Luke has personally completed 37 Fix & Flip Rehabs, including 14 New Construction, in his career. He enjoys helping his clients each step of the way including property acquisition, financing, budgeting, and trade selections.",
       "In the often-complex world of real estate investing, you want a dynamic resource like Luke on your side. Truly Investor Capital provides Fix & Flip, Bridge, New Construction, and Single/Portfolio Rental loans to residential real estate investors across the country, helping our clients overcome traditional financing hurdles and build long-term wealth through real estate investment.",
+    ],
+  },
+  {
+    id: "andrew-haines",
+    name: "Andrew Haines",
+    title: "Regional Sales Manager",
+    phone: "610.283.3532",
+    email: "ahaines@trulyinvestorcap.com",
+    image: "/team/andrew-haines.jpg",
+    isLeadership: false,
+    bio: [
+      "Bio coming soon.",
+    ],
+  },
+  {
+    id: "brian-welborne",
+    name: "Brian Welborne",
+    title: "Regional Sales Manager",
+    phone: "866.219.2294",
+    email: "bwelborne@trulyinvestorcap.com",
+    image: "/team/brian-welborne.jpg",
+    isLeadership: false,
+    bio: [
+      "Bio coming soon.",
     ],
   },
 ];

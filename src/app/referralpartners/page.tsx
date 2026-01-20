@@ -400,23 +400,10 @@ export default function ReferralPartnersPage() {
             <h2 className="font-display text-4xl md:text-5xl text-white mb-4">
               Earn Up to <span className="text-gold">1%</span> of the Loan Amount
             </h2>
-            <p className="text-white/60 text-lg max-w-2xl mx-auto mb-8">
-              Payments are delivered bi-weekly. There's no cap on how much you can earn—the 
+            <p className="text-white/60 text-lg max-w-2xl mx-auto">
+              Payments are delivered bi-weekly. There's no cap on how much you can earn—the
               more you refer, the more you make.
             </p>
-            
-            <div className="flex flex-wrap justify-center gap-8 text-center">
-              {[
-                { value: "$5M", label: "Loan = $50K earned" },
-                { value: "$2M", label: "Loan = $20K earned" },
-                { value: "$500K", label: "Loan = $5K earned" }
-              ].map((item, i) => (
-                <div key={i} className="bg-white/5 border border-white/10 px-8 py-6">
-                  <div className="font-display text-3xl text-gold mb-1">{item.value}</div>
-                  <div className="text-white/50 text-sm">{item.label}</div>
-                </div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </section>

@@ -41,10 +41,10 @@ const propertyComparison = [
 
 const highlights = [
   "Fix & flip financing",
-  "Up to 90% of purchase price",
-  "100% of rehab costs available",
+  "Up to 95% of the cost basis",
+  "100% of rehab costs financed",
   "Interest-only payments",
-  "No prepayment penalty",
+  "In-house Construction Management",
   "12-18 month terms",
 ];
 
@@ -133,13 +133,9 @@ export default function RehabPage() {
                     <span className="text-white/70">Interest Type</span>
                     <span className="text-white font-semibold">Fixed, Interest Only</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white/70">Property Types</span>
-                    <span className="text-white font-semibold">1-8 Units</span>
-                  </div>
                   <div className="flex justify-between items-center py-3">
-                    <span className="text-white/70">Prepayment Penalty</span>
-                    <span className="text-gold font-semibold">None ✓</span>
+                    <span className="text-white/70">Property Types</span>
+                    <span className="text-white font-semibold">SFR, Condo, Townhomes, 2-4, 5-9</span>
                   </div>
                 </div>
               </motion.div>

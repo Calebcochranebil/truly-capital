@@ -25,23 +25,12 @@ const teamMembersData: Record<string, {
     name: "Darin Judis",
     title: "President, Truly Investor Capital",
     phone: "626.716.2556",
-    email: "djudis@oaktreefunding.com",
+    email: "djudis@trulyinvestorcap.com",
     image: "/team/darin-judis.jpg",
     bio: [
       "Darin is a veteran mortgage executive with over 30 years of experience driving growth and innovation in wholesale and correspondent lending. As President of Truly Investor Capital and EVP of Correspondent Lending at Oaktree Funding Corp, he leads national strategy and partnerships, delivering scalable solutions that strengthen market presence and client success.",
       "Throughout his career, Darin has held senior leadership roles at Axos Bank, IndyMac Bank, and Aames Capital Corp, consistently building high-performing teams and guiding organizations through expansion in both residential lending and real estate investment finance.",
       "Recognized for his ability to optimize operations and foster long-term partnerships, Darin has a proven track record of aligning business strategy with execution to achieve measurable results. Based in California, he continues to be a trusted leader in third-party origination, shaping the future of correspondent and wholesale lending.",
-    ],
-  },
-  "lindy-pond": {
-    name: "Lindy Pond",
-    title: "Regional Sales Manager",
-    nmls: "203141",
-    phone: "804.647.7866",
-    email: "LPond@trulyinvestorcap.com",
-    image: "/team/lindy-pond.jpg",
-    bio: [
-      "Lindy specializes in providing the best possible service to all her customers and business partners. With over 16 years' experience in the mortgage banking industry, she has the knowledge and experience to help match the right product/program to fit a client's situation.",
     ],
   },
   "heidi-hawk": {
@@ -114,6 +103,16 @@ const teamMembersData: Record<string, {
       "Holding a Bachelor of Science in Electrical Engineering from the Georgia Institute of Technology, Kevin also brings advanced training in solution selling and financial services. His expertise in building strong client relationships and delivering consistent results makes him a valuable asset to Truly Investor Capital.",
     ],
   },
+  "jolisa-garrett": {
+    name: "Jolisa Garrett",
+    title: "Processing Manager",
+    phone: "480.493.1959",
+    email: "Jgarrett@oaktreefunding.com",
+    image: "/team/jolisa-garrett.jpg",
+    bio: [
+      "Jolisa Garrett serves as the Processing Manager at Truly Investor Capital, bringing expertise and dedication to ensuring smooth loan processing operations.",
+    ],
+  },
   "alex-tkachenko": {
     name: "Alex Tkachenko",
     title: "Regional Sales Manager",
@@ -160,6 +159,26 @@ const teamMembersData: Record<string, {
       "At Truly, Barton lives our mission: People, Partnerships, and Process. He focuses on understanding your unique needs, offering clear guidance, and ensuring a smooth, stress-free experience with fast closings. His work supports Truly's reputation for reliable execution and attention to detail on all loan sizes, and he's here to make your financing journey seamless as an expert in all of our programs.",
       "Outside of work, Barton enjoys exploring new places, staying active, and riding mountain bike trails, bringing that same energy and dedication to helping you succeed. With Barton and Truly Investor Capital, you'll find a supportive partner, competitive rates, and a streamlined process designed to make securing your investment financing simple and worry-free.",
       "Connect with Barton to experience the Truly Difference and move forward with confidence in your next real estate deal!",
+    ],
+  },
+  "andrew-haines": {
+    name: "Andrew Haines",
+    title: "Regional Sales Manager",
+    phone: "610.283.3532",
+    email: "ahaines@trulyinvestorcap.com",
+    image: "/team/andrew-haines.jpg",
+    bio: [
+      "Bio coming soon.",
+    ],
+  },
+  "brian-welborne": {
+    name: "Brian Welborne",
+    title: "Regional Sales Manager",
+    phone: "866.219.2294",
+    email: "bwelborne@trulyinvestorcap.com",
+    image: "/team/brian-welborne.jpg",
+    bio: [
+      "Bio coming soon.",
     ],
   },
 };

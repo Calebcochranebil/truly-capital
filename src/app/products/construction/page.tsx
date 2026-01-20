@@ -44,7 +44,7 @@ const highlights = [
   "Spec & custom builds",
   "Up to 24 month terms",
   "Interest-only payments",
-  "No prepayment penalty",
+  "In-house Construction Management",
   "Flexible draw schedules",
 ];
 
@@ -123,7 +123,7 @@ export default function ConstructionPage() {
                 <div className="space-y-4">
                   <div className="flex justify-between items-center py-3 border-b border-white/10">
                     <span className="text-white/70">Loan Amounts</span>
-                    <span className="text-white font-semibold">$100K - $5M</span>
+                    <span className="text-white font-semibold">Up To $5M</span>
                   </div>
                   <div className="flex justify-between items-center py-3 border-b border-white/10">
                     <span className="text-white/70">Loan Terms</span>
@@ -133,13 +133,9 @@ export default function ConstructionPage() {
                     <span className="text-white/70">Interest Type</span>
                     <span className="text-white font-semibold">Fixed, Interest Only</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
-                    <span className="text-white/70">Property Types</span>
-                    <span className="text-white font-semibold">1-8 Units</span>
-                  </div>
                   <div className="flex justify-between items-center py-3">
-                    <span className="text-white/70">Prepayment Penalty</span>
-                    <span className="text-gold font-semibold">None ✓</span>
+                    <span className="text-white/70">Property Types</span>
+                    <span className="text-white font-semibold">SFR, Condo, Townhomes, 2-4, 5-9</span>
                   </div>
                 </div>
               </motion.div>

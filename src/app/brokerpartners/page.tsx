@@ -169,8 +169,7 @@ export default function BrokerPartnersPage() {
             <div className="space-y-4">
               {[
                 { label: "Partner retention rate", value: "97%" },
-                { label: "Average deal close time", value: "20 Days" },
-                { label: "Commission payout", value: "Same day" }
+                { label: "Commission payout", value: "At Funding" }
               ].map((item, i) => (
                 <div key={i} className="flex justify-between items-center py-2 border-b border-white/5 last:border-0">
                   <span className="text-white/50 text-sm">{item.label}</span>

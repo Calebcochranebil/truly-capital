@@ -42,9 +42,9 @@ const propertyComparison = [
 const highlights = [
   "12-month terms",
   "No prepayment penalty",
-  "Interest-only payments",
+  "Up To 80% LTV",
   "Quick closing",
-  "Raw/Entitled land eligible",
+  "620 Min. Score To Qualify",
   "Cash out for reserves",
 ];
 
@@ -87,8 +87,7 @@ export default function BridgePage() {
 
                 <p className="text-white/80 text-xl leading-relaxed mb-8">
                   Truly's Bridge Loan program is designed to provide business-purpose lending to professional and
-                  emerging real estate investors for acquiring or refinancing properties intended for rent or resale,
-                  without renovations during the loan term.
+                  emerging real estate investors for acquiring or refinancing properties intended for rent, resale, or stabilization.
                 </p>
 
                 {/* Highlights */}
@@ -134,13 +133,9 @@ export default function BridgePage() {
                     <span className="text-white/70">Interest Type</span>
                     <span className="text-white font-semibold">Fixed, Interest Only</span>
                   </div>
-                  <div className="flex justify-between items-center py-3 border-b border-white/10">
+                  <div className="flex justify-between items-center py-3">
                     <span className="text-white/70">Property Types</span>
                     <span className="text-white font-semibold">1-8 Units, Land</span>
-                  </div>
-                  <div className="flex justify-between items-center py-3">
-                    <span className="text-white/70">Prepayment Penalty</span>
-                    <span className="text-gold font-semibold">None ✓</span>
                   </div>
                 </div>
               </motion.div>

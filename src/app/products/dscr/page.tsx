@@ -121,7 +121,7 @@ const highlights = [
   "No personal income verification",
   "Purchase, refinance, or cash-out",
   "Up to 80% LTV",
-  "30-year fixed options",
+  "STR and LTR Considered",
   "Interest-only available",
   "Foreign nationals eligible",
 ];
@@ -176,8 +176,8 @@ export default function DSCRPage() {
               </h1>
 
               <p className="text-white/80 text-xl leading-relaxed mb-8">
-                Long-term financing for rental property investors. Finance a Single Investment 
-                Property or Portfolio for new Purchase, Refinance to stabilize terms or take cash-out.
+                Long-term financing for rental property investors. Finance a Single Investment
+                Property or Portfolio for new Purchase, Refinance rate and term or take cash out.
               </p>
 
               {/* Highlights */}
@@ -210,7 +210,7 @@ export default function DSCRPage() {
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-3 border-b border-white/10">
                   <span className="text-white/70">Loan Amounts</span>
-                  <span className="text-white font-semibold">$150K - $3.5M</span>
+                  <span className="text-white font-semibold">$100K - $3.5M</span>
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-white/10">
                   <span className="text-white/70">Min. DSCR</span>
