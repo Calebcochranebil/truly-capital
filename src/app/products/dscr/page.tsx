@@ -128,7 +128,7 @@ const highlights = [
 export default function DSCRPage() {
   return (
     <>
-      <Navbar />
+      <Navbar currentPage="/products/dscr" />
       <main className="min-h-screen bg-cream">
         {/* Hero Section */}
         <section className="relative bg-forest-deep pt-40 pb-20">

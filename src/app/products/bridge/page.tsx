@@ -51,7 +51,7 @@ const highlights = [
 export default function BridgePage() {
   return (
     <>
-      <Navbar />
+      <Navbar currentPage="/products/bridge" />
       <main className="min-h-screen bg-cream">
         {/* Hero Section */}
         <section className="relative bg-forest-deep pt-40 pb-20 overflow-hidden">
