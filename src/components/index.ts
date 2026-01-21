@@ -10,3 +10,4 @@ export { default as Footer } from "./Footer";
 export { default as InnerFooter } from "./InnerFooter";
 export { default as PopupForm } from "./PopupForm";
 export { default as PopupTrigger } from "./PopupTrigger";
+export { default as EmailPopup } from "./EmailPopup";

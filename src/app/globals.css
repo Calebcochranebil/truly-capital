@@ -100,3 +100,41 @@ input[type="range"]::-webkit-slider-thumb {
 input[type="range"]::-webkit-slider-thumb:hover {
   transform: scale(1.2);
 }
+
+/* Cognito Forms styling */
+.cognito-form-wrapper .cognito {
+  font-family: inherit !important;
+}
+
+.cognito-form-wrapper .cognito .c-forms-form {
+  padding: 0 !important;
+}
+
+.cognito-form-wrapper .cognito .c-forms-form-title {
+  display: none !important;
+}
+
+.cognito-form-wrapper .cognito .c-editor {
+  border: 1px solid #e8e0d0 !important;
+  border-radius: 0.5rem !important;
+  padding: 0.875rem 1rem !important;
+}
+
+.cognito-form-wrapper .cognito .c-editor:focus-within {
+  border-color: #c9a962 !important;
+  box-shadow: 0 0 0 2px rgba(201, 169, 98, 0.2) !important;
+}
+
+.cognito-form-wrapper .cognito .c-button {
+  background-color: #1a3a2f !important;
+  color: white !important;
+  font-weight: 600 !important;
+  padding: 0.875rem 1.5rem !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
+  transition: all 0.3s !important;
+}
+
+.cognito-form-wrapper .cognito .c-button:hover {
+  background-color: #2d5a47 !important;
+}

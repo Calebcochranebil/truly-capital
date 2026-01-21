@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { EmailPopup } from "@/components";
 
 export const metadata: Metadata = {
   title: "Truly Investor Capital | Real Estate Investor Lending",
@@ -18,6 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className="antialiased">
         {children}
+        <EmailPopup />
       </body>
     </html>
   );
