@@ -17,9 +17,38 @@ export default function EmailPopup() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    const hasSeenPopup = localStorage.getItem("truly-popup-seen");
+    const STORAGE_KEY = "truly-popup-data";
+    const MAX_VISITS = 3;
+    const RESET_DAYS = 30;
 
-    if (!hasSeenPopup) {
+    const storedData = localStorage.getItem(STORAGE_KEY);
+    let popupData = storedData ? JSON.parse(storedData) : null;
+
+    // Check if we need to reset (30 days have passed)
+    if (popupData) {
+      const daysSinceStart = (Date.now() - popupData.startTimestamp) / (1000 * 60 * 60 * 24);
+      if (daysSinceStart >= RESET_DAYS) {
+        // Reset the data after 30 days
+        popupData = null;
+      }
+    }
+
+    // Initialize if no data exists
+    if (!popupData) {
+      popupData = {
+        visitCount: 0,
+        startTimestamp: Date.now(),
+      };
+    }
+
+    // Increment visit count
+    popupData.visitCount += 1;
+
+    // Save updated data
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(popupData));
+
+    // Show popup only for the first 3 visits
+    if (popupData.visitCount <= MAX_VISITS) {
       const timer = setTimeout(() => {
         setIsOpen(true);
       }, 2000);
@@ -30,7 +59,6 @@ export default function EmailPopup() {
 
   const handleClose = () => {
     setIsOpen(false);
-    localStorage.setItem("truly-popup-seen", "true");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -57,7 +85,6 @@ export default function EmailPopup() {
 
       if (response.ok) {
         setIsSubmitted(true);
-        localStorage.setItem("truly-popup-seen", "true");
       }
     } catch (error) {
       console.error("Error submitting:", error);
