@@ -222,7 +222,7 @@ export default function DSCRPage() {
                 </div>
                 <div className="flex justify-between items-center py-3 border-b border-white/10">
                   <span className="text-white/70">Property Types</span>
-                  <span className="text-white font-semibold">SFR, 1-10 Units</span>
+                  <span className="text-white font-semibold">SFR, Condo, Townhomes, 2-4, 5-9</span>
                 </div>
                 <div className="flex justify-between items-center py-3">
                   <span className="text-white/70">Foreign Nationals</span>

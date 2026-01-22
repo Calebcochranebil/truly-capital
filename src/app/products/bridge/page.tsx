@@ -135,7 +135,7 @@ export default function BridgePage() {
                   </div>
                   <div className="flex justify-between items-center py-3">
                     <span className="text-white/70">Property Types</span>
-                    <span className="text-white font-semibold">1-8 Units, Land</span>
+                    <span className="text-white font-semibold">SFR, Condo, Townhomes, 2-4, 5-9</span>
                   </div>
                 </div>
               </motion.div>
