@@ -20,33 +20,16 @@ export async function POST(request: NextRequest) {
 
     const clientTypeLabel = clientType === "direct" ? "Direct Client" : "Broker Client";
 
-    // PDF files to attach (fetched via URL)
-    const pdfFiles = [
-      { filename: "DSCR Rental Loans.pdf", url: `${BASE_URL}/pdfs/DSCR%20Rental%20Loans.pdf` },
-      { filename: "Standard Rehab.pdf", url: `${BASE_URL}/pdfs/Standard%20Rehab.pdf` },
-      { filename: "Bridge Loans.pdf", url: `${BASE_URL}/pdfs/Bridge%20Loans.pdf` },
-      { filename: "New Construction.pdf", url: `${BASE_URL}/pdfs/New%20Construction.pdf` },
-    ];
-
     // Fetch logo for inline embedding
     const logoResponse = await fetch(`${BASE_URL}/trulylogo.png`);
     const logoBuffer = Buffer.from(await logoResponse.arrayBuffer());
 
-    // Fetch all PDFs in parallel
-    const pdfAttachments = await Promise.all(
-      pdfFiles.map(async (pdf) => {
-        const response = await fetch(pdf.url);
-        const arrayBuffer = await response.arrayBuffer();
-        return {
-          filename: pdf.filename,
-          content: Buffer.from(arrayBuffer),
-        };
-      })
-    );
-
-    // Combine PDFs with inline logo attachment
+    // PDF attachments using Resend's path property (more reliable)
     const attachments = [
-      ...pdfAttachments,
+      { filename: "DSCR Rental Loans.pdf", path: `${BASE_URL}/pdfs/DSCR%20Rental%20Loans.pdf` },
+      { filename: "Standard Rehab.pdf", path: `${BASE_URL}/pdfs/Standard%20Rehab.pdf` },
+      { filename: "Bridge Loans.pdf", path: `${BASE_URL}/pdfs/Bridge%20Loans.pdf` },
+      { filename: "New Construction.pdf", path: `${BASE_URL}/pdfs/New%20Construction.pdf` },
       {
         filename: "logo.png",
         content: logoBuffer,
