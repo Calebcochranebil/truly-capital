@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
-import { readFileSync } from "fs";
-import path from "path";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const MARKETING_EMAIL = "marketing@trulyinvestcapital.com";
 const FROM_EMAIL = "Truly Investor Capital <noreply@trulyinvestcapital.com>";
+const BASE_URL = "https://trulyinvestcapital.com";
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,22 +20,25 @@ export async function POST(request: NextRequest) {
 
     const clientTypeLabel = clientType === "direct" ? "Direct Client" : "Broker Client";
 
-    // Read PDF files from the public directory
+    // PDF files to attach (fetched via URL)
     const pdfFiles = [
-      { filename: "DSCR Rental Loans.pdf", path: "pdfs/DSCR Rental Loans.pdf" },
-      { filename: "Standard Rehab.pdf", path: "pdfs/Standard Rehab.pdf" },
-      { filename: "Bridge Loans.pdf", path: "pdfs/Bridge Loans.pdf" },
-      { filename: "New Construction.pdf", path: "pdfs/New Construction.pdf" },
+      { filename: "DSCR Rental Loans.pdf", url: `${BASE_URL}/pdfs/DSCR%20Rental%20Loans.pdf` },
+      { filename: "Standard Rehab.pdf", url: `${BASE_URL}/pdfs/Standard%20Rehab.pdf` },
+      { filename: "Bridge Loans.pdf", url: `${BASE_URL}/pdfs/Bridge%20Loans.pdf` },
+      { filename: "New Construction.pdf", url: `${BASE_URL}/pdfs/New%20Construction.pdf` },
     ];
 
-    const attachments = pdfFiles.map((pdf) => {
-      const filePath = path.join(process.cwd(), "public", pdf.path);
-      const content = readFileSync(filePath);
-      return {
-        filename: pdf.filename,
-        content: content,
-      };
-    });
+    // Fetch all PDFs in parallel
+    const attachments = await Promise.all(
+      pdfFiles.map(async (pdf) => {
+        const response = await fetch(pdf.url);
+        const arrayBuffer = await response.arrayBuffer();
+        return {
+          filename: pdf.filename,
+          content: Buffer.from(arrayBuffer),
+        };
+      })
+    );
 
     // Send email to user with PDFs attached
     await resend.emails.send({
