@@ -5,9 +5,12 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 const MARKETING_EMAIL = "marketing@trulyinvestcapital.com";
 const FROM_EMAIL = "Truly Investor Capital <noreply@trulyinvestcapital.com>";
-const BASE_URL = "https://trulyinvestcapital.com";
 
 export async function POST(request: NextRequest) {
+  // Get base URL from request origin for fetching assets
+  const origin = request.headers.get("origin") || request.headers.get("host");
+  const protocol = origin?.includes("localhost") ? "http" : "https";
+  const baseUrl = origin?.includes("://") ? origin : `${protocol}://${origin}`;
   try {
     const { firstName, lastName, email, clientType } = await request.json();
 
@@ -21,21 +24,28 @@ export async function POST(request: NextRequest) {
     const clientTypeLabel = clientType === "direct" ? "Direct Client" : "Broker Client";
 
     // Fetch logo for inline embedding
-    const logoResponse = await fetch(`${BASE_URL}/trulylogo.png`);
+    const logoResponse = await fetch(`${baseUrl}/trulylogo.png`);
+    if (!logoResponse.ok) {
+      console.error(`Failed to fetch logo: ${logoResponse.status}`);
+    }
     const logoBuffer = Buffer.from(await logoResponse.arrayBuffer());
 
     // PDF files to fetch
     const pdfFiles = [
-      { filename: "DSCR Rental Loans.pdf", url: `${BASE_URL}/pdfs/DSCR%20Rental%20Loans.pdf` },
-      { filename: "Standard Rehab.pdf", url: `${BASE_URL}/pdfs/Standard%20Rehab.pdf` },
-      { filename: "Bridge Loans.pdf", url: `${BASE_URL}/pdfs/Bridge%20Loans.pdf` },
-      { filename: "New Construction.pdf", url: `${BASE_URL}/pdfs/New%20Construction.pdf` },
+      { filename: "DSCR Rental Loans.pdf", url: `${baseUrl}/pdfs/DSCR%20Rental%20Loans.pdf` },
+      { filename: "Standard Rehab.pdf", url: `${baseUrl}/pdfs/Standard%20Rehab.pdf` },
+      { filename: "Bridge Loans.pdf", url: `${baseUrl}/pdfs/Bridge%20Loans.pdf` },
+      { filename: "New Construction.pdf", url: `${baseUrl}/pdfs/New%20Construction.pdf` },
     ];
 
     // Fetch all PDFs
     const pdfAttachments = await Promise.all(
       pdfFiles.map(async (pdf) => {
         const response = await fetch(pdf.url);
+        if (!response.ok) {
+          console.error(`Failed to fetch ${pdf.filename}: ${response.status} from ${pdf.url}`);
+          throw new Error(`Failed to fetch ${pdf.filename}`);
+        }
         const arrayBuffer = await response.arrayBuffer();
         return {
           filename: pdf.filename,
@@ -175,8 +185,9 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Error sending emails:", error);
+    const errorMessage = error instanceof Error ? error.message : "Failed to send emails";
     return NextResponse.json(
-      { error: "Failed to send emails" },
+      { error: errorMessage },
       { status: 500 }
     );
   }
