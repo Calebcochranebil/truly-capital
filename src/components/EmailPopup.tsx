@@ -15,6 +15,7 @@ export default function EmailPopup() {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const STORAGE_KEY = "truly-popup-data";
@@ -68,6 +69,7 @@ export default function EmailPopup() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError("");
 
     try {
       const response = await fetch("/api/signup", {
@@ -85,9 +87,13 @@ export default function EmailPopup() {
 
       if (response.ok) {
         setIsSubmitted(true);
+      } else {
+        const data = await response.json();
+        setError(data.error || "Something went wrong. Please try again.");
       }
-    } catch (error) {
-      console.error("Error submitting:", error);
+    } catch (err) {
+      console.error("Error submitting:", err);
+      setError("Network error. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -162,6 +168,11 @@ export default function EmailPopup() {
                     </div>
 
                     <form onSubmit={handleSubmit} className="space-y-3">
+                      {error && (
+                        <div className="bg-red-50 text-red-600 text-sm p-3 rounded-lg">
+                          {error}
+                        </div>
+                      )}
                       <div className="grid grid-cols-2 gap-3">
                         <div className="relative">
                           <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate/50" />
