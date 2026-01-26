@@ -54,14 +54,13 @@ export async function POST(request: NextRequest) {
       })
     );
 
-    const attachments = [
-      ...pdfAttachments,
-      {
-        filename: "logo.png",
-        content: logoBuffer,
-        cid: "trulylogo",
-      },
-    ];
+    // Logo as inline image (separate from PDF attachments)
+    const logoAttachment = {
+      filename: "logo.png",
+      content: logoBuffer,
+      cid: "trulylogo",
+      contentType: "image/png",
+    };
 
     // Send email to user with PDFs attached
     await resend.emails.send({
@@ -123,7 +122,7 @@ export async function POST(request: NextRequest) {
         </body>
         </html>
       `,
-      attachments,
+      attachments: [logoAttachment, ...pdfAttachments],
     });
 
     // Send notification email to marketing team
