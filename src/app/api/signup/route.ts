@@ -23,12 +23,14 @@ export async function POST(request: NextRequest) {
 
     const clientTypeLabel = clientType === "direct" ? "Direct Client" : "Broker Client";
 
-    // Fetch logo for inline embedding
+    // Fetch logo and convert to base64 for inline embedding
     const logoResponse = await fetch(`${baseUrl}/trulylogo.png`);
     if (!logoResponse.ok) {
       console.error(`Failed to fetch logo: ${logoResponse.status}`);
     }
     const logoBuffer = Buffer.from(await logoResponse.arrayBuffer());
+    const logoBase64 = logoBuffer.toString("base64");
+    const logoDataUri = `data:image/png;base64,${logoBase64}`;
 
     // PDF files to fetch
     const pdfFiles = [
@@ -54,13 +56,6 @@ export async function POST(request: NextRequest) {
       })
     );
 
-    // Logo as inline image (separate from PDF attachments)
-    const logoAttachment = {
-      filename: "logo.png",
-      content: logoBuffer,
-      cid: "trulylogo",
-      contentType: "image/png",
-    };
 
     // Send email to user with PDFs attached
     await resend.emails.send({
@@ -81,7 +76,7 @@ export async function POST(request: NextRequest) {
             </tr>
             <tr>
               <td style="padding: 40px 30px; text-align: center;">
-                <img src="cid:trulylogo" alt="Truly Investor Capital" style="height: 50px; width: auto; margin-bottom: 30px;">
+                <img src="${logoDataUri}" alt="Truly Investor Capital" style="height: 50px; width: auto; margin-bottom: 30px;">
 
                 <h1 style="color: #1a3a2f; font-size: 24px; margin: 0 0 20px 0;">
                   Hi ${firstName}, here are your marketing materials!
@@ -122,7 +117,7 @@ export async function POST(request: NextRequest) {
         </body>
         </html>
       `,
-      attachments: [logoAttachment, ...pdfAttachments],
+      attachments: pdfAttachments,
     });
 
     // Send notification email to marketing team
