@@ -28,8 +28,12 @@ export async function POST(request: NextRequest) {
       { filename: "New Construction.pdf", url: `${BASE_URL}/pdfs/New%20Construction.pdf` },
     ];
 
+    // Fetch logo for inline embedding
+    const logoResponse = await fetch(`${BASE_URL}/trulylogo.png`);
+    const logoBuffer = Buffer.from(await logoResponse.arrayBuffer());
+
     // Fetch all PDFs in parallel
-    const attachments = await Promise.all(
+    const pdfAttachments = await Promise.all(
       pdfFiles.map(async (pdf) => {
         const response = await fetch(pdf.url);
         const arrayBuffer = await response.arrayBuffer();
@@ -39,6 +43,16 @@ export async function POST(request: NextRequest) {
         };
       })
     );
+
+    // Combine PDFs with inline logo attachment
+    const attachments = [
+      ...pdfAttachments,
+      {
+        filename: "logo.png",
+        content: logoBuffer,
+        cid: "trulylogo",
+      },
+    ];
 
     // Send email to user with PDFs attached
     await resend.emails.send({
@@ -59,7 +73,7 @@ export async function POST(request: NextRequest) {
             </tr>
             <tr>
               <td style="padding: 40px 30px; text-align: center;">
-                <img src="https://trulyinvestcapital.com/trulylogo.png" alt="Truly Investor Capital" style="height: 50px; width: auto; margin-bottom: 30px;">
+                <img src="cid:trulylogo" alt="Truly Investor Capital" style="height: 50px; width: auto; margin-bottom: 30px;">
 
                 <h1 style="color: #1a3a2f; font-size: 24px; margin: 0 0 20px 0;">
                   Hi ${firstName}, here are your marketing materials!
