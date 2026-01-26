@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Mail, User, CheckCircle, ChevronDown, Download } from "lucide-react";
+import { X, Mail, User, CheckCircle, ChevronDown } from "lucide-react";
 import Image from "next/image";
 
 export default function EmailPopup() {
@@ -70,7 +70,7 @@ export default function EmailPopup() {
     setIsLoading(true);
 
     try {
-      const response = await fetch("https://formspree.io/f/mvzzwwkn", {
+      const response = await fetch("/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,7 +79,7 @@ export default function EmailPopup() {
           firstName: formData.firstName,
           lastName: formData.lastName,
           email: formData.email,
-          clientType: formData.clientType === "direct" ? "Direct Client" : "Broker Client",
+          clientType: formData.clientType,
         }),
       });
 
@@ -92,13 +92,6 @@ export default function EmailPopup() {
       setIsLoading(false);
     }
   };
-
-  const pdfDownloads = [
-    { name: "DSCR Rental Loans", file: "/pdfs/DSCR%20Rental%20Loans.pdf" },
-    { name: "Standard Rehab", file: "/pdfs/Standard%20Rehab.pdf" },
-    { name: "Bridge Loans", file: "/pdfs/Bridge%20Loans.pdf" },
-    { name: "New Construction", file: "/pdfs/New%20Construction.pdf" },
-  ];
 
   return (
     <AnimatePresence>
@@ -272,26 +265,12 @@ export default function EmailPopup() {
                       You&apos;re All Set!
                     </h2>
                     <p className="text-slate text-sm mb-6">
-                      Download your free marketing materials below.
+                      We&apos;ve sent your marketing materials to your email.
                     </p>
-
-                    <div className="space-y-2">
-                      {pdfDownloads.map((pdf, i) => (
-                        <a
-                          key={i}
-                          href={pdf.file}
-                          download
-                          className="flex items-center justify-between w-full px-4 py-3 bg-cream hover:bg-cream-warm rounded-lg transition-colors group"
-                        >
-                          <span className="text-forest-deep text-sm font-medium">{pdf.name}</span>
-                          <Download className="w-4 h-4 text-gold group-hover:text-forest-deep transition-colors" />
-                        </a>
-                      ))}
-                    </div>
 
                     <button
                       onClick={handleClose}
-                      className="w-full mt-6 bg-forest-deep hover:bg-forest text-white font-semibold py-3 rounded-lg transition-all duration-300 text-sm"
+                      className="w-full bg-forest-deep hover:bg-forest text-white font-semibold py-3 rounded-lg transition-all duration-300 text-sm"
                     >
                       Done
                     </button>
