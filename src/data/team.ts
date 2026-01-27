@@ -100,7 +100,6 @@ export const teamMembers: TeamMember[] = [
     phone: "213.822.4733",
     email: "blewis@trulyinvestorcap.com",
     image: "/team/barton-lewis.jpg",
-    hasPhoto: true,
     isLeadership: false,
     bio: [
       "With over 15 years of mortgage experience in roles like Senior Account Executive, EVP, and Operations Director, Barton Lewis is committed to supporting your real estate investment goals at Truly Investor Capital. He brings deep knowledge of our tailored loan products—Rehab, Bridge, New Construction, Single Property Rental, Multifamily Rental, and Portfolio Loans—to guide you through every step of the financing process with clarity and care.",
