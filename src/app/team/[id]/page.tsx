@@ -241,7 +241,7 @@ export default function TeamMemberPage() {
       <Navbar currentPage="/team" />
       <main className="min-h-screen bg-cream">
         {/* Back Navigation */}
-      <div className="bg-forest-deep pt-24 sm:pt-28 pb-6 sm:pb-8">
+      <div className="bg-forest-deep pt-28 sm:pt-32 pb-6 sm:pb-8">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <Link
             href="/team"

@@ -220,7 +220,7 @@ export default function TeamPage() {
       <Navbar currentPage="/team" />
       <main className="min-h-screen bg-cream">
         {/* Hero Section */}
-        <section className="relative bg-forest-deep pt-24 sm:pt-32 pb-12 sm:pb-20 overflow-hidden">
+        <section className="relative bg-forest-deep pt-28 sm:pt-32 pb-12 sm:pb-20 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gold rounded-full blur-3xl" />

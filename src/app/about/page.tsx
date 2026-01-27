@@ -107,7 +107,7 @@ export default function AboutPage() {
       <Navbar currentPage="/about" />
       <main className="bg-cream min-h-screen">
         {/* Hero Section */}
-        <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-20">
+        <section className="relative min-h-[70vh] flex items-center overflow-hidden pt-28 sm:pt-20">
         {/* Background Image with Overlay */}
         <div className="absolute inset-0">
           <Image
