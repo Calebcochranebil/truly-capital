@@ -102,6 +102,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          className="text-center lg:text-left"
         >
           <h1 className="font-display text-5xl sm:text-6xl md:text-6xl lg:text-7xl font-medium text-white leading-[1.1] mb-4 sm:mb-6">
             <span className="block">Investor Lending</span>
@@ -115,10 +116,10 @@ export default function Hero() {
               />
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-6 sm:mb-10 max-w-lg text-balance">
+          <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-6 sm:mb-10 max-w-lg mx-auto lg:mx-0 text-balance">
             We provide fast, streamlined real estate lending solutions for direct borrowers and broker partners, built to support investor success.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <a href="https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z" target="_blank" rel="noopener noreferrer" className="btn-primary">Apply Now</a>
             <a href="/#products" className="btn-secondary">Explore Products</a>
           </div>

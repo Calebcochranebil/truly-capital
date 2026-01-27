@@ -215,13 +215,13 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 className="mt-8 pt-8 border-t border-white/10"
               >
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-                  <span className="text-white/40 text-sm">Already a partner? Access the portal</span>
-                  <div className="flex flex-col sm:flex-row gap-3">
+                  <span className="text-white/40 text-sm text-center sm:text-left">Already a partner? Access the portal</span>
+                  <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
                     <a
                       href="https://tmadvantage.my.site.com/Borrower/login"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 hover:bg-gold hover:border-gold transition-all duration-300"
+                      className="group flex items-center justify-center gap-3 bg-white/5 border border-white/10 px-6 py-3 hover:bg-gold hover:border-gold transition-all duration-300"
                     >
                       <LogIn className="w-4 h-4 text-gold group-hover:text-forest-deep transition-colors" />
                       <span className="text-white group-hover:text-forest-deep text-sm font-medium transition-colors">Borrower Login</span>
@@ -230,7 +230,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                       href="https://tmadvantage.my.site.com/Broker/login"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center gap-3 bg-white/5 border border-white/10 px-6 py-3 hover:bg-gold hover:border-gold transition-all duration-300"
+                      className="group flex items-center justify-center gap-3 bg-white/5 border border-white/10 px-6 py-3 hover:bg-gold hover:border-gold transition-all duration-300"
                     >
                       <Briefcase className="w-4 h-4 text-gold group-hover:text-forest-deep transition-colors" />
                       <span className="text-white group-hover:text-forest-deep text-sm font-medium transition-colors">Broker Login</span>
