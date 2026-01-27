@@ -155,8 +155,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll Indicator - Hidden on mobile */}
-      <div className="hidden md:flex absolute bottom-12 left-1/2 -translate-x-1/2 flex-col items-center">
+      {/* Scroll Indicator */}
+      <div className="flex absolute bottom-6 sm:bottom-12 left-1/2 -translate-x-1/2 flex-col items-center">
         <motion.div
           className="relative"
           animate={{
