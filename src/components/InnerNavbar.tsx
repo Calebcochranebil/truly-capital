@@ -53,7 +53,7 @@ export default function InnerNavbar() {
             </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center">
+            <nav className="hidden xl:flex items-center">
               {/* Main Links */}
               <div className="flex items-center gap-1 mr-8">
                 {[
@@ -152,7 +152,7 @@ export default function InnerNavbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileOpen(true)}
-              className="lg:hidden w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              className="xl:hidden w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
             >
               <Menu className="w-6 h-6" />
             </button>
@@ -167,7 +167,7 @@ export default function InnerNavbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[2000] lg:hidden"
+            className="fixed inset-0 z-[2000] xl:hidden"
           >
             {/* Backdrop */}
             <motion.div
