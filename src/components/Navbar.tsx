@@ -209,6 +209,30 @@ export default function Navbar({ currentPage }: NavbarProps) {
                 </div>
               </div>
 
+              {/* Contact Numbers - Mobile */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.12, duration: 0.2 }}
+                className="mt-8 pt-8 border-t border-white/10"
+              >
+                <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
+                  Contact Us
+                </span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {phoneNumbers.map((phone) => (
+                    <a
+                      key={phone.label}
+                      href={`tel:${phone.tel}`}
+                      className="bg-white/[0.02] border border-white/[0.06] px-4 py-3 hover:bg-gold/10 hover:border-gold/20 transition-all duration-300"
+                    >
+                      <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-1">{phone.label}</span>
+                      <span className="block text-white font-semibold text-sm">{phone.number}</span>
+                    </a>
+                  ))}
+                </div>
+              </motion.div>
+
               {/* Login Section */}
               <motion.div
                 initial={{ opacity: 0 }}
@@ -359,18 +383,18 @@ export default function Navbar({ currentPage }: NavbarProps) {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: 8 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute right-0 top-full mt-2 bg-white border border-cream-warm rounded-lg shadow-xl overflow-hidden min-w-[200px] z-50"
+                      className="absolute right-0 top-full mt-2 bg-white border border-cream-warm rounded-lg shadow-xl overflow-hidden w-[220px] z-50"
                     >
                       {phoneNumbers.map((phone, index) => (
                         <a
                           key={phone.label}
                           href={`tel:${phone.tel}`}
-                          className={`flex items-center justify-between gap-4 px-4 py-3 hover:bg-cream transition-colors ${
+                          className={`block px-4 py-3 hover:bg-cream transition-colors ${
                             index !== phoneNumbers.length - 1 ? 'border-b border-cream-warm' : ''
                           }`}
                         >
-                          <span className="text-forest-deep/60 text-xs uppercase tracking-wide">{phone.label}</span>
-                          <span className="text-forest-deep font-medium text-sm">{phone.number}</span>
+                          <span className="block text-forest-deep/50 text-[10px] uppercase tracking-wider mb-0.5">{phone.label}</span>
+                          <span className="block text-forest-deep font-semibold text-sm">{phone.number}</span>
                         </a>
                       ))}
                     </motion.div>
