@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { Phone, Mail, ArrowLeft, FileText, MessageSquare } from "lucide-react";
+import { Phone, Mail, ArrowLeft, FileText, MessageSquare, Building2, Wrench, HardHat, Layers, ArrowRight } from "lucide-react";
 import { Navbar, InnerFooter } from "@/components";
 
 // Complete team member data with full bios
@@ -187,6 +187,33 @@ const teamMembersData: Record<string, {
     ],
   },
 };
+
+const products = [
+  {
+    icon: Wrench,
+    title: "Rehab Loans",
+    description: "Finance fix and flip projects with flexible terms and fast funding.",
+    href: "/products/rehab",
+  },
+  {
+    icon: HardHat,
+    title: "Construction Loans",
+    description: "Ground-up construction financing with flexible draw schedules.",
+    href: "/products/construction",
+  },
+  {
+    icon: Building2,
+    title: "DSCR Loans",
+    description: "Finance based on rental income, not personal income.",
+    href: "/products/dscr",
+  },
+  {
+    icon: Layers,
+    title: "Bridge Loans",
+    description: "Short-term financing to bridge gaps between loans.",
+    href: "/products/bridge",
+  },
+];
 
 export default function TeamMemberPage() {
   const params = useParams();
@@ -397,61 +424,56 @@ export default function TeamMemberPage() {
         </div>
       </section>
 
-      {/* Other Team Members */}
+      {/* What I Offer */}
       <section className="py-12 sm:py-16 bg-gradient-to-b from-cream to-cream-warm">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-8"
+            className="text-center mb-8 sm:mb-10"
           >
-            <span className="text-gold text-xs tracking-[0.2em] uppercase">Our Team</span>
+            <span className="text-gold text-xs tracking-[0.2em] uppercase">Products</span>
             <h3 className="font-display text-xl sm:text-2xl text-forest-deep mt-2">
-              Work With Another Expert
+              What I Offer
             </h3>
           </motion.div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-            {Object.entries(teamMembersData)
-              .filter(([id]) => id !== memberId)
-              .slice(0, 4)
-              .map(([id, m], index) => (
-                <motion.div
-                  key={id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            {products.map((product, index) => (
+              <motion.div
+                key={product.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Link
+                  href={product.href}
+                  className="group block bg-white p-4 sm:p-6 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gold/20 h-full relative overflow-hidden"
                 >
-                  <Link
-                    href={`/team/${id}`}
-                    className="group block bg-white p-4 sm:p-5 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 border border-transparent hover:border-gold/20 text-center"
-                  >
-                    <span className="text-forest-deep group-hover:text-gold transition-colors font-medium text-sm sm:text-base block">
-                      {m.name}
-                    </span>
-                    <span className="text-slate/60 text-xs mt-1 block">
-                      {m.title.split(',')[0]}
-                    </span>
-                  </Link>
-                </motion.div>
-              ))}
+                  {/* Top accent line */}
+                  <div className="absolute top-0 left-0 h-1 bg-gold w-0 group-hover:w-full transition-all duration-500" />
+
+                  {/* Icon */}
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-forest-deep flex items-center justify-center mb-3 sm:mb-4 group-hover:bg-gold transition-colors duration-500">
+                    <product.icon className="w-5 h-5 sm:w-6 sm:h-6 text-gold group-hover:text-forest-deep transition-colors duration-500" />
+                  </div>
+
+                  <h4 className="font-display text-base sm:text-lg text-forest-deep mb-2 group-hover:text-gold transition-colors">
+                    {product.title}
+                  </h4>
+                  <p className="text-slate text-xs sm:text-sm leading-relaxed mb-3">
+                    {product.description}
+                  </p>
+
+                  <span className="inline-flex items-center gap-1 text-forest-deep font-semibold text-xs sm:text-sm group-hover:text-gold transition-colors">
+                    Learn More
+                    <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </Link>
+              </motion.div>
+            ))}
           </div>
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="text-center mt-8"
-          >
-            <Link
-              href="/team"
-              className="inline-flex items-center gap-2 text-forest-deep hover:text-gold transition-colors font-medium text-sm group"
-            >
-              View All Team Members
-              <span className="group-hover:translate-x-1 transition-transform">→</span>
-            </Link>
-          </motion.div>
         </div>
       </section>
       </main>
