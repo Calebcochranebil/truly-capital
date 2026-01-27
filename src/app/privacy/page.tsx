@@ -377,8 +377,8 @@ export default function PrivacyPage() {
                     </div>
                     <div className="flex items-start gap-3">
                       <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <a href="mailto:customersupport@trulyinvestorcapital.com" className="text-white hover:text-gold transition-colors text-sm sm:text-base break-all">
-                        customersupport@trulyinvestorcapital.com
+                      <a href="mailto:customersupport@trulyinvestorcapital.com" className="text-white hover:text-gold transition-colors text-sm sm:text-base">
+                        Email us
                       </a>
                     </div>
                     <div className="flex items-start gap-3">
