@@ -6,7 +6,7 @@ import { motion, useInView } from "framer-motion";
 const stats = [
   { value: 3500, label: "Loans Funded", suffix: "+" },
   { value: 2, label: "Billion Funded", suffix: "B+", isDecimal: false },
-  { value: 48, label: "States Served", suffix: "+" },
+  { value: 46, label: "States Served", suffix: "+" },
   { value: 20, label: "Day Avg Close", suffix: "+" },
 ];
 
