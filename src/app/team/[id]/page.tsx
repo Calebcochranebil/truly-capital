@@ -178,7 +178,8 @@ const teamMembersData: Record<string, {
     email: "bwelborne@trulyinvestorcap.com",
     image: "/team/brian-welborne.jpg",
     bio: [
-      "Bio coming soon.",
+      "As a Regional Sales Manager at Truly Investor Capital, I strive to provide excellent service. I pride myself on my responsiveness as I always get back to my Broker Partners in a timely fashion. I have been in the industry for over 30 years, with experience as a wholesale account executive, mortgage loan originator and real estate agent.",
+      "In my spare time, I enjoy golfing. My motto is A B C! Always Be Closing! I am proud to be part of the Truly Investor Capital Lending Team!",
     ],
   },
 };
@@ -320,13 +321,13 @@ export default function TeamMemberPage() {
                   {member.customButtons?.primary?.label || "Request A Quote"}
                 </a>
                 <a
-                  href={member.customButtons?.secondary?.href || "https://applications.trulyinvestorcapital.com/form-6571272/?N8yvhYgdEG4zFKZ5cu5pWA1Z"}
+                  href={member.customButtons?.secondary?.href || "https://applications.trulyinvestorcapital.com/form-6571264/"}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
                 >
                   <MessageSquare className="w-4 h-4" />
-                  {member.customButtons?.secondary?.label || "Apply Now"}
+                  {member.customButtons?.secondary?.label || "Broker Registration"}
                 </a>
               </motion.div>
             </div>
