@@ -347,18 +347,18 @@ export default function TeamMemberPage() {
                     href={member.customButtons?.primary?.href || "https://applications.trulyinvestorcapital.com/form-6571272/"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
+                    className="btn-primary flex items-center justify-center gap-2 text-xs sm:text-sm px-3 sm:px-6 py-2.5 sm:py-3 whitespace-nowrap"
                   >
-                    <FileText className="w-4 h-4" />
+                    <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 hidden sm:block" />
                     {member.customButtons?.primary?.label || "Request A Quote"}
                   </a>
                   <a
                     href={member.customButtons?.secondary?.href || "https://applications.trulyinvestorcapital.com/form-6571264/"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
+                    className="btn-secondary flex items-center justify-center gap-2 text-xs sm:text-sm px-3 sm:px-6 py-2.5 sm:py-3 whitespace-nowrap"
                   >
-                    <MessageSquare className="w-4 h-4" />
+                    <MessageSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 hidden sm:block" />
                     {member.customButtons?.secondary?.label || "Broker Registration"}
                   </a>
                 </motion.div>
@@ -433,8 +433,8 @@ export default function TeamMemberPage() {
             viewport={{ once: true }}
             className="text-center mb-8 sm:mb-10"
           >
-            <span className="text-gold text-xs tracking-[0.2em] uppercase">Products</span>
-            <h3 className="font-display text-xl sm:text-2xl text-forest-deep mt-2">
+            <span className="text-gold text-xs sm:text-sm tracking-[0.2em] uppercase">Products</span>
+            <h3 className="font-display text-2xl sm:text-3xl text-forest-deep mt-2">
               What I Offer
             </h3>
           </motion.div>
