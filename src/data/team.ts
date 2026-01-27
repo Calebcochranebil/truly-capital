@@ -185,7 +185,8 @@ export const teamMembers: TeamMember[] = [
     image: "/team/brian-welborne.jpg",
     isLeadership: false,
     bio: [
-      "Bio coming soon.",
+      "As a Regional Sales Manager at Truly Investor Capital, I strive to provide excellent service. I pride myself on my responsiveness as I always get back to my Broker Partners in a timely fashion. I have been in the industry for over 30 years, with experience as a wholesale account executive, mortgage loan originator and real estate agent.",
+      "In my spare time, I enjoy golfing. My motto is A B C! Always Be Closing! I am proud to be part of the Truly Investor Capital Lending Team!",
     ],
   },
 ];
