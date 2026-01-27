@@ -149,7 +149,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
                   </a>
 
                   {/* Quick Links - Mobile */}
-                  <div className="lg:hidden mt-8 pt-6 border-t border-white/10">
+                  <div className="xl:hidden mt-8 pt-6 border-t border-white/10">
                     <span className="inline-block text-gold text-xs font-semibold tracking-[0.2em] uppercase mb-4">
                       Quick Links
                     </span>
@@ -302,7 +302,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             </Link>
 
             {/* Center Nav Links */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden xl:flex items-center">
               <ul className="flex items-center gap-1">
                 {/* Explore Dropdown Trigger */}
                 <li>
@@ -367,7 +367,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
             <div className="flex items-center gap-4 md:gap-6">
               {/* Phone Dropdown */}
               <div
-                className="hidden md:block relative"
+                className="hidden xl:block relative"
                 onMouseEnter={() => setIsPhoneDropdownOpen(true)}
                 onMouseLeave={() => setIsPhoneDropdownOpen(false)}
               >
@@ -417,7 +417,7 @@ export default function Navbar({ currentPage }: NavbarProps) {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="lg:hidden w-10 h-10 flex items-center justify-center text-forest-deep/80 hover:text-forest-deep transition-colors"
+                className="xl:hidden w-10 h-10 flex items-center justify-center text-forest-deep/80 hover:text-forest-deep transition-colors"
               >
                 <Menu className="w-5 h-5" />
               </button>
