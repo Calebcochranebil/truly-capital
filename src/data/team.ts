@@ -173,7 +173,8 @@ export const teamMembers: TeamMember[] = [
     image: "/team/andrew-haines.jpg",
     isLeadership: false,
     bio: [
-      "Bio coming soon.",
+      "Andrew Haines is a seasoned private money lending professional with over five years of experience originating renovation, ground-up construction, bridge, and DSCR loans. Known for his exemplary customer service, Andrew combines deep product knowledge with a solutions-driven approach to help borrowers navigate complex real estate transactions with confidence.",
+      "His unparalleled commitment to service, responsiveness, and transparency has earned the trust of investors, brokers, and borrowers alike, consistently delivering smooth closings and long-term relationships built on results.",
     ],
   },
   {
