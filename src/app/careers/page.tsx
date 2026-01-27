@@ -190,28 +190,6 @@ export default function CareersPage() {
             </div>
           </div>
         </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-forest-deep">
-          <div className="max-w-4xl mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
-                Your Next Chapter Starts Here
-              </h2>
-              <a
-                href="mailto:careers@trulyinvestorcap.com"
-                className="btn-primary inline-flex items-center gap-2"
-              >
-                <Mail className="w-4 h-4" />
-                Get In Touch
-              </a>
-            </motion.div>
-          </div>
-        </section>
       </main>
       <InnerFooter />
     </>
