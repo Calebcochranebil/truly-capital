@@ -15,6 +15,7 @@ const teamMembersData: Record<string, {
   email: string;
   image: string;
   hasPhoto?: boolean;
+  hideButtons?: boolean;
   bio: string[];
   customButtons?: {
     primary?: { label: string; href: string };
@@ -27,6 +28,7 @@ const teamMembersData: Record<string, {
     phone: "626.716.2556",
     email: "djudis@trulyinvestorcap.com",
     image: "/team/darin-judis.jpg",
+    hideButtons: true,
     bio: [
       "Darin is a veteran mortgage executive with over 30 years of experience driving growth and innovation in wholesale and correspondent lending. As President of Truly Investor Capital and EVP of Correspondent Lending at Oaktree Funding Corp, he leads national strategy and partnerships, delivering scalable solutions that strengthen market presence and client success.",
       "Throughout his career, Darin has held senior leadership roles at Axos Bank, IndyMac Bank, and Aames Capital Corp, consistently building high-performing teams and guiding organizations through expansion in both residential lending and real estate investment finance.",
@@ -98,6 +100,7 @@ const teamMembersData: Record<string, {
     phone: "480.856.9158",
     email: "kkavanaugh@trulyinvestorcap.com",
     image: "/team/kevin-kavanaugh.jpg",
+    hideButtons: true,
     bio: [
       "Kevin Kavanaugh is an accomplished Business Development Manager with more than a decade of experience driving growth in sales, marketing, and product strategy. He has a proven record of exceeding sales goals, launching new products, and strengthening profit and loss performance while leading high-performing teams.",
       "Holding a Bachelor of Science in Electrical Engineering from the Georgia Institute of Technology, Kevin also brings advanced training in solution selling and financial services. His expertise in building strong client relationships and delivering consistent results makes him a valuable asset to Truly Investor Capital.",
@@ -109,6 +112,7 @@ const teamMembersData: Record<string, {
     phone: "480.493.1959",
     email: "Jgarrett@oaktreefunding.com",
     image: "/team/jolisa-garrett.jpg",
+    hideButtons: true,
     bio: [
       "Jolisa Garrett serves as the Processing Manager at Truly Investor Capital, bringing expertise and dedication to ensuring smooth loan processing operations.",
     ],
@@ -305,31 +309,33 @@ export default function TeamMemberPage() {
               </motion.div>
 
               {/* Action Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start"
-              >
-                <a
-                  href={member.customButtons?.primary?.href || "tel:8662192294"}
-                  target={member.customButtons?.primary ? "_blank" : undefined}
-                  rel={member.customButtons?.primary ? "noopener noreferrer" : undefined}
-                  className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
+              {!member.hideButtons && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.4 }}
+                  className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start"
                 >
-                  <FileText className="w-4 h-4" />
-                  {member.customButtons?.primary?.label || "Request A Quote"}
-                </a>
-                <a
-                  href={member.customButtons?.secondary?.href || "https://applications.trulyinvestorcapital.com/form-6571264/"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  {member.customButtons?.secondary?.label || "Broker Registration"}
-                </a>
-              </motion.div>
+                  <a
+                    href={member.customButtons?.primary?.href || "https://applications.trulyinvestorcapital.com/form-6571272/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
+                  >
+                    <FileText className="w-4 h-4" />
+                    {member.customButtons?.primary?.label || "Request A Quote"}
+                  </a>
+                  <a
+                    href={member.customButtons?.secondary?.href || "https://applications.trulyinvestorcapital.com/form-6571264/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-secondary flex items-center justify-center gap-2 text-sm sm:text-base px-5 sm:px-8 py-3 sm:py-4"
+                  >
+                    <MessageSquare className="w-4 h-4" />
+                    {member.customButtons?.secondary?.label || "Broker Registration"}
+                  </a>
+                </motion.div>
+              )}
             </div>
 
             {/* Profile Photo - only shown if hasPhoto is true */}
