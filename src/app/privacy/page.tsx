@@ -361,29 +361,29 @@ export default function PrivacyPage() {
                 </p>
 
                 {/* Contact Section */}
-                <div className="bg-forest-deep text-white p-8 md:p-10 mt-12">
-                  <h2 className="font-display text-2xl mb-6">Exercise Your Rights</h2>
-                  <p className="text-white/80 mb-6">
+                <div className="bg-forest-deep text-white p-6 sm:p-8 md:p-10 mt-12">
+                  <h2 className="font-display text-xl sm:text-2xl mb-6">Exercise Your Rights</h2>
+                  <p className="text-white/80 mb-6 text-sm sm:text-base">
                     You may exercise your right to access or delete the personal information we have of you by making
                     a verifiable consumer request:
                   </p>
 
                   <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Phone className="w-5 h-5 text-gold" />
-                      <a href="tel:8662192294" className="text-white hover:text-gold transition-colors">
-                        (866) 219-2294 <span className="text-white/60">(during business hours)</span>
+                    <div className="flex items-start gap-3">
+                      <Phone className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <a href="tel:8662192294" className="text-white hover:text-gold transition-colors text-sm sm:text-base">
+                        (866) 219-2294 <span className="text-white/60 block sm:inline">(during business hours)</span>
                       </a>
                     </div>
-                    <div className="flex items-center gap-3">
-                      <Mail className="w-5 h-5 text-gold" />
-                      <a href="mailto:customersupport@trulyinvestorcapital.com" className="text-white hover:text-gold transition-colors">
+                    <div className="flex items-start gap-3">
+                      <Mail className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
+                      <a href="mailto:customersupport@trulyinvestorcapital.com" className="text-white hover:text-gold transition-colors text-sm sm:text-base break-all">
                         customersupport@trulyinvestorcapital.com
                       </a>
                     </div>
                     <div className="flex items-start gap-3">
                       <MapPin className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" />
-                      <address className="not-italic text-white/80">
+                      <address className="not-italic text-white/80 text-sm sm:text-base">
                         Truly Investor Capital<br />
                         Compliance Department<br />
                         3133 W Frye Rd Suite 205<br />
