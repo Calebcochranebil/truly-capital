@@ -338,7 +338,8 @@ export default function TeamPage() {
             transition={{ delay: 0.1 }}
             className="text-white/70 text-lg mb-10 max-w-2xl mx-auto"
           >
-            Connect with one of our experienced team members today and discover how we can help fund the next deal.
+            Connect with one of our experienced team members today
+            <span className="block">and discover how we can help fund the next deal.</span>
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
