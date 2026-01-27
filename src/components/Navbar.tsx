@@ -46,7 +46,7 @@ const navLinks = [
 
 const phoneNumbers = [
   { label: "Sales", number: "866-219-2294", tel: "8662192294" },
-  { label: "Servicing", number: "480-696-2094", tel: "4806962094" },
+  { label: "Servicing", number: "1-800-968-5773", tel: "18009685773", note: "Option 3" },
   { label: "Customer Service", number: "866-219-2294", tel: "8662192294" },
 ];
 
@@ -227,7 +227,10 @@ export default function Navbar({ currentPage }: NavbarProps) {
                       className="bg-white/[0.02] border border-white/[0.06] px-4 py-3 hover:bg-gold/10 hover:border-gold/20 transition-all duration-300"
                     >
                       <span className="block text-white/50 text-[10px] uppercase tracking-wider mb-1">{phone.label}</span>
-                      <span className="block text-white font-semibold text-sm">{phone.number}</span>
+                      <span className="block text-white font-semibold text-sm">
+                        {phone.number}
+                        {phone.note && <span className="text-white/50 font-normal text-xs ml-1">({phone.note})</span>}
+                      </span>
                     </a>
                   ))}
                 </div>
@@ -394,7 +397,10 @@ export default function Navbar({ currentPage }: NavbarProps) {
                           }`}
                         >
                           <span className="block text-forest-deep/50 text-[10px] uppercase tracking-wider mb-0.5">{phone.label}</span>
-                          <span className="block text-forest-deep font-semibold text-sm">{phone.number}</span>
+                          <span className="block text-forest-deep font-semibold text-sm">
+                            {phone.number}
+                            {phone.note && <span className="text-forest-deep/50 font-normal text-xs ml-1">({phone.note})</span>}
+                          </span>
                         </a>
                       ))}
                     </motion.div>
