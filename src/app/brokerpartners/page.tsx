@@ -43,7 +43,7 @@ const benefits = [
 const stats = [
   { icon: Users, value: "10,000+", label: "Satisfied Partners" },
   { icon: Award, value: "15+ Years", label: "Industry Experience" },
-  { icon: DollarSign, value: "$5B+", label: "Loans Funded" },
+  { icon: DollarSign, value: "$2B+", label: "Loans Funded" },
   { icon: Clock, value: "20 Days", label: "Average Close Time" }
 ];
 
