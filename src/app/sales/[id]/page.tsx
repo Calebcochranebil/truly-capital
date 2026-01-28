@@ -228,7 +228,7 @@ export default function TeamMemberPage() {
           <div className="text-center">
             <h1 className="font-display text-4xl text-forest-deep mb-4">Team Member Not Found</h1>
             <Link href="/team" className="text-gold hover:underline">
-              ← Back to Team
+              ← Back to Sales Team
             </Link>
           </div>
         </main>
@@ -248,7 +248,7 @@ export default function TeamMemberPage() {
             className="inline-flex items-center gap-2 text-white/70 hover:text-gold transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
-            <span className="text-sm tracking-wider uppercase">Back to Team</span>
+            <span className="text-sm tracking-wider uppercase">Back to Sales Team</span>
           </Link>
         </div>
       </div>
