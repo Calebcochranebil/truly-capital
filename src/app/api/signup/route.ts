@@ -96,20 +96,8 @@ export async function POST(request: NextRequest) {
                   </ul>
                 </div>
 
-                <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0 0 25px 0;">
+                <p style="color: #64748b; font-size: 14px; line-height: 1.6; margin: 0;">
                   Feel free to use these materials in your marketing. If you have any questions or need assistance, our team is here to help.
-                </p>
-
-                <a href="https://trulyinvestcapital.com" style="display: inline-block; background-color: #1a3a2f; color: #ffffff; text-decoration: none; padding: 14px 30px; border-radius: 8px; font-weight: bold; font-size: 14px;">
-                  Visit Our Website
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 25px 30px; background-color: #f8f7f4; text-align: center;">
-                <p style="color: #64748b; font-size: 12px; margin: 0;">
-                  Truly Investor Capital<br>
-                  <a href="https://trulyinvestcapital.com" style="color: #c9a227; text-decoration: none;">trulyinvestcapital.com</a>
                 </p>
               </td>
             </tr>
