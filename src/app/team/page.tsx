@@ -14,7 +14,6 @@ interface TeamMember {
   email: string;
   image: string;
   isLeadership: boolean;
-  isOperations?: boolean;
   hideContact?: boolean;
   nmls?: string;
 }
@@ -46,8 +45,7 @@ const teamMembers: TeamMember[] = [
     phone: "",
     email: "",
     image: "/team/jolisa-garrett.jpg",
-    isLeadership: false,
-    isOperations: true,
+    isLeadership: true,
     hideContact: true,
   },
   {
@@ -57,8 +55,7 @@ const teamMembers: TeamMember[] = [
     phone: "",
     email: "",
     image: "/team/shahin-ilbeig.jpg",
-    isLeadership: false,
-    isOperations: true,
+    isLeadership: true,
     hideContact: true,
   },
   {
@@ -230,8 +227,7 @@ function TeamMemberCard({ member }: { member: typeof teamMembers[0] }) {
 
 export default function TeamPage() {
   const leadership = teamMembers.filter((m) => m.isLeadership);
-  const operations = teamMembers.filter((m) => m.isOperations);
-  const salesTeam = teamMembers.filter((m) => !m.isLeadership && !m.isOperations);
+  const salesTeam = teamMembers.filter((m) => !m.isLeadership);
 
   return (
     <>
@@ -298,40 +294,9 @@ export default function TeamPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8"
+            className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-3xl mx-auto"
           >
             {leadership.map((member) => (
-              <TeamMemberCard key={member.id} member={member} />
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Operations Section */}
-      <section className="py-12 sm:py-16 md:py-20 bg-cream">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-10 sm:mb-16"
-          >
-            <span className="section-tag">Operations</span>
-            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">Behind the Scenes</h2>
-            <p className="section-subtitle max-w-2xl mx-auto">
-              The operational team ensuring seamless execution on every transaction.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto"
-          >
-            {operations.map((member) => (
               <TeamMemberCard key={member.id} member={member} />
             ))}
           </motion.div>
