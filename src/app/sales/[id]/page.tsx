@@ -117,6 +117,18 @@ const teamMembersData: Record<string, {
       "Jolisa Garrett serves as the Processing Manager at Truly Investor Capital, bringing expertise and dedication to ensuring smooth loan processing operations.",
     ],
   },
+  "shahin-ilbeig": {
+    name: "Shahin Ilbeig",
+    title: "EVP of Operations",
+    phone: "",
+    email: "",
+    image: "/team/shahin-ilbeig.jpg",
+    hideButtons: true,
+    bio: [
+      "Shahin Ilbeig serves as EVP of Operations at Truly Investor Capital, based in Southern California, with 15 years of experience in real estate lending. He oversees the teams and systems that drive loan execution—from underwriting and closing coordination to funding, construction draw administration, and post-close workflows.",
+      "Shahin focuses on operational excellence, process improvement, and consistent borrower communication to ensure transactions move quickly and smoothly while meeting quality and compliance standards.",
+    ],
+  },
   "alex-tkachenko": {
     name: "Alex Tkachenko",
     title: "Regional Sales Manager",
