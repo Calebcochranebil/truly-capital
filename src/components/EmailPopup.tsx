@@ -19,17 +19,18 @@ export default function EmailPopup() {
 
   useEffect(() => {
     const STORAGE_KEY = "truly-popup-data";
-    const MAX_VISITS = 3;
-    const RESET_DAYS = 30;
+    const MAX_SHOWS = 2;
 
     const storedData = localStorage.getItem(STORAGE_KEY);
     let popupData = storedData ? JSON.parse(storedData) : null;
 
-    // Check if we need to reset (30 days have passed)
+    // Reset on the first of every month
     if (popupData) {
-      const daysSinceStart = (Date.now() - popupData.startTimestamp) / (1000 * 60 * 60 * 24);
-      if (daysSinceStart >= RESET_DAYS) {
-        // Reset the data after 30 days
+      const now = new Date();
+      const storedDate = new Date(popupData.monthKey);
+      const currentMonthKey = `${now.getFullYear()}-${now.getMonth()}`;
+      const storedMonthKey = `${storedDate.getFullYear()}-${storedDate.getMonth()}`;
+      if (currentMonthKey !== storedMonthKey) {
         popupData = null;
       }
     }
@@ -37,19 +38,19 @@ export default function EmailPopup() {
     // Initialize if no data exists
     if (!popupData) {
       popupData = {
-        visitCount: 0,
-        startTimestamp: Date.now(),
+        showCount: 0,
+        monthKey: new Date().toISOString(),
       };
     }
 
-    // Increment visit count
-    popupData.visitCount += 1;
+    // Increment show count
+    popupData.showCount += 1;
 
     // Save updated data
     localStorage.setItem(STORAGE_KEY, JSON.stringify(popupData));
 
-    // Show popup only for the first 3 visits
-    if (popupData.visitCount <= MAX_VISITS) {
+    // Show popup only for the first 2 site visits per month
+    if (popupData.showCount <= MAX_SHOWS) {
       const timer = setTimeout(() => {
         setIsOpen(true);
       }, 2000);
