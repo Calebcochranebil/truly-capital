@@ -45,6 +45,7 @@ const navLinks = [
 ];
 
 const phoneNumbers = [
+  { label: "Sales", number: "866-219-2386", tel: "8662192386" },
   { label: "Servicing", number: "1-800-968-5773", tel: "18009685773", note: "Option 3" },
   { label: "Customer Service", number: "866-219-2294", tel: "8662192294" },
 ];
