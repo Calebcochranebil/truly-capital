@@ -14,6 +14,8 @@ interface TeamMember {
   email: string;
   image: string;
   isLeadership: boolean;
+  isOperations?: boolean;
+  hideContact?: boolean;
   nmls?: string;
 }
 
@@ -41,10 +43,23 @@ const teamMembers: TeamMember[] = [
     id: "jolisa-garrett",
     name: "Jolisa Garrett",
     title: "Processing Manager",
-    phone: "480.493.1959",
-    email: "Jgarrett@oaktreefunding.com",
+    phone: "",
+    email: "",
     image: "/team/jolisa-garrett.jpg",
-    isLeadership: true,
+    isLeadership: false,
+    isOperations: true,
+    hideContact: true,
+  },
+  {
+    id: "shahin-ilbeig",
+    name: "Shahin Ilbeig",
+    title: "EVP of Operations",
+    phone: "",
+    email: "",
+    image: "/team/shahin-ilbeig.jpg",
+    isLeadership: false,
+    isOperations: true,
+    hideContact: true,
   },
   {
     id: "heidi-hawk",
@@ -180,30 +195,32 @@ function TeamMemberCard({ member }: { member: typeof teamMembers[0] }) {
             )}
 
             {/* Contact Info */}
-            <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4 border-t border-cream-warm">
-              <span
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.location.href = `tel:${member.phone.replace(/\./g, "")}`;
-                }}
-                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors cursor-pointer"
-              >
-                <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
-                {member.phone}
-              </span>
-              <span
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  window.location.href = `mailto:${member.email}`;
-                }}
-                className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors cursor-pointer"
-              >
-                <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
-                <span className="truncate">{member.email}</span>
-              </span>
-            </div>
+            {!member.hideContact && (
+              <div className="space-y-1.5 sm:space-y-2 pt-3 sm:pt-4 border-t border-cream-warm">
+                <span
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.location.href = `tel:${member.phone.replace(/\./g, "")}`;
+                  }}
+                  className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors cursor-pointer"
+                >
+                  <Phone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
+                  {member.phone}
+                </span>
+                <span
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.location.href = `mailto:${member.email}`;
+                  }}
+                  className="flex items-center gap-2 text-xs sm:text-sm text-slate hover:text-gold transition-colors cursor-pointer"
+                >
+                  <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-gold flex-shrink-0" />
+                  <span className="truncate">{member.email}</span>
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </Link>
@@ -213,7 +230,8 @@ function TeamMemberCard({ member }: { member: typeof teamMembers[0] }) {
 
 export default function TeamPage() {
   const leadership = teamMembers.filter((m) => m.isLeadership);
-  const salesTeam = teamMembers.filter((m) => !m.isLeadership);
+  const operations = teamMembers.filter((m) => m.isOperations);
+  const salesTeam = teamMembers.filter((m) => !m.isLeadership && !m.isOperations);
 
   return (
     <>
@@ -289,8 +307,39 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Sales Team Section */}
+      {/* Operations Section */}
       <section className="py-12 sm:py-16 md:py-20 bg-cream">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10 sm:mb-16"
+          >
+            <span className="section-tag">Operations</span>
+            <h2 className="section-title text-2xl sm:text-3xl md:text-4xl">Behind the Scenes</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">
+              The operational team ensuring seamless execution on every transaction.
+            </p>
+          </motion.div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto"
+          >
+            {operations.map((member) => (
+              <TeamMemberCard key={member.id} member={member} />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Sales Team Section */}
+      <section className="py-12 sm:py-16 md:py-20 bg-cream-warm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
