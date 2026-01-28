@@ -76,7 +76,8 @@ export const teamMembers: TeamMember[] = [
     image: "/team/jolisa-garrett.jpg",
     isLeadership: true,
     bio: [
-      "Jolisa Garrett serves as the Processing Manager at Truly Investor Capital, bringing expertise and dedication to ensuring smooth loan processing operations.",
+      "Jolisa Garrett serves as Processing Manager at Truly Investor Capital, bringing over 10 years of experience in the mortgage industry. She leads the processing team responsible for loan intake, pipeline oversight, and execution from application through funding, working closely with Sales, Underwriting, Appraisal, Title, Insurance, and Closing to keep loans moving smoothly and efficiently.",
+      "Jolisa's leadership centers on collaboration, clarity, and consistency. She focuses on supporting her team, strengthening processes, and maintaining clear communication to create a confident, reliable experience for both internal partners and borrowers.",
     ],
   },
   {
