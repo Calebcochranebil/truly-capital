@@ -16,6 +16,7 @@ const teamMembersData: Record<string, {
   image: string;
   hasPhoto?: boolean;
   hideButtons?: boolean;
+  hideContact?: boolean;
   bio: string[];
   customButtons?: {
     primary?: { label: string; href: string };
@@ -113,6 +114,7 @@ const teamMembersData: Record<string, {
     email: "Jgarrett@oaktreefunding.com",
     image: "/team/jolisa-garrett.jpg",
     hideButtons: true,
+    hideContact: true,
     bio: [
       "Jolisa Garrett serves as the Processing Manager at Truly Investor Capital, bringing expertise and dedication to ensuring smooth loan processing operations.",
     ],
@@ -124,6 +126,7 @@ const teamMembersData: Record<string, {
     email: "",
     image: "/team/shahin-ilbeig.jpg",
     hideButtons: true,
+    hideContact: true,
     bio: [
       "Shahin Ilbeig serves as EVP of Operations at Truly Investor Capital, based in Southern California, with 15 years of experience in real estate lending. He oversees the teams and systems that drive loan execution—from underwriting and closing coordination to funding, construction draw administration, and post-close workflows.",
       "Shahin focuses on operational excellence, process improvement, and consistent borrower communication to ensure transactions move quickly and smoothly while meeting quality and compliance standards.",
@@ -325,27 +328,29 @@ export default function TeamMemberPage() {
               )}
 
               {/* Contact Info */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start mb-6 sm:mb-8"
-              >
-                <a
-                  href={`tel:${member.phone.replace(/\./g, "")}`}
-                  className="group flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-gold/20 p-3 sm:px-5 sm:py-3 rounded-full sm:rounded transition-all duration-300"
+              {!member.hideContact && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="flex flex-row gap-2 sm:gap-3 justify-center lg:justify-start mb-6 sm:mb-8"
                 >
-                  <Phone className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
-                  <span className="text-white text-sm hidden sm:inline">{member.phone}</span>
-                </a>
-                <a
-                  href={`mailto:${member.email}`}
-                  className="group flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-gold/20 p-3 sm:px-5 sm:py-3 rounded-full sm:rounded transition-all duration-300"
-                >
-                  <Mail className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
-                  <span className="text-white text-sm hidden sm:inline truncate max-w-[200px]">{member.email}</span>
-                </a>
-              </motion.div>
+                  <a
+                    href={`tel:${member.phone.replace(/\./g, "")}`}
+                    className="group flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-gold/20 p-3 sm:px-5 sm:py-3 rounded-full sm:rounded transition-all duration-300"
+                  >
+                    <Phone className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
+                    <span className="text-white text-sm hidden sm:inline">{member.phone}</span>
+                  </a>
+                  <a
+                    href={`mailto:${member.email}`}
+                    className="group flex items-center justify-center gap-2 sm:gap-3 bg-white/10 hover:bg-gold/20 p-3 sm:px-5 sm:py-3 rounded-full sm:rounded transition-all duration-300"
+                  >
+                    <Mail className="w-5 h-5 text-gold group-hover:scale-110 transition-transform" />
+                    <span className="text-white text-sm hidden sm:inline truncate max-w-[200px]">{member.email}</span>
+                  </a>
+                </motion.div>
+              )}
 
               {/* Action Buttons */}
               {!member.hideButtons && (
