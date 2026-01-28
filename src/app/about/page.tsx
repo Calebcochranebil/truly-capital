@@ -24,16 +24,6 @@ import { Navbar, InnerFooter } from "@/components";
 
 const leadership = [
   {
-    name: "Kristopher Martin",
-    title: "Co-CEO",
-    initials: "KM",
-  },
-  {
-    name: "Stephen Lippens",
-    title: "Co-CEO",
-    initials: "SL",
-  },
-  {
     name: "Darin Judis",
     title: "President",
     initials: "DJ",
